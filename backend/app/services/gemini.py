@@ -18,7 +18,7 @@ if not GEMINI_API_KEY:
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Select the model
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 async def generate_manim_code(prompt: str) -> str:
     """
@@ -39,7 +39,7 @@ async def generate_manim_code(prompt: str) -> str:
     You are an expert educational content creator specializing in creating Manim animations.
     
     Your task is to create Python code using the Manim library that will generate an educational
-    video explaining the concept: "{prompt}".
+    video explaining the concept, if it is a math problem, explain the problem and the solution step by: "{prompt}".
     
     Requirements:
     
@@ -60,7 +60,7 @@ async def generate_manim_code(prompt: str) -> str:
     6. Use self.wait() with appropriate durations to give viewers time to understand concepts
     7. Add self.play(FadeOut(*self.mobjects)) at the end of the animation for clean transitions
     8. Include proper text positioning and scaling for readability
-    9. For mathematical concepts, use MathTex for proper LaTeX rendering
+    9. For mathematical concepts, use MathTex for proper LaTeX rendering, if it is a math problem, use the problem and explain the solution step by step with different scenes for each step
     10. Structure the animation in logical sections with clear transitions between ideas
     
     EDUCATIONAL BEST PRACTICES:
