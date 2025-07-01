@@ -13,6 +13,12 @@
 # testing
 /coverage
 
+# Ignore Next.js build output
+frontend/.next/
+
+# Node modules
+frontend/node_modules/
+
 # next.js
 /.next/
 /out/
