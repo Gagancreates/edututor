@@ -16,8 +16,8 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Forward the request to the backend API
-    const response = await fetch(`${BACKEND_API_URL}/api/video/${videoId}`, {
+    // Forward the request to the backend API status endpoint
+    const response = await fetch(`${BACKEND_API_URL}/api/video/${videoId}/status`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

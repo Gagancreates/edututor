@@ -1,234 +1,0 @@
-Error generating video: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  import pkg_resources
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 0: Write(Tex('Quadratic Equations')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 0: Write(Tex('Quadratic Equations')):   2%|1         | 1/60 [00:01<01:11,  1.21s/it]Animation 0: Write(Tex('Quadratic Equations')):  18%|#8        | 11/60 [00:01<00:04, 11.21it/s]Animation 0: Write(Tex('Quadratic Equations')):  35%|###5      | 21/60 [00:01<00:01, 22.67it/s]Animation 0: Write(Tex('Quadratic Equations')):  53%|#####3    | 32/60 [00:01<00:00, 36.07it/s]Animation 0: Write(Tex('Quadratic Equations')):  72%|#######1  | 43/60 [00:01<00:00, 48.94it/s]Animation 0: Write(Tex('Quadratic Equations')):  90%|######### | 54/60 [00:01<00:00, 59.20it/s]                                                                                               Animation 2: FadeOut(Tex('Quadratic Equations')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: FadeOut(Tex('Quadratic Equations')):   3%|3         | 1/30 [00:01<00:40,  1.40s/it]Animation 2: FadeOut(Tex('Quadratic Equations')):  50%|#####     | 15/30 [00:01<00:01, 13.45it/s]Animation 2: FadeOut(Tex('Quadratic Equations')):  90%|######### | 27/30 [00:01<00:00, 25.50it/s]                                                                                                 latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):   2%|1         | 1/60 [00:01<01:09,  1.17s/it]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  13%|#3        | 8/60 [00:01<00:06,  8.28it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  23%|##3       | 14/60 [00:01<00:03, 14.67it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  32%|###1      | 19/60 [00:01<00:02, 19.87it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  42%|####1     | 25/60 [00:01<00:01, 26.61it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  55%|#####5    | 33/60 [00:01<00:00, 36.63it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  67%|######6   | 40/60 [00:01<00:00, 43.05it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  78%|#######8  | 47/60 [00:01<00:00, 48.31it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  90%|######### | 54/60 [00:02<00:00, 52.38it/s]                                                                                                                                                                   latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-+--------------------- Traceback (most recent call last) ---------------------+
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
-| 15 in render                                                                |
-|                                                                             |
-|   112             try:                                                      |
-|   113                 with tempconfig({}):                                  |
-|   114                     scene = SceneClass()                              |
-| > 115                     scene.render()                                    |
-|   116             except Exception:                                         |
-|   117                 error_console.print_exception()                       |
-|   118                 sys.exit(1)                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
-| render                                                                      |
-|                                                                             |
-|    220         """                                                          |
-|    221         self.setup()                                                 |
-|    222         try:                                                         |
-| >  223             self.construct()                                         |
-|    224         except EndSceneEarlyException:                               |
-|    225             pass                                                     |
-|    226         except RerunSceneException as e:                             |
-|                                                                             |
-| C:\Users\Gagan\AppData\Local\Temp\tmpxbkeo69f\700cb27c-53a8-41d3-9acd-2d43f |
-| 775bf0d.py:25 in construct                                                  |
-|                                                                             |
-|    22         b_explanation = Tex("b: Linear coefficient").scale(0.6).next_ |
-|    23         c_explanation = Tex("c: Constant term").scale(0.6).next_to(c, |
-|    24                                                                       |
-| >  25         self.play(TransformMatchingTex(definition_text[1], VGroup(a,M |
-|    26         self.wait(1)                                                  |
-|    27         a.move_to([-4, -2, 0])                                        |
-|    28         b.move_to([0, -2, 0])                                         |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:274 in __init__                                               |
-|                                                                             |
-|   271         key_map: dict | None = None,                                  |
-|   272         **kwargs,                                                     |
-|   273     ):                                                                |
-| > 274         super().__init__(                                             |
-|   275             mobject,                                                  |
-|   276             target_mobject,                                           |
-|   277             transform_mismatches=transform_mismatches,                |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:88 in __init__                                                |
-|                                                                             |
-|    85         else:                                                         |
-|    86             group_type = Group                                        |
-|    87                                                                       |
-| >  88         source_map = self.get_shape_map(mobject)                      |
-|    89         target_map = self.get_shape_map(target_mobject)               |
-|    90                                                                       |
-|    91         if key_map is None:                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:147 in get_shape_map                                          |
-|                                                                             |
-|   144     def get_shape_map(self, mobject: Mobject) -> dict:                |
-|   145         shape_map = {}                                                |
-|   146         for sm in self.get_mobject_parts(mobject):                    |
-| > 147             key = self.get_mobject_key(sm)                            |
-|   148             if key not in shape_map:                                  |
-|   149                 if config["renderer"] == RendererType.OPENGL:         |
-|   150                     shape_map[key] = OpenGLVGroup()                   |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:297 in get_mobject_key                                        |
-|                                                                             |
-|   294                                                                       |
-|   295     @staticmethod                                                     |
-|   296     def get_mobject_key(mobject: Mobject) -> str:                     |
-| > 297         return mobject.tex_string                                     |
-|   298                                                                       |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\mobject.py:672   |
-| in __getattr__                                                              |
-|                                                                             |
-|    669             return types.MethodType(setter, self)                    |
-|    670                                                                      |
-|    671         # Unhandled attribute, therefore error                       |
-| >  672         raise AttributeError(f"{type(self).__name__} object has no a |
-|    673                                                                      |
-|    674     @property                                                        |
-|    675     def width(self) -> float:                                        |
-+-----------------------------------------------------------------------------+
-AttributeError: VMobjectFromSVGPath object has no attribute 'tex_string'
-
-
-Traceback (most recent call last):
-  File "G:\edututor1\backend\app\services\manim.py", line 175, in execute_manim_code
-    raise RuntimeError(f"Manim execution failed: {error_message}")
-RuntimeError: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  import pkg_resources
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 0: Write(Tex('Quadratic Equations')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 0: Write(Tex('Quadratic Equations')):   2%|1         | 1/60 [00:01<01:11,  1.21s/it]Animation 0: Write(Tex('Quadratic Equations')):  18%|#8        | 11/60 [00:01<00:04, 11.21it/s]Animation 0: Write(Tex('Quadratic Equations')):  35%|###5      | 21/60 [00:01<00:01, 22.67it/s]Animation 0: Write(Tex('Quadratic Equations')):  53%|#####3    | 32/60 [00:01<00:00, 36.07it/s]Animation 0: Write(Tex('Quadratic Equations')):  72%|#######1  | 43/60 [00:01<00:00, 48.94it/s]Animation 0: Write(Tex('Quadratic Equations')):  90%|######### | 54/60 [00:01<00:00, 59.20it/s]                                                                                               Animation 2: FadeOut(Tex('Quadratic Equations')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: FadeOut(Tex('Quadratic Equations')):   3%|3         | 1/30 [00:01<00:40,  1.40s/it]Animation 2: FadeOut(Tex('Quadratic Equations')):  50%|#####     | 15/30 [00:01<00:01, 13.45it/s]Animation 2: FadeOut(Tex('Quadratic Equations')):  90%|######### | 27/30 [00:01<00:00, 25.50it/s]                                                                                                 latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):   2%|1         | 1/60 [00:01<01:09,  1.17s/it]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  13%|#3        | 8/60 [00:01<00:06,  8.28it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  23%|##3       | 14/60 [00:01<00:03, 14.67it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  32%|###1      | 19/60 [00:01<00:02, 19.87it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  42%|####1     | 25/60 [00:01<00:01, 26.61it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  55%|#####5    | 33/60 [00:01<00:00, 36.63it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  67%|######6   | 40/60 [00:01<00:00, 43.05it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  78%|#######8  | 47/60 [00:01<00:00, 48.31it/s]Animation 3: Write(Tex('A quadratic equation is an equation of the form: $ax^2 + bx + c = 0$ where $a \\neq 0$.')):  90%|######### | 54/60 [00:02<00:00, 52.38it/s]                                                                                                                                                                   latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-+--------------------- Traceback (most recent call last) ---------------------+
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
-| 15 in render                                                                |
-|                                                                             |
-|   112             try:                                                      |
-|   113                 with tempconfig({}):                                  |
-|   114                     scene = SceneClass()                              |
-| > 115                     scene.render()                                    |
-|   116             except Exception:                                         |
-|   117                 error_console.print_exception()                       |
-|   118                 sys.exit(1)                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
-| render                                                                      |
-|                                                                             |
-|    220         """                                                          |
-|    221         self.setup()                                                 |
-|    222         try:                                                         |
-| >  223             self.construct()                                         |
-|    224         except EndSceneEarlyException:                               |
-|    225             pass                                                     |
-|    226         except RerunSceneException as e:                             |
-|                                                                             |
-| C:\Users\Gagan\AppData\Local\Temp\tmpxbkeo69f\700cb27c-53a8-41d3-9acd-2d43f |
-| 775bf0d.py:25 in construct                                                  |
-|                                                                             |
-|    22         b_explanation = Tex("b: Linear coefficient").scale(0.6).next_ |
-|    23         c_explanation = Tex("c: Constant term").scale(0.6).next_to(c, |
-|    24                                                                       |
-| >  25         self.play(TransformMatchingTex(definition_text[1], VGroup(a,M |
-|    26         self.wait(1)                                                  |
-|    27         a.move_to([-4, -2, 0])                                        |
-|    28         b.move_to([0, -2, 0])                                         |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:274 in __init__                                               |
-|                                                                             |
-|   271         key_map: dict | None = None,                                  |
-|   272         **kwargs,                                                     |
-|   273     ):                                                                |
-| > 274         super().__init__(                                             |
-|   275             mobject,                                                  |
-|   276             target_mobject,                                           |
-|   277             transform_mismatches=transform_mismatches,                |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:88 in __init__                                                |
-|                                                                             |
-|    85         else:                                                         |
-|    86             group_type = Group                                        |
-|    87                                                                       |
-| >  88         source_map = self.get_shape_map(mobject)                      |
-|    89         target_map = self.get_shape_map(target_mobject)               |
-|    90                                                                       |
-|    91         if key_map is None:                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:147 in get_shape_map                                          |
-|                                                                             |
-|   144     def get_shape_map(self, mobject: Mobject) -> dict:                |
-|   145         shape_map = {}                                                |
-|   146         for sm in self.get_mobject_parts(mobject):                    |
-| > 147             key = self.get_mobject_key(sm)                            |
-|   148             if key not in shape_map:                                  |
-|   149                 if config["renderer"] == RendererType.OPENGL:         |
-|   150                     shape_map[key] = OpenGLVGroup()                   |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\animation\transform_matc |
-| hing_parts.py:297 in get_mobject_key                                        |
-|                                                                             |
-|   294                                                                       |
-|   295     @staticmethod                                                     |
-|   296     def get_mobject_key(mobject: Mobject) -> str:                     |
-| > 297         return mobject.tex_string                                     |
-|   298                                                                       |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\mobject.py:672   |
-| in __getattr__                                                              |
-|                                                                             |
-|    669             return types.MethodType(setter, self)                    |
-|    670                                                                      |
-|    671         # Unhandled attribute, therefore error                       |
-| >  672         raise AttributeError(f"{type(self).__name__} object has no a |
-|    673                                                                      |
-|    674     @property                                                        |
-|    675     def width(self) -> float:                                        |
-+-----------------------------------------------------------------------------+
-AttributeError: VMobjectFromSVGPath object has no attribute 'tex_string'
-

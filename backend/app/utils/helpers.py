@@ -151,11 +151,17 @@ def get_video_status(video_id: str) -> Dict[str, Any]:
     # Check if there's an error file
     error_path = video_dir / "error.txt"
     if error_path.exists():
-        with open(error_path, "r") as f:
-            error_message = f.read()
+        try:
+            with open(error_path, "r", encoding="utf-8") as f:
+                error_message = f.read()
+                # Get just the first line for a cleaner error message
+                error_message = error_message.split('\n')[0]
+        except Exception as e:
+            error_message = "An error occurred during video generation"
+        
         return {
             "video_id": video_id,
-            "status": "error",
+            "status": "failed",  # Changed from "error" to match frontend expectations
             "message": error_message
         }
     

@@ -166,7 +166,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
         
         # Create an error file
         error_path = output_dir / "error.txt"
-        with open(error_path, "w") as f:
+        with open(error_path, "w", encoding="utf-8") as f:
             f.write(f"Code validation failed: {error_message}\n\n")
             f.write("Please regenerate with a simpler animation.")
         
@@ -180,7 +180,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
     with tempfile.TemporaryDirectory() as temp_dir:
         # Create the Python file with the Manim code
         script_path = Path(temp_dir) / f"{video_id}.py"
-        with open(script_path, "w") as f:
+        with open(script_path, "w", encoding="utf-8") as f:
             f.write(manim_code)
         
         logger.info(f"Created Manim script at {script_path}")
@@ -188,7 +188,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
         
         # Save the script for debugging purposes
         debug_script_path = output_dir / f"{video_id}.py"
-        with open(debug_script_path, "w") as f:
+        with open(debug_script_path, "w", encoding="utf-8") as f:
             f.write(manim_code)
         logger.info(f"Saved script for debugging at {debug_script_path}")
         
@@ -205,7 +205,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
             cmd = [
                 python_executable,
                 "-m", "manim",
-                "-qm",  # Medium quality
+                "-ql",  # Low quality for faster rendering
                 "--output_file", f"{video_id}",
                 "--media_dir", str(temp_media_dir),
                 str(script_path),
@@ -222,7 +222,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
             )
             
             try:
-                stdout, stderr = process.communicate(timeout=300)  # 5-minute timeout
+                stdout, stderr = process.communicate(timeout=600)  # 10-minute timeout
                 
                 # Log the output for debugging
                 stdout_text = stdout.decode() if stdout else ""
@@ -244,7 +244,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     
                     logger.error(f"Manim execution failed with return code {process.returncode}")
                     error_path = output_dir / "error.txt"
-                    with open(error_path, "w") as f:
+                    with open(error_path, "w", encoding="utf-8") as f:
                         f.write(f"Manim execution failed:\n{error_message}")
                     raise RuntimeError(f"Manim execution failed: {error_message}")
                 
@@ -317,10 +317,10 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 if "File ready at" in stdout_text:
                     logger.warning("Manim reported a video file was created, but we couldn't find it.")
                     
-                    # Save stdout and stderr to files for debugging
-                    with open(output_dir / "stdout.txt", "w") as f:
+                                        # Save stdout and stderr to files for debugging
+                    with open(output_dir / "stdout.txt", "w", encoding="utf-8") as f:
                         f.write(stdout_text)
-                    with open(output_dir / "stderr.txt", "w") as f:
+                    with open(output_dir / "stderr.txt", "w", encoding="utf-8") as f:
                         f.write(stderr_text)
                     
                     # Look for any MP4 files in the entire temp directory using glob
@@ -339,18 +339,18 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     
                     # Create a dummy file to indicate that the video should exist
                     dummy_path = output_dir / f"{video_id}_dummy.mp4"
-                    with open(dummy_path, "w") as f:
+                    with open(dummy_path, "w", encoding="utf-8") as f:
                         f.write("This is a dummy file. The actual video was not found.")
                     
                     logger.error("No video file was found. Created a dummy file instead.")
                     error_path = output_dir / "error.txt"
-                    with open(error_path, "w") as f:
+                    with open(error_path, "w", encoding="utf-8") as f:
                         f.write("Error: No video file was found, but Manim reported success.")
                     raise FileNotFoundError("No video file was generated, but Manim reported success.")
                 
                 logger.error("No video file was generated")
                 error_path = output_dir / "error.txt"
-                with open(error_path, "w") as f:
+                with open(error_path, "w", encoding="utf-8") as f:
                     f.write("Error: No video file was generated")
                 raise FileNotFoundError("No video file was generated")
                 
@@ -358,15 +358,15 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 process.kill()
                 logger.error(f"Manim execution timed out for video ID: {video_id}")
                 error_path = output_dir / "error.txt"
-                with open(error_path, "w") as f:
-                    f.write("Error generating video: Execution timed out after 5 minutes")
-                raise RuntimeError("Manim execution timed out after 5 minutes")
+                with open(error_path, "w", encoding="utf-8") as f:
+                    f.write("Error generating video: Execution timed out after 10 minutes")
+                raise RuntimeError("Manim execution timed out after 10 minutes")
             
         except Exception as e:
             # Create an error file to indicate failure
             logger.error(f"Error during Manim execution: {str(e)}")
             logger.error(traceback.format_exc())
             error_path = output_dir / "error.txt"
-            with open(error_path, "w") as f:
+            with open(error_path, "w", encoding="utf-8") as f:
                 f.write(f"Error generating video: {str(e)}\n\n{traceback.format_exc()}")
             raise 

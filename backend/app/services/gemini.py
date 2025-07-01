@@ -66,6 +66,7 @@ IMPORTANT INSTRUCTIONS:
 10. Include helpful comments within the code to explain key parts.
 
 CRITICAL RESTRICTIONS TO AVOID ERRORS:
+0.Do not use any external assets like images, videos, or audio files.
 1. DO NOT use 'display_frame' parameter in any Scene initialization.
 2. DO NOT use ZoomedScene, ThreeDScene, or other specialized scene types - ONLY use the basic Scene class.
 3. DO NOT use TransformMatchingTex on objects that are not Tex or MathTex objects.

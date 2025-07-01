@@ -1,6 +1,0 @@
-Error generating video: No video file was generated, but Manim reported success.
-
-Traceback (most recent call last):
-  File "G:\edututor1\backend\app\services\manim.py", line 245, in execute_manim_code
-    raise FileNotFoundError("No video file was generated, but Manim reported success.")
-FileNotFoundError: No video file was generated, but Manim reported success.

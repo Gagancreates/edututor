@@ -1,0 +1,168 @@
+Error generating video: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+Animation 0: Write(Text('What is Machine Learning?')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 0: Write(Text('What is Machine Learning?')):   2%|1         | 1/60 [00:01<01:00,  1.02s/it]Animation 0: Write(Text('What is Machine Learning?')):  18%|#8        | 11/60 [00:01<00:03, 12.84it/s]Animation 0: Write(Text('What is Machine Learning?')):  33%|###3      | 20/60 [00:01<00:01, 23.52it/s]Animation 0: Write(Text('What is Machine Learning?')):  47%|####6     | 28/60 [00:01<00:00, 32.52it/s]Animation 0: Write(Text('What is Machine Learning?')):  58%|#####8    | 35/60 [00:01<00:00, 38.98it/s]Animation 0: Write(Text('What is Machine Learning?')):  70%|#######   | 42/60 [00:01<00:00, 42.24it/s]Animation 0: Write(Text('What is Machine Learning?')):  82%|########1 | 49/60 [00:01<00:00, 47.79it/s]Animation 0: Write(Text('What is Machine Learning?')):  93%|#########3| 56/60 [00:01<00:00, 52.83it/s]                                                                                                      Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):   0%|          | 0/90 [00:00<?, ?it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):   1%|1         | 1/90 [00:01<01:30,  1.02s/it]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):   6%|5         | 5/90 [00:01<00:14,  5.67it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  10%|#         | 9/90 [00:01<00:07, 10.58it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  14%|#4        | 13/90 [00:01<00:05, 15.15it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  19%|#8        | 17/90 [00:01<00:03, 19.87it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  23%|##3       | 21/90 [00:01<00:02, 23.67it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  28%|##7       | 25/90 [00:01<00:02, 26.45it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  32%|###2      | 29/90 [00:01<00:02, 28.72it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  37%|###6      | 33/90 [00:01<00:01, 30.69it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  41%|####1     | 37/90 [00:02<00:01, 31.49it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  46%|####5     | 41/90 [00:02<00:01, 28.73it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  50%|#####     | 45/90 [00:02<00:01, 29.38it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  54%|#####4    | 49/90 [00:02<00:01, 30.01it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  59%|#####8    | 53/90 [00:02<00:01, 30.07it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  63%|######3   | 57/90 [00:02<00:01, 30.52it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  68%|######7   | 61/90 [00:02<00:00, 30.67it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  72%|#######2  | 65/90 [00:02<00:00, 29.64it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  77%|#######6  | 69/90 [00:03<00:00, 29.82it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  81%|########1 | 73/90 [00:03<00:00, 28.29it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  84%|########4 | 76/90 [00:03<00:00, 27.72it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  88%|########7 | 79/90 [00:03<00:00, 27.89it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  91%|#########1| 82/90 [00:03<00:00, 27.95it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  96%|#########5| 86/90 [00:03<00:00, 29.40it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')): 100%|##########| 90/90 [00:03<00:00, 29.87it/s]                                                                                                                                                                                                     Animation 4: FadeOut(Group):   0%|          | 0/30 [00:00<?, ?it/s]Animation 4: FadeOut(Group):   3%|3         | 1/30 [00:00<00:22,  1.32it/s]Animation 4: FadeOut(Group):  13%|#3        | 4/30 [00:00<00:04,  5.72it/s]Animation 4: FadeOut(Group):  23%|##3       | 7/30 [00:01<00:02,  9.36it/s]Animation 4: FadeOut(Group):  30%|###       | 9/30 [00:01<00:01, 11.04it/s]Animation 4: FadeOut(Group):  40%|####      | 12/30 [00:01<00:01, 14.45it/s]Animation 4: FadeOut(Group):  50%|#####     | 15/30 [00:01<00:00, 17.44it/s]Animation 4: FadeOut(Group):  60%|######    | 18/30 [00:01<00:00, 19.33it/s]Animation 4: FadeOut(Group):  70%|#######   | 21/30 [00:01<00:00, 21.05it/s]Animation 4: FadeOut(Group):  80%|########  | 24/30 [00:01<00:00, 22.52it/s]Animation 4: FadeOut(Group):  90%|######### | 27/30 [00:01<00:00, 23.76it/s]Animation 4: FadeOut(Group): 100%|##########| 30/30 [00:01<00:00, 24.48it/s]                                                                            Animation 5: Write(Text('Data is Key!')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 5: Write(Text('Data is Key!')):   3%|3         | 1/30 [00:01<00:39,  1.35s/it]Animation 5: Write(Text('Data is Key!')):  43%|####3     | 13/30 [00:01<00:01, 11.98it/s]Animation 5: Write(Text('Data is Key!')):  80%|########  | 24/30 [00:01<00:00, 23.62it/s]                                                                                         +--------------------- Traceback (most recent call last) ---------------------+
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
+| 15 in render                                                                |
+|                                                                             |
+|   112             try:                                                      |
+|   113                 with tempconfig({}):                                  |
+|   114                     scene = SceneClass()                              |
+| > 115                     scene.render()                                    |
+|   116             except Exception:                                         |
+|   117                 error_console.print_exception()                       |
+|   118                 sys.exit(1)                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
+| render                                                                      |
+|                                                                             |
+|    220         """                                                          |
+|    221         self.setup()                                                 |
+|    222         try:                                                         |
+| >  223             self.construct()                                         |
+|    224         except EndSceneEarlyException:                               |
+|    225             pass                                                     |
+|    226         except RerunSceneException as e:                             |
+|                                                                             |
+| C:\Users\Gagan\AppData\Local\Temp\tmp45z0n521\ab1989a1-ca39-4878-9998-23756 |
+| 348ac01.py:22 in construct                                                  |
+|                                                                             |
+|   19         self.play(Write(data_title), run_time=1)                       |
+|   20         self.wait(1)                                                   |
+|   21                                                                        |
+| > 22         example_image = ImageMobject("example_image.png") #Replace wit |
+|   23         example_image.scale(0.5).move_to(LEFT * 3)                     |
+|   24         example_label = Text("Images of Cats", font_size=24).next_to(e |
+|   25                                                                        |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\types\image_mobj |
+| ect.py:183 in __init__                                                      |
+|                                                                             |
+|   180         self.invert = invert                                          |
+|   181         self.image_mode = image_mode                                  |
+|   182         if isinstance(filename_or_array, (str, pathlib.PurePath)):    |
+| > 183             path = get_full_raster_image_path(filename_or_array)      |
+|   184             image = Image.open(path).convert(self.image_mode)         |
+|   185             self.pixel_array = np.array(image)                        |
+|   186             self.path = path                                          |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\images.py:22 in    |
+| get_full_raster_image_path                                                  |
+|                                                                             |
+|   19                                                                        |
+|   20                                                                        |
+|   21 def get_full_raster_image_path(image_file_name: str) -> Path:          |
+| > 22     return seek_full_path_from_defaults(                               |
+|   23         image_file_name,                                               |
+|   24         default_dir=config.get_dir("assets_dir"),                      |
+|   25         extensions=[".jpg", ".jpeg", ".png", ".gif", ".ico"],          |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\file_ops.py:175 in |
+| seek_full_path_from_defaults                                                |
+|                                                                             |
+|   172         f"From: {Path.cwd()}, could not find {file_name} at either "  |
+|   173         f"of these locations: {list(map(str, possible_paths))}"       |
+|   174     )                                                                 |
+| > 175     raise OSError(error)                                              |
+|   176                                                                       |
+|   177                                                                       |
+|   178 def modify_atime(file_path: str) -> None:                             |
++-----------------------------------------------------------------------------+
+OSError: From: G:\edututor1\backend, could not find example_image.png at either
+of these locations: ['example_image.png', 'example_image.png', 
+'example_image.png.jpg', 'example_image.png.jpeg', 'example_image.png.png', 
+'example_image.png.gif', 'example_image.png.ico']
+
+
+Traceback (most recent call last):
+  File "G:\edututor1\backend\app\services\manim.py", line 249, in execute_manim_code
+    raise RuntimeError(f"Manim execution failed: {error_message}")
+RuntimeError: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+Animation 0: Write(Text('What is Machine Learning?')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 0: Write(Text('What is Machine Learning?')):   2%|1         | 1/60 [00:01<01:00,  1.02s/it]Animation 0: Write(Text('What is Machine Learning?')):  18%|#8        | 11/60 [00:01<00:03, 12.84it/s]Animation 0: Write(Text('What is Machine Learning?')):  33%|###3      | 20/60 [00:01<00:01, 23.52it/s]Animation 0: Write(Text('What is Machine Learning?')):  47%|####6     | 28/60 [00:01<00:00, 32.52it/s]Animation 0: Write(Text('What is Machine Learning?')):  58%|#####8    | 35/60 [00:01<00:00, 38.98it/s]Animation 0: Write(Text('What is Machine Learning?')):  70%|#######   | 42/60 [00:01<00:00, 42.24it/s]Animation 0: Write(Text('What is Machine Learning?')):  82%|########1 | 49/60 [00:01<00:00, 47.79it/s]Animation 0: Write(Text('What is Machine Learning?')):  93%|#########3| 56/60 [00:01<00:00, 52.83it/s]                                                                                                      Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):   0%|          | 0/90 [00:00<?, ?it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):   1%|1         | 1/90 [00:01<01:30,  1.02s/it]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):   6%|5         | 5/90 [00:01<00:14,  5.67it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  10%|#         | 9/90 [00:01<00:07, 10.58it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  14%|#4        | 13/90 [00:01<00:05, 15.15it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  19%|#8        | 17/90 [00:01<00:03, 19.87it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  23%|##3       | 21/90 [00:01<00:02, 23.67it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  28%|##7       | 25/90 [00:01<00:02, 26.45it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  32%|###2      | 29/90 [00:01<00:02, 28.72it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  37%|###6      | 33/90 [00:01<00:01, 30.69it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  41%|####1     | 37/90 [00:02<00:01, 31.49it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  46%|####5     | 41/90 [00:02<00:01, 28.73it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  50%|#####     | 45/90 [00:02<00:01, 29.38it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  54%|#####4    | 49/90 [00:02<00:01, 30.01it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  59%|#####8    | 53/90 [00:02<00:01, 30.07it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  63%|######3   | 57/90 [00:02<00:01, 30.52it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  68%|######7   | 61/90 [00:02<00:00, 30.67it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  72%|#######2  | 65/90 [00:02<00:00, 29.64it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  77%|#######6  | 69/90 [00:03<00:00, 29.82it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  81%|########1 | 73/90 [00:03<00:00, 28.29it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  84%|########4 | 76/90 [00:03<00:00, 27.72it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  88%|########7 | 79/90 [00:03<00:00, 27.89it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  91%|#########1| 82/90 [00:03<00:00, 27.95it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')):  96%|#########5| 86/90 [00:03<00:00, 29.40it/s]Animation 2: Write(Text('Machine learning (ML) is a field of study that gives computers the ability to learn without being explicitly programmed.')): 100%|##########| 90/90 [00:03<00:00, 29.87it/s]                                                                                                                                                                                                     Animation 4: FadeOut(Group):   0%|          | 0/30 [00:00<?, ?it/s]Animation 4: FadeOut(Group):   3%|3         | 1/30 [00:00<00:22,  1.32it/s]Animation 4: FadeOut(Group):  13%|#3        | 4/30 [00:00<00:04,  5.72it/s]Animation 4: FadeOut(Group):  23%|##3       | 7/30 [00:01<00:02,  9.36it/s]Animation 4: FadeOut(Group):  30%|###       | 9/30 [00:01<00:01, 11.04it/s]Animation 4: FadeOut(Group):  40%|####      | 12/30 [00:01<00:01, 14.45it/s]Animation 4: FadeOut(Group):  50%|#####     | 15/30 [00:01<00:00, 17.44it/s]Animation 4: FadeOut(Group):  60%|######    | 18/30 [00:01<00:00, 19.33it/s]Animation 4: FadeOut(Group):  70%|#######   | 21/30 [00:01<00:00, 21.05it/s]Animation 4: FadeOut(Group):  80%|########  | 24/30 [00:01<00:00, 22.52it/s]Animation 4: FadeOut(Group):  90%|######### | 27/30 [00:01<00:00, 23.76it/s]Animation 4: FadeOut(Group): 100%|##########| 30/30 [00:01<00:00, 24.48it/s]                                                                            Animation 5: Write(Text('Data is Key!')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 5: Write(Text('Data is Key!')):   3%|3         | 1/30 [00:01<00:39,  1.35s/it]Animation 5: Write(Text('Data is Key!')):  43%|####3     | 13/30 [00:01<00:01, 11.98it/s]Animation 5: Write(Text('Data is Key!')):  80%|########  | 24/30 [00:01<00:00, 23.62it/s]                                                                                         +--------------------- Traceback (most recent call last) ---------------------+
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
+| 15 in render                                                                |
+|                                                                             |
+|   112             try:                                                      |
+|   113                 with tempconfig({}):                                  |
+|   114                     scene = SceneClass()                              |
+| > 115                     scene.render()                                    |
+|   116             except Exception:                                         |
+|   117                 error_console.print_exception()                       |
+|   118                 sys.exit(1)                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
+| render                                                                      |
+|                                                                             |
+|    220         """                                                          |
+|    221         self.setup()                                                 |
+|    222         try:                                                         |
+| >  223             self.construct()                                         |
+|    224         except EndSceneEarlyException:                               |
+|    225             pass                                                     |
+|    226         except RerunSceneException as e:                             |
+|                                                                             |
+| C:\Users\Gagan\AppData\Local\Temp\tmp45z0n521\ab1989a1-ca39-4878-9998-23756 |
+| 348ac01.py:22 in construct                                                  |
+|                                                                             |
+|   19         self.play(Write(data_title), run_time=1)                       |
+|   20         self.wait(1)                                                   |
+|   21                                                                        |
+| > 22         example_image = ImageMobject("example_image.png") #Replace wit |
+|   23         example_image.scale(0.5).move_to(LEFT * 3)                     |
+|   24         example_label = Text("Images of Cats", font_size=24).next_to(e |
+|   25                                                                        |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\types\image_mobj |
+| ect.py:183 in __init__                                                      |
+|                                                                             |
+|   180         self.invert = invert                                          |
+|   181         self.image_mode = image_mode                                  |
+|   182         if isinstance(filename_or_array, (str, pathlib.PurePath)):    |
+| > 183             path = get_full_raster_image_path(filename_or_array)      |
+|   184             image = Image.open(path).convert(self.image_mode)         |
+|   185             self.pixel_array = np.array(image)                        |
+|   186             self.path = path                                          |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\images.py:22 in    |
+| get_full_raster_image_path                                                  |
+|                                                                             |
+|   19                                                                        |
+|   20                                                                        |
+|   21 def get_full_raster_image_path(image_file_name: str) -> Path:          |
+| > 22     return seek_full_path_from_defaults(                               |
+|   23         image_file_name,                                               |
+|   24         default_dir=config.get_dir("assets_dir"),                      |
+|   25         extensions=[".jpg", ".jpeg", ".png", ".gif", ".ico"],          |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\file_ops.py:175 in |
+| seek_full_path_from_defaults                                                |
+|                                                                             |
+|   172         f"From: {Path.cwd()}, could not find {file_name} at either "  |
+|   173         f"of these locations: {list(map(str, possible_paths))}"       |
+|   174     )                                                                 |
+| > 175     raise OSError(error)                                              |
+|   176                                                                       |
+|   177                                                                       |
+|   178 def modify_atime(file_path: str) -> None:                             |
++-----------------------------------------------------------------------------+
+OSError: From: G:\edututor1\backend, could not find example_image.png at either
+of these locations: ['example_image.png', 'example_image.png', 
+'example_image.png.jpg', 'example_image.png.jpeg', 'example_image.png.png', 
+'example_image.png.gif', 'example_image.png.ico']
+

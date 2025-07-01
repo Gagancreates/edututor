@@ -20,7 +20,7 @@ function VideoPlayerContent() {
   const [videoStatus, setVideoStatus] = useState({
     status: "loading", // loading, processing, completed, failed
     message: "Checking video status...",
-    url: null
+    video_url: null  // Match the backend response structure
   })
   
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -57,7 +57,7 @@ function VideoPlayerContent() {
         setVideoStatus({
           status: 'failed',
           message: 'Failed to fetch video status',
-          url: null
+          video_url: null
         })
       }
     }

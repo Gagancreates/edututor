@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Forward the request to the backend API
-    const response = await fetch(`${BACKEND_API_URL}/api/video/file/${videoId}`);
+    const response = await fetch(`${BACKEND_API_URL}/api/video/${videoId}`);
 
     if (!response.ok) {
       return new Response(null, {
