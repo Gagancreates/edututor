@@ -1,0 +1,6 @@
+Error generating video: No video file was generated
+
+Traceback (most recent call last):
+  File "G:\edututor1\backend\app\services\manim.py", line 140, in execute_manim_code
+    raise FileNotFoundError("No video file was generated")
+FileNotFoundError: No video file was generated

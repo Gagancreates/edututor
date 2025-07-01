@@ -1,88 +1,177 @@
 """
-Helper utility functions for the EduTutor application.
+Helper functions for the application.
 """
-import uuid
 import os
+import re
+import uuid
+import glob
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import List, Optional, Dict, Any, Union
 
-def generate_unique_id() -> str:
+def generate_uuid() -> str:
     """
-    Generate a unique identifier for videos and other resources.
+    Generate a unique identifier for a video.
     
     Returns:
-        A unique string ID
+        A unique identifier string
     """
     return str(uuid.uuid4())
 
-def get_video_path(video_id: str) -> Optional[Path]:
+def clean_code(code_text: str) -> str:
     """
-    Get the path to a generated video file.
+    Clean the code text by removing any Markdown formatting.
     
     Args:
-        video_id: The unique ID of the video
+        code_text: The code text to clean
         
     Returns:
-        Path to the video file if it exists, None otherwise
+        Cleaned code text
     """
-    videos_dir = Path("./videos") / video_id
-    if not videos_dir.exists():
+    # Remove Markdown code block markers (```python and ```)
+    code_text = re.sub(r'^```python\s*', '', code_text, flags=re.MULTILINE)
+    code_text = re.sub(r'^```\s*$', '', code_text, flags=re.MULTILINE)
+    
+    # Remove any other Markdown formatting that might be present
+    code_text = re.sub(r'^```.*\s*', '', code_text, flags=re.MULTILINE)
+    
+    return code_text.strip()
+
+def find_video_files(directory: Union[str, Path]) -> List[Path]:
+    """
+    Find all video files in a directory and its subdirectories.
+    
+    Args:
+        directory: The directory to search
+        
+    Returns:
+        List of paths to video files
+    """
+    if isinstance(directory, str):
+        directory = Path(directory)
+    
+    video_files = []
+    
+    # Check the main directory
+    video_files.extend(list(directory.glob("*.mp4")))
+    
+    # Check for the default Manim media structure
+    media_dir = directory / "videos"
+    if media_dir.exists():
+        # Check all quality subdirectories (480p15, 720p30, 1080p60, etc.)
+        for quality_dir in media_dir.iterdir():
+            if quality_dir.is_dir():
+                video_files.extend(list(quality_dir.glob("*.mp4")))
+                
+                # Check for partial movie files directory
+                partial_dir = quality_dir / "partial_movie_files"
+                if partial_dir.exists():
+                    for scene_dir in partial_dir.iterdir():
+                        if scene_dir.is_dir():
+                            video_files.extend(list(scene_dir.glob("*.mp4")))
+    
+    # Check for media_dir structure
+    media_dir = directory / "media" / "videos"
+    if media_dir.exists():
+        for quality_dir in media_dir.iterdir():
+            if quality_dir.is_dir():
+                video_files.extend(list(quality_dir.glob("*.mp4")))
+                
+                # Check for partial movie files directory
+                partial_dir = quality_dir / "partial_movie_files"
+                if partial_dir.exists():
+                    for scene_dir in partial_dir.iterdir():
+                        if scene_dir.is_dir():
+                            video_files.extend(list(scene_dir.glob("*.mp4")))
+    
+    # Check for the temp directory structure that might be used
+    for temp_dir in directory.glob("**/videos"):
+        if temp_dir.is_dir():
+            for quality_dir in temp_dir.iterdir():
+                if quality_dir.is_dir():
+                    video_files.extend(list(quality_dir.glob("*.mp4")))
+                    
+                    # Check for partial movie files directory
+                    partial_dir = quality_dir / "partial_movie_files"
+                    if partial_dir.exists():
+                        for scene_dir in partial_dir.iterdir():
+                            if scene_dir.is_dir():
+                                video_files.extend(list(scene_dir.glob("*.mp4")))
+    
+    return video_files
+
+def get_video_path(video_id: str) -> Optional[str]:
+    """
+    Get the path to a generated video.
+    
+    Args:
+        video_id: The ID of the video
+        
+    Returns:
+        The path to the video file, or None if not found
+    """
+    # Define the videos directory
+    videos_dir = Path("./videos")
+    
+    # Check if the video directory exists
+    video_dir = videos_dir / video_id
+    if not video_dir.exists():
         return None
     
-    # Look for MP4 files
-    video_files = list(videos_dir.glob("*.mp4"))
-    if not video_files:
-        return None
+    # Find video files in the directory
+    video_files = find_video_files(video_dir)
     
-    return video_files[0]
+    # If we found video files, return the path to the first one
+    if video_files:
+        return str(video_files[0])
+    
+    return None
 
 def get_video_status(video_id: str) -> Dict[str, Any]:
     """
-    Get the status of a video generation request.
+    Get the status of a video generation process.
     
     Args:
-        video_id: The unique ID of the video
+        video_id: The ID of the video
         
     Returns:
         Dictionary with status information
     """
-    videos_dir = Path("./videos") / video_id
+    # Define the videos directory
+    videos_dir = Path("./videos")
     
-    # Check if the directory exists
-    if not videos_dir.exists():
+    # Check if the video directory exists
+    video_dir = videos_dir / video_id
+    if not video_dir.exists():
         return {
             "video_id": video_id,
             "status": "not_found",
-            "message": "Video not found",
-            "url": None
+            "message": "Video ID not found"
         }
     
-    # Check for error file
-    error_file = videos_dir / "error.txt"
-    if error_file.exists():
-        with open(error_file, "r") as f:
+    # Check if there's an error file
+    error_path = video_dir / "error.txt"
+    if error_path.exists():
+        with open(error_path, "r") as f:
             error_message = f.read()
         return {
             "video_id": video_id,
-            "status": "failed",
-            "message": error_message,
-            "url": None
+            "status": "error",
+            "message": error_message
         }
     
-    # Check for video file
-    video_path = get_video_path(video_id)
-    if video_path:
+    # Check if there's a video file
+    video_files = find_video_files(video_dir)
+    if video_files:
         return {
             "video_id": video_id,
             "status": "completed",
             "message": "Video generation completed",
-            "url": f"/api/video/file/{video_id}"
+            "video_url": f"/api/video/{video_id}"
         }
     
-    # If directory exists but no video or error file yet, it's still processing
+    # If there's a directory but no video file or error file, it's still processing
     return {
         "video_id": video_id,
         "status": "processing",
-        "message": "Video is being generated",
-        "url": None
+        "message": "Video generation in progress"
     } 

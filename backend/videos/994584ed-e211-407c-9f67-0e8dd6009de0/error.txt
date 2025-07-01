@@ -1,0 +1,244 @@
+Error generating video: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+Animation 0: Write(Text('How does the Internet work?')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 0: Write(Text('How does the Internet work?')):   2%|1         | 1/60 [00:01<01:13,  1.25s/it]Animation 0: Write(Text('How does the Internet work?')):  15%|#5        | 9/60 [00:01<00:05,  8.91it/s]Animation 0: Write(Text('How does the Internet work?')):  30%|###       | 18/60 [00:01<00:02, 18.86it/s]Animation 0: Write(Text('How does the Internet work?')):  47%|####6     | 28/60 [00:01<00:01, 30.39it/s]Animation 0: Write(Text('How does the Internet work?')):  60%|######    | 36/60 [00:01<00:00, 39.03it/s]Animation 0: Write(Text('How does the Internet work?')):  73%|#######3  | 44/60 [00:01<00:00, 44.43it/s]Animation 0: Write(Text('How does the Internet work?')):  85%|########5 | 51/60 [00:01<00:00, 47.94it/s]Animation 0: Write(Text('How does the Internet work?')): 100%|##########| 60/60 [00:02<00:00, 55.34it/s]                                                                                                        Animation 2: FadeOut(Text('How does the Internet work?')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: FadeOut(Text('How does the Internet work?')):   3%|3         | 1/30 [00:01<00:36,  1.27s/it]Animation 2: FadeOut(Text('How does the Internet work?')):  33%|###3      | 10/30 [00:01<00:02,  9.68it/s]Animation 2: FadeOut(Text('How does the Internet work?')):  63%|######3   | 19/30 [00:01<00:00, 19.68it/s]Animation 2: FadeOut(Text('How does the Internet work?')):  87%|########6 | 26/30 [00:01<00:00, 26.67it/s]                                                                                                          Animation 3: Create(Rectangle), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 3: Create(Rectangle), etc.:   3%|3         | 1/30 [00:01<00:41,  1.42s/it]Animation 3: Create(Rectangle), etc.:  33%|###3      | 10/30 [00:01<00:02,  8.77it/s]Animation 3: Create(Rectangle), etc.:  60%|######    | 18/30 [00:01<00:00, 16.86it/s]Animation 3: Create(Rectangle), etc.:  93%|#########3| 28/30 [00:01<00:00, 27.87it/s]                                                                                     Animation 5: Create(Circle), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 5: Create(Circle), etc.:   3%|3         | 1/30 [00:01<00:40,  1.39s/it]Animation 5: Create(Circle), etc.:  50%|#####     | 15/30 [00:01<00:01, 13.47it/s]Animation 5: Create(Circle), etc.:  93%|#########3| 28/30 [00:01<00:00, 26.50it/s]                                                                                  Animation 7: Create(Line):   0%|          | 0/30 [00:00<?, ?it/s]Animation 7: Create(Line):   3%|3         | 1/30 [00:01<00:41,  1.44s/it]Animation 7: Create(Line):  37%|###6      | 11/30 [00:01<00:01,  9.54it/s]Animation 7: Create(Line):  90%|######### | 27/30 [00:01<00:00, 26.17it/s]                                                                          Animation 8: Write(Text('Data Packet')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 8: Write(Text('Data Packet')):   3%|3         | 1/30 [00:01<00:40,  1.41s/it]Animation 8: Write(Text('Data Packet')):  53%|#####3    | 16/30 [00:01<00:00, 14.29it/s]Animation 8: Write(Text('Data Packet')):  90%|######### | 27/30 [00:01<00:00, 25.13it/s]                                                                                        Animation 10: FadeOut(Text('Data Packet')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 10: FadeOut(Text('Data Packet')):   7%|6         | 1/15 [00:01<00:19,  1.39s/it]Animation 10: FadeOut(Text('Data Packet')):  80%|########  | 12/15 [00:01<00:00, 10.76it/s]                                                                                           Animation 11: Create(Ellipse), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 11: Create(Ellipse), etc.:   3%|3         | 1/30 [00:01<00:40,  1.41s/it]Animation 11: Create(Ellipse), etc.:  40%|####      | 12/30 [00:01<00:01, 10.76it/s]Animation 11: Create(Ellipse), etc.:  83%|########3 | 25/30 [00:01<00:00, 24.36it/s]                                                                                    Animation 13: Create(Line):   0%|          | 0/30 [00:00<?, ?it/s]Animation 13: Create(Line):   3%|3         | 1/30 [00:01<00:37,  1.28s/it]Animation 13: Create(Line):  60%|######    | 18/30 [00:01<00:00, 17.72it/s]                                                                           Animation 14: Write(Text('Data Packet')):   0%|          | 0/30 [00:00<?, ?it/s]Exception ignored in: <generator object tqdm.__iter__ at 0x000001B971BCE0E0>
+Traceback (most recent call last):
+  File "G:\edututor1\backend\.venv\Lib\site-packages\tqdm\std.py", line 1196, in __iter__
+    self.close()
+  File "G:\edututor1\backend\.venv\Lib\site-packages\tqdm\std.py", line 1265, in close
+    def close(self):
+
+KeyboardInterrupt: 
++--------------------- Traceback (most recent call last) ---------------------+
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
+| 15 in render                                                                |
+|                                                                             |
+|   112             try:                                                      |
+|   113                 with tempconfig({}):                                  |
+|   114                     scene = SceneClass()                              |
+| > 115                     scene.render()                                    |
+|   116             except Exception:                                         |
+|   117                 error_console.print_exception()                       |
+|   118                 sys.exit(1)                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
+| render                                                                      |
+|                                                                             |
+|    220         """                                                          |
+|    221         self.setup()                                                 |
+|    222         try:                                                         |
+| >  223             self.construct()                                         |
+|    224         except EndSceneEarlyException:                               |
+|    225             pass                                                     |
+|    226         except RerunSceneException as e:                             |
+|                                                                             |
+| C:\Users\Gagan\AppData\Local\Temp\tmp4n8qa_5b\994584ed-e211-407c-9f67-0e8dd |
+| 6009de0.py:41 in construct                                                  |
+|                                                                             |
+|   38         line2 = Line(router.get_right(), internet_cloud.get_left(), co |
+|   39         self.play(Create(line2), run_time=1)                           |
+|   40         data_packet_text_to_internet = Text("Data Packet", font_size=1 |
+| > 41         self.play(Write(data_packet_text_to_internet), run_time=1)     |
+|   42         self.wait(0.5)                                                 |
+|   43         self.play(FadeOut(data_packet_text_to_internet), run_time=0.5) |
+|   44                                                                        |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:1080 in   |
+| play                                                                        |
+|                                                                             |
+|   1077             return                                                   |
+|   1078                                                                      |
+|   1079         start_time = self.renderer.time                              |
+| > 1080         self.renderer.play(self, *args, **kwargs)                    |
+|   1081         run_time = self.renderer.time - start_time                   |
+|   1082         if subcaption:                                               |
+|   1083             if subcaption_duration is None:                          |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\renderer\cairo_renderer. |
+| py:104 in play                                                              |
+|                                                                             |
+|   101             # In this case, as there is only a wait, it will be the l |
+|   102             self.freeze_current_frame(scene.duration)                 |
+|   103         else:                                                         |
+| > 104             scene.play_internal()                                     |
+|   105         self.file_writer.end_animation(not self.skip_animations)      |
+|   106                                                                       |
+|   107         self.num_plays += 1                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:1245 in   |
+| play_internal                                                               |
+|                                                                             |
+|   1242         for t in self.time_progression:                              |
+|   1243             self.update_to_time(t)                                   |
+|   1244             if not skip_rendering and not self.skip_animation_previe |
+| > 1245                 self.renderer.render(self, t, self.moving_mobjects)  |
+|   1246             if self.stop_condition is not None and self.stop_conditi |
+|   1247                 self.time_progression.close()                        |
+|   1248                 break                                                |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\renderer\cairo_renderer. |
+| py:150 in render                                                            |
+|                                                                             |
+|   147                                                                       |
+|   148     def render(self, scene, time, moving_mobjects):                   |
+|   149         self.update_frame(scene, moving_mobjects)                     |
+| > 150         self.add_frame(self.get_frame())                              |
+|   151                                                                       |
+|   152     def get_frame(self):                                              |
+|   153         """                                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\renderer\cairo_renderer. |
+| py:180 in add_frame                                                         |
+|                                                                             |
+|   177             return                                                    |
+|   178         self.time += num_frames * dt                                  |
+|   179         for _ in range(num_frames):                                   |
+| > 180             self.file_writer.write_frame(frame)                       |
+|   181                                                                       |
+|   182     def freeze_current_frame(self, duration: float):                  |
+|   183         """Adds a static frame to the movie for a given duration. The |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene_file_writer. |
+| py:391 in write_frame                                                       |
+|                                                                             |
+|   388         elif config.renderer == RendererType.CAIRO:                   |
+|   389             frame = frame_or_renderer                                 |
+|   390             if write_to_movie():                                      |
+| > 391                 self.writing_process.stdin.write(frame.tobytes())     |
+|   392             if is_png_format() and not config["dry_run"]:             |
+|   393                 self.output_image_from_array(frame)                   |
+|   394                                                                       |
++-----------------------------------------------------------------------------+
+BrokenPipeError: [Errno 32] Broken pipe
+                                                                                
+
+Traceback (most recent call last):
+  File "G:\edututor1\backend\app\services\manim.py", line 172, in execute_manim_code
+    raise RuntimeError(f"Manim execution failed: {error_message}")
+RuntimeError: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+Animation 0: Write(Text('How does the Internet work?')):   0%|          | 0/60 [00:00<?, ?it/s]Animation 0: Write(Text('How does the Internet work?')):   2%|1         | 1/60 [00:01<01:13,  1.25s/it]Animation 0: Write(Text('How does the Internet work?')):  15%|#5        | 9/60 [00:01<00:05,  8.91it/s]Animation 0: Write(Text('How does the Internet work?')):  30%|###       | 18/60 [00:01<00:02, 18.86it/s]Animation 0: Write(Text('How does the Internet work?')):  47%|####6     | 28/60 [00:01<00:01, 30.39it/s]Animation 0: Write(Text('How does the Internet work?')):  60%|######    | 36/60 [00:01<00:00, 39.03it/s]Animation 0: Write(Text('How does the Internet work?')):  73%|#######3  | 44/60 [00:01<00:00, 44.43it/s]Animation 0: Write(Text('How does the Internet work?')):  85%|########5 | 51/60 [00:01<00:00, 47.94it/s]Animation 0: Write(Text('How does the Internet work?')): 100%|##########| 60/60 [00:02<00:00, 55.34it/s]                                                                                                        Animation 2: FadeOut(Text('How does the Internet work?')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: FadeOut(Text('How does the Internet work?')):   3%|3         | 1/30 [00:01<00:36,  1.27s/it]Animation 2: FadeOut(Text('How does the Internet work?')):  33%|###3      | 10/30 [00:01<00:02,  9.68it/s]Animation 2: FadeOut(Text('How does the Internet work?')):  63%|######3   | 19/30 [00:01<00:00, 19.68it/s]Animation 2: FadeOut(Text('How does the Internet work?')):  87%|########6 | 26/30 [00:01<00:00, 26.67it/s]                                                                                                          Animation 3: Create(Rectangle), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 3: Create(Rectangle), etc.:   3%|3         | 1/30 [00:01<00:41,  1.42s/it]Animation 3: Create(Rectangle), etc.:  33%|###3      | 10/30 [00:01<00:02,  8.77it/s]Animation 3: Create(Rectangle), etc.:  60%|######    | 18/30 [00:01<00:00, 16.86it/s]Animation 3: Create(Rectangle), etc.:  93%|#########3| 28/30 [00:01<00:00, 27.87it/s]                                                                                     Animation 5: Create(Circle), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 5: Create(Circle), etc.:   3%|3         | 1/30 [00:01<00:40,  1.39s/it]Animation 5: Create(Circle), etc.:  50%|#####     | 15/30 [00:01<00:01, 13.47it/s]Animation 5: Create(Circle), etc.:  93%|#########3| 28/30 [00:01<00:00, 26.50it/s]                                                                                  Animation 7: Create(Line):   0%|          | 0/30 [00:00<?, ?it/s]Animation 7: Create(Line):   3%|3         | 1/30 [00:01<00:41,  1.44s/it]Animation 7: Create(Line):  37%|###6      | 11/30 [00:01<00:01,  9.54it/s]Animation 7: Create(Line):  90%|######### | 27/30 [00:01<00:00, 26.17it/s]                                                                          Animation 8: Write(Text('Data Packet')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 8: Write(Text('Data Packet')):   3%|3         | 1/30 [00:01<00:40,  1.41s/it]Animation 8: Write(Text('Data Packet')):  53%|#####3    | 16/30 [00:01<00:00, 14.29it/s]Animation 8: Write(Text('Data Packet')):  90%|######### | 27/30 [00:01<00:00, 25.13it/s]                                                                                        Animation 10: FadeOut(Text('Data Packet')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 10: FadeOut(Text('Data Packet')):   7%|6         | 1/15 [00:01<00:19,  1.39s/it]Animation 10: FadeOut(Text('Data Packet')):  80%|########  | 12/15 [00:01<00:00, 10.76it/s]                                                                                           Animation 11: Create(Ellipse), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 11: Create(Ellipse), etc.:   3%|3         | 1/30 [00:01<00:40,  1.41s/it]Animation 11: Create(Ellipse), etc.:  40%|####      | 12/30 [00:01<00:01, 10.76it/s]Animation 11: Create(Ellipse), etc.:  83%|########3 | 25/30 [00:01<00:00, 24.36it/s]                                                                                    Animation 13: Create(Line):   0%|          | 0/30 [00:00<?, ?it/s]Animation 13: Create(Line):   3%|3         | 1/30 [00:01<00:37,  1.28s/it]Animation 13: Create(Line):  60%|######    | 18/30 [00:01<00:00, 17.72it/s]                                                                           Animation 14: Write(Text('Data Packet')):   0%|          | 0/30 [00:00<?, ?it/s]Exception ignored in: <generator object tqdm.__iter__ at 0x000001B971BCE0E0>
+Traceback (most recent call last):
+  File "G:\edututor1\backend\.venv\Lib\site-packages\tqdm\std.py", line 1196, in __iter__
+    self.close()
+  File "G:\edututor1\backend\.venv\Lib\site-packages\tqdm\std.py", line 1265, in close
+    def close(self):
+
+KeyboardInterrupt: 
++--------------------- Traceback (most recent call last) ---------------------+
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
+| 15 in render                                                                |
+|                                                                             |
+|   112             try:                                                      |
+|   113                 with tempconfig({}):                                  |
+|   114                     scene = SceneClass()                              |
+| > 115                     scene.render()                                    |
+|   116             except Exception:                                         |
+|   117                 error_console.print_exception()                       |
+|   118                 sys.exit(1)                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
+| render                                                                      |
+|                                                                             |
+|    220         """                                                          |
+|    221         self.setup()                                                 |
+|    222         try:                                                         |
+| >  223             self.construct()                                         |
+|    224         except EndSceneEarlyException:                               |
+|    225             pass                                                     |
+|    226         except RerunSceneException as e:                             |
+|                                                                             |
+| C:\Users\Gagan\AppData\Local\Temp\tmp4n8qa_5b\994584ed-e211-407c-9f67-0e8dd |
+| 6009de0.py:41 in construct                                                  |
+|                                                                             |
+|   38         line2 = Line(router.get_right(), internet_cloud.get_left(), co |
+|   39         self.play(Create(line2), run_time=1)                           |
+|   40         data_packet_text_to_internet = Text("Data Packet", font_size=1 |
+| > 41         self.play(Write(data_packet_text_to_internet), run_time=1)     |
+|   42         self.wait(0.5)                                                 |
+|   43         self.play(FadeOut(data_packet_text_to_internet), run_time=0.5) |
+|   44                                                                        |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:1080 in   |
+| play                                                                        |
+|                                                                             |
+|   1077             return                                                   |
+|   1078                                                                      |
+|   1079         start_time = self.renderer.time                              |
+| > 1080         self.renderer.play(self, *args, **kwargs)                    |
+|   1081         run_time = self.renderer.time - start_time                   |
+|   1082         if subcaption:                                               |
+|   1083             if subcaption_duration is None:                          |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\renderer\cairo_renderer. |
+| py:104 in play                                                              |
+|                                                                             |
+|   101             # In this case, as there is only a wait, it will be the l |
+|   102             self.freeze_current_frame(scene.duration)                 |
+|   103         else:                                                         |
+| > 104             scene.play_internal()                                     |
+|   105         self.file_writer.end_animation(not self.skip_animations)      |
+|   106                                                                       |
+|   107         self.num_plays += 1                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:1245 in   |
+| play_internal                                                               |
+|                                                                             |
+|   1242         for t in self.time_progression:                              |
+|   1243             self.update_to_time(t)                                   |
+|   1244             if not skip_rendering and not self.skip_animation_previe |
+| > 1245                 self.renderer.render(self, t, self.moving_mobjects)  |
+|   1246             if self.stop_condition is not None and self.stop_conditi |
+|   1247                 self.time_progression.close()                        |
+|   1248                 break                                                |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\renderer\cairo_renderer. |
+| py:150 in render                                                            |
+|                                                                             |
+|   147                                                                       |
+|   148     def render(self, scene, time, moving_mobjects):                   |
+|   149         self.update_frame(scene, moving_mobjects)                     |
+| > 150         self.add_frame(self.get_frame())                              |
+|   151                                                                       |
+|   152     def get_frame(self):                                              |
+|   153         """                                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\renderer\cairo_renderer. |
+| py:180 in add_frame                                                         |
+|                                                                             |
+|   177             return                                                    |
+|   178         self.time += num_frames * dt                                  |
+|   179         for _ in range(num_frames):                                   |
+| > 180             self.file_writer.write_frame(frame)                       |
+|   181                                                                       |
+|   182     def freeze_current_frame(self, duration: float):                  |
+|   183         """Adds a static frame to the movie for a given duration. The |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene_file_writer. |
+| py:391 in write_frame                                                       |
+|                                                                             |
+|   388         elif config.renderer == RendererType.CAIRO:                   |
+|   389             frame = frame_or_renderer                                 |
+|   390             if write_to_movie():                                      |
+| > 391                 self.writing_process.stdin.write(frame.tobytes())     |
+|   392             if is_png_format() and not config["dry_run"]:             |
+|   393                 self.output_image_from_array(frame)                   |
+|   394                                                                       |
++-----------------------------------------------------------------------------+
+BrokenPipeError: [Errno 32] Broken pipe
+                                                                                
