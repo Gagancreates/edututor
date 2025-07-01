@@ -100,18 +100,172 @@ In Phase 1, we will implement the core functionality of EduTutor using local sto
    - Handle API errors
    - Implement proper error responses
 
-### 5. Frontend Integration
-1. **Update API client in Next.js**
-   - Modify the existing API client to communicate with the FastAPI backend
-   - Update the `app/api/generate/route.ts` to proxy requests to the FastAPI backend
+### 5. Frontend-Backend Integration
+1. **Update Next.js API routes to proxy to FastAPI**
+   - Modify app/api/generate/route.ts to forward requests to the FastAPI backend
+   ```typescript
+   // app/api/generate/route.ts
+   import { NextRequest, NextResponse } from 'next/server';
+   
+   export async function POST(req: NextRequest) {
+     try {
+       const body = await req.json();
+       
+       // Forward request to FastAPI backend
+       const response = await fetch('http://localhost:8000/api/generate', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(body)
+       });
+       
+       const data = await response.json();
+       return NextResponse.json(data);
+     } catch (error) {
+       return NextResponse.json({ error: 'Failed to generate video' }, { status: 500 });
+     }
+   }
+   ```
 
-2. **Update video generation component**
-   - Modify `components/video-generator.tsx` to send requests to the new API
-   - Implement real progress tracking instead of simulated steps
+2. **Create video status polling endpoint**
+   - Add app/api/video/[videoId]/route.ts to check video generation status
+   ```typescript
+   // app/api/video/[videoId]/route.ts
+   import { NextRequest, NextResponse } from 'next/server';
+   
+   export async function GET(req: NextRequest, { params }: { params: { videoId: string } }) {
+     try {
+       const videoId = params.videoId;
+       
+       // Check video status from backend
+       const response = await fetch(`http://localhost:8000/api/video/${videoId}`);
+       const data = await response.json();
+       
+       return NextResponse.json(data);
+     } catch (error) {
+       return NextResponse.json({ error: 'Failed to get video status' }, { status: 500 });
+     }
+   }
+   ```
 
-3. **Update video player component**
-   - Modify `app/video/page.tsx` to fetch and display the generated video
-   - Implement video controls for the Manim-generated content
+3. **Implement video streaming endpoint**
+   - Create app/api/video/file/[videoId]/route.ts for video streaming
+   ```typescript
+   // app/api/video/file/[videoId]/route.ts
+   import { NextRequest } from 'next/server';
+   
+   export async function GET(req: NextRequest, { params }: { params: { videoId: string } }) {
+     try {
+       const videoId = params.videoId;
+       
+       // Stream video from backend
+       const response = await fetch(`http://localhost:8000/api/video/file/${videoId}`);
+       
+       // Return video stream
+       return new Response(response.body, {
+         headers: {
+           'Content-Type': 'video/mp4',
+           'Content-Disposition': `inline; filename="${videoId}.mp4"`
+         }
+       });
+     } catch (error) {
+       return new Response('Failed to stream video', { status: 500 });
+     }
+   }
+   ```
+
+4. **Update video generation component**
+   - Modify components/video-generator.tsx to use the new API endpoints
+   - Implement form validation for user prompts
+   - Add complexity and duration options
+   ```typescript
+   // Example update to video-generator.tsx
+   const handleSubmit = async (e: React.FormEvent) => {
+     e.preventDefault();
+     setIsLoading(true);
+     
+     try {
+       const response = await fetch('/api/generate', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ 
+           prompt: prompt,
+           complexity: complexity,
+           duration: duration
+         })
+       });
+       
+       const data = await response.json();
+       setVideoId(data.video_id);
+       startPolling(data.video_id);
+     } catch (error) {
+       setError('Failed to generate video');
+     } finally {
+       setIsLoading(false);
+     }
+   };
+   ```
+
+5. **Implement status polling mechanism**
+   - Create a polling function in video-generator.tsx to check video status
+   - Update UI based on status changes
+   - Handle different status states (processing, completed, failed)
+   ```typescript
+   const startPolling = (videoId: string) => {
+     const interval = setInterval(async () => {
+       try {
+         const response = await fetch(`/api/video/${videoId}`);
+         const data = await response.json();
+         
+         setStatus(data.status);
+         
+         if (data.status === 'completed') {
+           setVideoUrl(data.url);
+           clearInterval(interval);
+         } else if (data.status === 'failed') {
+           setError(data.message);
+           clearInterval(interval);
+         }
+       } catch (error) {
+         setError('Failed to check video status');
+         clearInterval(interval);
+       }
+     }, 2000); // Poll every 2 seconds
+     
+     return () => clearInterval(interval);
+   };
+   ```
+
+6. **Update video player component**
+   - Enhance app/video/page.tsx to handle Manim videos
+   - Implement video controls with play, pause, and seek functionality
+   - Add error handling for video loading issues
+   ```typescript
+   // Example update to video player component
+   import { useEffect, useRef } from 'react';
+   
+   export default function VideoPlayer({ videoUrl }) {
+     const videoRef = useRef<HTMLVideoElement>(null);
+     
+     useEffect(() => {
+       if (videoRef.current && videoUrl) {
+         videoRef.current.load();
+       }
+     }, [videoUrl]);
+     
+     return (
+       <div className="video-container">
+         <video 
+           ref={videoRef}
+           controls
+           className="w-full rounded-lg shadow-lg"
+         >
+           <source src={videoUrl} type="video/mp4" />
+           Your browser does not support the video tag.
+         </video>
+       </div>
+     );
+   }
+   ```
 
 ### 6. Local Storage Implementation
 1. **Set up temporary file storage**
