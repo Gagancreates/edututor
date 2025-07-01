@@ -1,0 +1,3 @@
+"""
+EduTutor backend application package.
+""" 
