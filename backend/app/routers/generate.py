@@ -14,8 +14,6 @@ router = APIRouter()
 class GenerateRequest(BaseModel):
     """Request model for video generation."""
     prompt: str
-    complexity: Optional[str] = "medium"  # simple, medium, complex
-    duration: Optional[int] = 60  # target duration in seconds
 
 class GenerateResponse(BaseModel):
     """Response model for video generation."""
@@ -29,7 +27,7 @@ async def generate_video(request: GenerateRequest, background_tasks: BackgroundT
     Generate an educational video based on the provided prompt.
     
     Args:
-        request: The generation request containing the prompt and options
+        request: The generation request containing the prompt
         background_tasks: FastAPI background tasks for async processing
         
     Returns:
@@ -39,8 +37,8 @@ async def generate_video(request: GenerateRequest, background_tasks: BackgroundT
         # Generate a unique ID for this video
         video_id = generate_unique_id()
         
-        # Generate Manim code using Gemini
-        manim_code = await generate_manim_code(request.prompt, request.complexity, request.duration)
+        # Generate Manim code using Gemini with default complexity and duration
+        manim_code = await generate_manim_code(request.prompt)
         
         # Execute Manim code in the background
         background_tasks.add_task(

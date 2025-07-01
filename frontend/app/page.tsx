@@ -39,26 +39,51 @@ export default function Home() {
     { icon: Play, title: "Finalizing Video", description: "Combining all elements together" },
   ]
   
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     if (!searchTopic.trim()) return
     
     setIsGenerating(true)
     setGenerationStep(0)
     
-    // Simulate generation process with step progression
-    const stepInterval = setInterval(() => {
-      setGenerationStep((prev) => {
-        if (prev >= 3) {
-          clearInterval(stepInterval)
-          setTimeout(() => {
-            // Navigate to video player page
-            router.push(`/video?topic=${encodeURIComponent(searchTopic)}`)
-          }, 1000)
-          return prev
-        }
-        return prev + 1
-      })
-    }, 2000)
+    try {
+      // Call our API to generate the Manim code
+      const response = await fetch('/api/generate_manim', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          topic: searchTopic,
+        }),
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error generating video:', errorData);
+        throw new Error(errorData.error || 'Failed to generate video');
+      }
+      
+      const data = await response.json();
+      
+      // Simulate generation process with step progression
+      const stepInterval = setInterval(() => {
+        setGenerationStep((prev) => {
+          if (prev >= 3) {
+            clearInterval(stepInterval)
+            setTimeout(() => {
+              // Navigate to video player page with the video ID
+              router.push(`/video?topic=${encodeURIComponent(searchTopic)}&videoId=${data.video_id}`)
+            }, 1000)
+            return prev
+          }
+          return prev + 1
+        })
+      }, 2000)
+    } catch (error) {
+      console.error('Error during video generation:', error);
+      setIsGenerating(false);
+      // Here you could add error handling UI feedback
+    }
   }
   return (
     <div 
