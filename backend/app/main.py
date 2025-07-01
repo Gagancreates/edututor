@@ -1,10 +1,13 @@
 """
 FastAPI entry point for EduTutor backend.
 """
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from pathlib import Path
 
 from app.routers import generate
+from app.utils.helpers import get_video_path
 
 app = FastAPI(title="EduTutor API", description="API for generating educational videos using Manim")
 
@@ -24,6 +27,27 @@ app.include_router(generate.router, prefix="/api", tags=["generate"])
 async def root():
     """Root endpoint to check if API is running."""
     return {"message": "Welcome to EduTutor API", "status": "online"}
+
+@app.get("/api/video/file/{video_id}")
+async def get_video_file(video_id: str):
+    """
+    Serve a generated video file.
+    
+    Args:
+        video_id: The unique ID of the video
+        
+    Returns:
+        Video file as a streaming response
+    """
+    video_path = get_video_path(video_id)
+    if not video_path or not video_path.exists():
+        raise HTTPException(status_code=404, detail="Video not found")
+    
+    return FileResponse(
+        path=str(video_path),
+        media_type="video/mp4",
+        filename=f"educational_video_{video_id}.mp4"
+    )
 
 if __name__ == "__main__":
     import uvicorn

@@ -73,8 +73,8 @@ async def generate_manim_code(prompt: str) -> str:
     7. Use color consistently to represent specific elements or ideas
     8. Include interactive elements where appropriate (e.g., transformations, highlighting)
     
-    Provide ONLY the Python code without any additional explanations or markdown.
-    The code should start with imports and end with the scene class.
+    *Provide ONLY the Python code without any additional explanations or markdown.*
+    *The code should start with imports and end with the scene class.*
     """
     
     # Generate content using Gemini

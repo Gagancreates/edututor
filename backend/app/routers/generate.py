@@ -7,7 +7,7 @@ from typing import Optional
 
 from app.services.gemini import generate_manim_code
 from app.services.manim import execute_manim_code
-from app.utils.helpers import generate_unique_id
+from app.utils.helpers import generate_unique_id, get_video_status
 
 router = APIRouter()
 
@@ -57,7 +57,7 @@ async def generate_video(request: GenerateRequest, background_tasks: BackgroundT
         raise HTTPException(status_code=500, detail=f"Video generation failed: {str(e)}")
 
 @router.get("/video/{video_id}", response_model=dict)
-async def get_video_status(video_id: str):
+async def get_video_status_endpoint(video_id: str):
     """
     Get the status of a video generation request.
     
@@ -67,13 +67,5 @@ async def get_video_status(video_id: str):
     Returns:
         Status information about the video generation process
     """
-    # TODO: Implement status checking from storage
-    # This would check if the video exists and its processing status
-    
-    # Placeholder implementation
-    return {
-        "video_id": video_id,
-        "status": "processing",  # processing, completed, failed
-        "message": "Video is being generated",
-        "url": None  # Will be populated when video is ready
-    } 
+    # Use the helper function to get video status
+    return get_video_status(video_id) 
