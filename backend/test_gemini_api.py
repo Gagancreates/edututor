@@ -28,7 +28,7 @@ def test_gemini_api():
         genai.configure(api_key=api_key)
         
         # Create a simple test prompt
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-2.5-flash-preview-05-20')
         response = model.generate_content("Hello, please respond with 'API is working correctly'")
         
         # Check the response

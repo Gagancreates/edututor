@@ -34,8 +34,8 @@ export default function Home() {
   
   const generationSteps = [
     { icon: Brain, title: "Analyzing Topic", description: "Understanding the educational concept" },
-    { icon: Sparkles, title: "Creating Animations", description: "Generating custom p5.js visualizations" },
-    { icon: Zap, title: "Synthesizing Voice", description: "Creating natural AI narration" },
+    { icon: Sparkles, title: "Creating Animations", description: "Generating custom visualizations" },
+    { icon: Zap, title: "Synthesizing Voice", description: "Adding the perfect voice" },
     { icon: Play, title: "Finalizing Video", description: "Combining all elements together" },
   ]
   
