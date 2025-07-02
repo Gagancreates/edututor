@@ -67,6 +67,8 @@ class ManimEducationalAgent:
 GENERATE PURE PYTHON CODE ONLY - NO MARKDOWN, NO EXPLANATIONS OUTSIDE CODE
 
 CRITICAL MANIM REQUIREMENTS:
+-**make sure that you dont overwrite the text from the previous scene**
+-**make sure that all the text rendered does not overlap**
 - from manim import * (required import)
 - class CreateScene(Scene): (exact class name and inheritance)
 - Complete, executable Python code only
