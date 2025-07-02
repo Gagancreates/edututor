@@ -5,6 +5,8 @@ from fastapi import APIRouter, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 import logging
 import traceback
+import os
+import json
 
 from app.services.gemini import generate_manim_code
 from app.services.manim import execute_manim_code
@@ -46,13 +48,61 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
     try:
         logger.info(f"Starting video generation for ID: {video_id}")
         
-        # Generate Manim code using Gemini
-        manim_code = await generate_manim_code(prompt, topic, grade_level, duration_minutes)
+        # Create videos directory for this video_id if it doesn't exist
+        video_dir = os.path.join("videos", video_id)
+        os.makedirs(video_dir, exist_ok=True)
+        
+        # Generate Manim code using Gemini with timeout handling
+        try:
+            manim_code = await generate_manim_code(
+                prompt=prompt, 
+                topic=topic, 
+                grade_level=grade_level, 
+                duration_minutes=duration_minutes,
+                max_retries=3,
+                timeout=180.0  # 3 minutes timeout
+            )
+        except Exception as e:
+            logger.error(f"Error generating Manim code: {str(e)}")
+            
+            # Save detailed error information
+            error_file = os.path.join(video_dir, "error.txt")
+            with open(error_file, "w") as f:
+                error_message = f"Failed to generate Manim code: {str(e)}\n\n"
+                error_message += "This might be due to:\n"
+                error_message += "- The prompt being too complex or broad\n"
+                error_message += "- The Gemini API experiencing high traffic\n\n"
+                error_message += "Please try:\n"
+                error_message += "- Using a more specific and focused prompt\n"
+                error_message += "- Breaking down complex topics into smaller parts\n"
+                error_message += "- Trying again in a few minutes\n\n"
+                error_message += traceback.format_exc()
+                f.write(error_message)
+            
+            # Save metadata for frontend to display
+            metadata_file = os.path.join(video_dir, "metadata.json")
+            with open(metadata_file, "w") as f:
+                metadata = {
+                    "status": "error",
+                    "error_type": "generation_failed",
+                    "prompt": prompt,
+                    "topic": topic,
+                    "message": f"Failed to generate code: {str(e)}"
+                }
+                json.dump(metadata, f)
+            
+            logger.error(f"Generation failed for video {video_id}. Error saved to {error_file}")
+            return
         
         # Clean the code to remove any Markdown formatting
         if "```" in manim_code:
             logger.warning("Detected Markdown code blocks in the code, cleaning...")
             manim_code = clean_code(manim_code)
+        
+        # Save the generated code
+        code_file = os.path.join(video_dir, f"{video_id}.py")
+        with open(code_file, "w") as f:
+            f.write(manim_code)
         
         # Execute the Manim code to generate the video
         await execute_manim_code(video_id, manim_code)
@@ -62,7 +112,15 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
     except Exception as e:
         logger.error(f"Error generating video {video_id}: {str(e)}")
         logger.error(traceback.format_exc())
-        # The error will be saved to an error file by the execute_manim_code function
+        
+        # Ensure the video directory exists
+        video_dir = os.path.join("videos", video_id)
+        os.makedirs(video_dir, exist_ok=True)
+        
+        # Save the error to a file
+        error_file = os.path.join(video_dir, "error.txt")
+        with open(error_file, "w") as f:
+            f.write(f"Error: {str(e)}\n\n{traceback.format_exc()}")
 
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_video(request: GenerateRequest, background_tasks: BackgroundTasks):

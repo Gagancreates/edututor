@@ -1,0 +1,9 @@
+Error: 'utf-8' codec can't decode byte 0x95 in position 25485: invalid start byte
+
+Traceback (most recent call last):
+  File "G:\edututor1\backend\app\routers\generate.py", line 108, in generate_video_task
+    await execute_manim_code(video_id, manim_code)
+  File "G:\edututor1\backend\app\services\manim.py", line 229, in execute_manim_code
+    stderr_text = stderr.decode() if stderr else ""
+                  ^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x95 in position 25485: invalid start byte

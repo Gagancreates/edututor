@@ -107,4 +107,25 @@ If you're having issues with the Gemini API:
 
 1. Verify your API key is correct
 2. Run `python setup_env.py` to reconfigure your API key
-3. Test the API configuration with `python test_gemini_api.py` 
+3. Test the API configuration with `python test_gemini_api.py`
+
+## Video Serving Fix
+
+We fixed an issue where videos were being generated successfully but not being served to the frontend. The following changes were made:
+
+1. **Backend Changes:**
+   - Updated `get_video_path` function to check for direct MP4 files with the same name as the video_id
+   - Updated `get_video_status` function to properly report completed videos
+   - Added better error handling and reporting for video generation failures
+   - Added timeout handling and retry logic for Gemini API calls
+
+2. **Frontend Changes:**
+   - Updated video_stream API route to handle errors better and add proper caching headers
+   - Added better error handling in the video player component
+   - Added cache-busting parameter to video source URL
+
+3. **Testing:**
+   - Created a test script (`test_video_serving.py`) to verify video serving functionality
+   - Created a test script (`test_timeout_handling.py`) to verify timeout handling in Gemini API calls
+
+These changes ensure that videos are properly detected, served, and displayed in the frontend, even when the Gemini API experiences timeouts or other issues. 

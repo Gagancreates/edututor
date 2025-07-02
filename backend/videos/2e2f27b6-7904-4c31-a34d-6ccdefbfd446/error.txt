@@ -1,0 +1,118 @@
+Error generating video: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+Animation 0: Write(Text('What is Machine Learning?')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 0: Write(Text('What is Machine Learning?')):   4%|4         | 1/23 [00:01<00:24,  1.13s/it]Animation 0: Write(Text('What is Machine Learning?')):  43%|####3     | 10/23 [00:01<00:01, 10.81it/s]Animation 0: Write(Text('What is Machine Learning?')):  83%|########2 | 19/23 [00:01<00:00, 21.40it/s]                                                                                                      Animation 2: Write(Text('Machines learning from data without explicit programming.')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):   3%|3         | 1/30 [00:01<00:32,  1.13s/it]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  27%|##6       | 8/30 [00:01<00:02,  8.59it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  47%|####6     | 14/30 [00:01<00:01, 15.12it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  63%|######3   | 19/30 [00:01<00:00, 19.87it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  80%|########  | 24/30 [00:01<00:00, 24.18it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')): 100%|##########| 30/30 [00:01<00:00, 30.66it/s]                                                                                                                                      Animation 4: FadeIn(Text('Like humans learning from experience.')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 4: FadeIn(Text('Like humans learning from experience.')):   7%|6         | 1/15 [00:01<00:17,  1.28s/it]Animation 4: FadeIn(Text('Like humans learning from experience.')):  60%|######    | 9/15 [00:01<00:00,  8.65it/s]                                                                                                                  Animation 6: Write(Text('Key Concepts:')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 6: Write(Text('Key Concepts:')):   7%|6         | 1/15 [00:00<00:11,  1.25it/s]Animation 6: Write(Text('Key Concepts:')): 100%|##########| 15/15 [00:00<00:00, 22.02it/s]                                                                                          Animation 8: FadeIn(VGroup of 4 submobjects):   0%|          | 0/23 [00:00<?, ?it/s]Animation 8: FadeIn(VGroup of 4 submobjects):   4%|4         | 1/23 [00:01<00:26,  1.20s/it]Animation 8: FadeIn(VGroup of 4 submobjects):  35%|###4      | 8/23 [00:01<00:01,  8.09it/s]Animation 8: FadeIn(VGroup of 4 submobjects):  65%|######5   | 15/23 [00:01<00:00, 15.97it/s]Animation 8: FadeIn(VGroup of 4 submobjects):  96%|#########5| 22/23 [00:01<00:00, 24.03it/s]                                                                                             Animation 10: FadeOut(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 10: FadeOut(Group):   4%|4         | 1/23 [00:00<00:02,  7.98it/s]Animation 10: FadeOut(Group):  13%|#3        | 3/23 [00:00<00:01, 13.64it/s]Animation 10: FadeOut(Group):  22%|##1       | 5/23 [00:00<00:01, 15.69it/s]Animation 10: FadeOut(Group):  30%|###       | 7/23 [00:00<00:00, 16.65it/s]Animation 10: FadeOut(Group):  43%|####3     | 10/23 [00:00<00:00, 17.77it/s]Animation 10: FadeOut(Group):  52%|#####2    | 12/23 [00:00<00:00, 17.63it/s]Animation 10: FadeOut(Group):  61%|######    | 14/23 [00:00<00:00, 17.32it/s]Animation 10: FadeOut(Group):  70%|######9   | 16/23 [00:00<00:00, 17.61it/s]Animation 10: FadeOut(Group):  78%|#######8  | 18/23 [00:01<00:00, 17.07it/s]Animation 10: FadeOut(Group):  87%|########6 | 20/23 [00:01<00:00, 16.73it/s]Animation 10: FadeOut(Group):  96%|#########5| 22/23 [00:01<00:00, 16.50it/s]                                                                             Animation 12: Write(Text('Types of Machine Learning')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 12: Write(Text('Types of Machine Learning')):   4%|4         | 1/23 [00:01<00:25,  1.16s/it]Animation 12: Write(Text('Types of Machine Learning')):  48%|####7     | 11/23 [00:01<00:01, 11.65it/s]Animation 12: Write(Text('Types of Machine Learning')):  83%|########2 | 19/23 [00:01<00:00, 20.57it/s]                                                                                                       Animation 14: FadeIn(Text('1. Supervised Learning')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 14: FadeIn(Text('1. Supervised Learning')):   7%|6         | 1/15 [00:01<00:16,  1.20s/it]Animation 14: FadeIn(Text('1. Supervised Learning')):  67%|######6   | 10/15 [00:01<00:00, 10.19it/s]                                                                                                     Animation 16: Write(Text('Learning from Labeled Data.')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 16: Write(Text('Learning from Labeled Data.')):   4%|4         | 1/23 [00:01<00:27,  1.24s/it]Animation 16: Write(Text('Learning from Labeled Data.')):  43%|####3     | 10/23 [00:01<00:01,  9.94it/s]Animation 16: Write(Text('Learning from Labeled Data.')):  83%|########2 | 19/23 [00:01<00:00, 19.54it/s]                                                                                                         +--------------------- Traceback (most recent call last) ---------------------+
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
+| 15 in render                                                                |
+|                                                                             |
+|   112             try:                                                      |
+|   113                 with tempconfig({}):                                  |
+|   114                     scene = SceneClass()                              |
+| > 115                     scene.render()                                    |
+|   116             except Exception:                                         |
+|   117                 error_console.print_exception()                       |
+|   118                 sys.exit(1)                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
+| render                                                                      |
+|                                                                             |
+|    220         """                                                          |
+|    221         self.setup()                                                 |
+|    222         try:                                                         |
+| >  223             self.construct()                                         |
+|    224         except EndSceneEarlyException:                               |
+|    225             pass                                                     |
+|    226         except RerunSceneException as e:                             |
+|                                                                             |
+| C:\Users\Gagan\AppData\Local\Temp\tmphovas0_g\2e2f27b6-7904-4c31-a34d-6ccde |
+| fbfd446.py:51 in construct                                                  |
+|                                                                             |
+|    48         self.wait(1.5)                                                |
+|    49                                                                       |
+|    50         input_box = Rectangle(width=2, height=1.5, color=WHITE).shift |
+| >  51         input_text = Text("Input (X)", font_size=28).move_to(input_bo |
+|    52         output_box = Rectangle(width=2, height=1.5, color=WHITE).shif |
+|    53         output_text = Text("Output (Y)", font_size=28).move_to(output |
+|    54         label_text = Text("(Labels)", font_size=20, color=YELLOW).nex |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\mobject.py:1670  |
+| in move_to                                                                  |
+|                                                                             |
+|   1667         else:                                                        |
+|   1668             target = point_or_mobject                                |
+|   1669         point_to_align = self.get_critical_point(aligned_edge)       |
+| > 1670         self.shift((target - point_to_align) * coor_mask)            |
+|   1671         return self                                                  |
+|   1672                                                                      |
+|   1673     def replace(                                                     |
++-----------------------------------------------------------------------------+
+TypeError: unsupported operand type(s) for -: 'method' and 'float'
+
+
+Traceback (most recent call last):
+  File "G:\edututor1\backend\app\services\manim.py", line 249, in execute_manim_code
+    raise RuntimeError(f"Manim execution failed: {error_message}")
+RuntimeError: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  parser = self.make_parser(ctx)
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
+  args = super().parse_args(ctx, args)  # type: ignore
+Animation 0: Write(Text('What is Machine Learning?')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 0: Write(Text('What is Machine Learning?')):   4%|4         | 1/23 [00:01<00:24,  1.13s/it]Animation 0: Write(Text('What is Machine Learning?')):  43%|####3     | 10/23 [00:01<00:01, 10.81it/s]Animation 0: Write(Text('What is Machine Learning?')):  83%|########2 | 19/23 [00:01<00:00, 21.40it/s]                                                                                                      Animation 2: Write(Text('Machines learning from data without explicit programming.')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):   3%|3         | 1/30 [00:01<00:32,  1.13s/it]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  27%|##6       | 8/30 [00:01<00:02,  8.59it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  47%|####6     | 14/30 [00:01<00:01, 15.12it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  63%|######3   | 19/30 [00:01<00:00, 19.87it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')):  80%|########  | 24/30 [00:01<00:00, 24.18it/s]Animation 2: Write(Text('Machines learning from data without explicit programming.')): 100%|##########| 30/30 [00:01<00:00, 30.66it/s]                                                                                                                                      Animation 4: FadeIn(Text('Like humans learning from experience.')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 4: FadeIn(Text('Like humans learning from experience.')):   7%|6         | 1/15 [00:01<00:17,  1.28s/it]Animation 4: FadeIn(Text('Like humans learning from experience.')):  60%|######    | 9/15 [00:01<00:00,  8.65it/s]                                                                                                                  Animation 6: Write(Text('Key Concepts:')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 6: Write(Text('Key Concepts:')):   7%|6         | 1/15 [00:00<00:11,  1.25it/s]Animation 6: Write(Text('Key Concepts:')): 100%|##########| 15/15 [00:00<00:00, 22.02it/s]                                                                                          Animation 8: FadeIn(VGroup of 4 submobjects):   0%|          | 0/23 [00:00<?, ?it/s]Animation 8: FadeIn(VGroup of 4 submobjects):   4%|4         | 1/23 [00:01<00:26,  1.20s/it]Animation 8: FadeIn(VGroup of 4 submobjects):  35%|###4      | 8/23 [00:01<00:01,  8.09it/s]Animation 8: FadeIn(VGroup of 4 submobjects):  65%|######5   | 15/23 [00:01<00:00, 15.97it/s]Animation 8: FadeIn(VGroup of 4 submobjects):  96%|#########5| 22/23 [00:01<00:00, 24.03it/s]                                                                                             Animation 10: FadeOut(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 10: FadeOut(Group):   4%|4         | 1/23 [00:00<00:02,  7.98it/s]Animation 10: FadeOut(Group):  13%|#3        | 3/23 [00:00<00:01, 13.64it/s]Animation 10: FadeOut(Group):  22%|##1       | 5/23 [00:00<00:01, 15.69it/s]Animation 10: FadeOut(Group):  30%|###       | 7/23 [00:00<00:00, 16.65it/s]Animation 10: FadeOut(Group):  43%|####3     | 10/23 [00:00<00:00, 17.77it/s]Animation 10: FadeOut(Group):  52%|#####2    | 12/23 [00:00<00:00, 17.63it/s]Animation 10: FadeOut(Group):  61%|######    | 14/23 [00:00<00:00, 17.32it/s]Animation 10: FadeOut(Group):  70%|######9   | 16/23 [00:00<00:00, 17.61it/s]Animation 10: FadeOut(Group):  78%|#######8  | 18/23 [00:01<00:00, 17.07it/s]Animation 10: FadeOut(Group):  87%|########6 | 20/23 [00:01<00:00, 16.73it/s]Animation 10: FadeOut(Group):  96%|#########5| 22/23 [00:01<00:00, 16.50it/s]                                                                             Animation 12: Write(Text('Types of Machine Learning')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 12: Write(Text('Types of Machine Learning')):   4%|4         | 1/23 [00:01<00:25,  1.16s/it]Animation 12: Write(Text('Types of Machine Learning')):  48%|####7     | 11/23 [00:01<00:01, 11.65it/s]Animation 12: Write(Text('Types of Machine Learning')):  83%|########2 | 19/23 [00:01<00:00, 20.57it/s]                                                                                                       Animation 14: FadeIn(Text('1. Supervised Learning')):   0%|          | 0/15 [00:00<?, ?it/s]Animation 14: FadeIn(Text('1. Supervised Learning')):   7%|6         | 1/15 [00:01<00:16,  1.20s/it]Animation 14: FadeIn(Text('1. Supervised Learning')):  67%|######6   | 10/15 [00:01<00:00, 10.19it/s]                                                                                                     Animation 16: Write(Text('Learning from Labeled Data.')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 16: Write(Text('Learning from Labeled Data.')):   4%|4         | 1/23 [00:01<00:27,  1.24s/it]Animation 16: Write(Text('Learning from Labeled Data.')):  43%|####3     | 10/23 [00:01<00:01,  9.94it/s]Animation 16: Write(Text('Learning from Labeled Data.')):  83%|########2 | 19/23 [00:01<00:00, 19.54it/s]                                                                                                         +--------------------- Traceback (most recent call last) ---------------------+
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
+| 15 in render                                                                |
+|                                                                             |
+|   112             try:                                                      |
+|   113                 with tempconfig({}):                                  |
+|   114                     scene = SceneClass()                              |
+| > 115                     scene.render()                                    |
+|   116             except Exception:                                         |
+|   117                 error_console.print_exception()                       |
+|   118                 sys.exit(1)                                           |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
+| render                                                                      |
+|                                                                             |
+|    220         """                                                          |
+|    221         self.setup()                                                 |
+|    222         try:                                                         |
+| >  223             self.construct()                                         |
+|    224         except EndSceneEarlyException:                               |
+|    225             pass                                                     |
+|    226         except RerunSceneException as e:                             |
+|                                                                             |
+| C:\Users\Gagan\AppData\Local\Temp\tmphovas0_g\2e2f27b6-7904-4c31-a34d-6ccde |
+| fbfd446.py:51 in construct                                                  |
+|                                                                             |
+|    48         self.wait(1.5)                                                |
+|    49                                                                       |
+|    50         input_box = Rectangle(width=2, height=1.5, color=WHITE).shift |
+| >  51         input_text = Text("Input (X)", font_size=28).move_to(input_bo |
+|    52         output_box = Rectangle(width=2, height=1.5, color=WHITE).shif |
+|    53         output_text = Text("Output (Y)", font_size=28).move_to(output |
+|    54         label_text = Text("(Labels)", font_size=20, color=YELLOW).nex |
+|                                                                             |
+| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\mobject.py:1670  |
+| in move_to                                                                  |
+|                                                                             |
+|   1667         else:                                                        |
+|   1668             target = point_or_mobject                                |
+|   1669         point_to_align = self.get_critical_point(aligned_edge)       |
+| > 1670         self.shift((target - point_to_align) * coor_mask)            |
+|   1671         return self                                                  |
+|   1672                                                                      |
+|   1673     def replace(                                                     |
++-----------------------------------------------------------------------------+
+TypeError: unsupported operand type(s) for -: 'method' and 'float'
+

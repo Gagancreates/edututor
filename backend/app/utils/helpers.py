@@ -117,7 +117,12 @@ def get_video_path(video_id: str) -> Optional[str]:
     if not video_dir.exists():
         return None
     
-    # Find video files in the directory
+    # First check for a direct MP4 file with the same name as the video_id
+    direct_video_path = video_dir / f"{video_id}.mp4"
+    if direct_video_path.exists():
+        return str(direct_video_path)
+    
+    # If direct file not found, search for any video files in the directory
     video_files = find_video_files(video_dir)
     
     # If we found video files, return the path to the first one
@@ -165,7 +170,17 @@ def get_video_status(video_id: str) -> Dict[str, Any]:
             "message": error_message
         }
     
-    # Check if there's a video file
+    # First check for a direct MP4 file with the same name as the video_id
+    direct_video_path = video_dir / f"{video_id}.mp4"
+    if direct_video_path.exists():
+        return {
+            "video_id": video_id,
+            "status": "completed",
+            "message": "Video generation completed",
+            "video_url": f"/api/video/{video_id}"
+        }
+    
+    # If direct file not found, check for any video files
     video_files = find_video_files(video_dir)
     if video_files:
         return {

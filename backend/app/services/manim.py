@@ -166,9 +166,14 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
         
         # Create an error file
         error_path = output_dir / "error.txt"
-        with open(error_path, "w", encoding="utf-8") as f:
-            f.write(f"Code validation failed: {error_message}\n\n")
-            f.write("Please regenerate with a simpler animation.")
+        try:
+            with open(error_path, "w", encoding="utf-8") as f:
+                f.write(f"Code validation failed: {error_message}\n\n")
+                f.write("Please regenerate with a simpler animation.")
+        except UnicodeEncodeError:
+            with open(error_path, "w", encoding="utf-8", errors="replace") as f:
+                f.write(f"Code validation failed: [Some characters were replaced due to encoding issues]\n\n")
+                f.write("Please regenerate with a simpler animation.")
         
         raise ValueError(f"Code validation failed: {error_message}")
     
@@ -225,8 +230,19 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 stdout, stderr = process.communicate(timeout=600)  # 10-minute timeout
                 
                 # Log the output for debugging
-                stdout_text = stdout.decode() if stdout else ""
-                stderr_text = stderr.decode() if stderr else ""
+                try:
+                    stdout_text = stdout.decode('utf-8') if stdout else ""
+                except UnicodeDecodeError:
+                    # Handle UTF-8 decode errors by using 'replace' error handler
+                    stdout_text = stdout.decode('utf-8', errors='replace') if stdout else ""
+                    logger.warning("Unicode decode error in stdout, some characters were replaced")
+                
+                try:
+                    stderr_text = stderr.decode('utf-8') if stderr else ""
+                except UnicodeDecodeError:
+                    # Handle UTF-8 decode errors by using 'replace' error handler
+                    stderr_text = stderr.decode('utf-8', errors='replace') if stderr else ""
+                    logger.warning("Unicode decode error in stderr, some characters were replaced")
                 
                 if stdout_text:
                     logger.info(f"Manim stdout: {stdout_text[:1000]}...")
@@ -244,8 +260,14 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     
                     logger.error(f"Manim execution failed with return code {process.returncode}")
                     error_path = output_dir / "error.txt"
-                    with open(error_path, "w", encoding="utf-8") as f:
-                        f.write(f"Manim execution failed:\n{error_message}")
+                    try:
+                        with open(error_path, "w", encoding="utf-8") as f:
+                            f.write(f"Manim execution failed:\n{error_message}")
+                    except UnicodeEncodeError:
+                        # If we can't write with UTF-8, try with a more permissive encoding
+                        with open(error_path, "w", encoding="utf-8", errors="replace") as f:
+                            f.write(f"Manim execution failed:\n[Some characters were replaced due to encoding issues]")
+                            f.write(f"\nReturn code: {process.returncode}")
                     raise RuntimeError(f"Manim execution failed: {error_message}")
                 
                 # Extract the output path from stdout if possible
@@ -317,11 +339,22 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 if "File ready at" in stdout_text:
                     logger.warning("Manim reported a video file was created, but we couldn't find it.")
                     
-                                        # Save stdout and stderr to files for debugging
-                    with open(output_dir / "stdout.txt", "w", encoding="utf-8") as f:
-                        f.write(stdout_text)
-                    with open(output_dir / "stderr.txt", "w", encoding="utf-8") as f:
-                        f.write(stderr_text)
+                    # Save stdout and stderr to files for debugging
+                    try:
+                        with open(output_dir / "stdout.txt", "w", encoding="utf-8") as f:
+                            f.write(stdout_text)
+                    except UnicodeEncodeError:
+                        with open(output_dir / "stdout.txt", "w", encoding="utf-8", errors="replace") as f:
+                            f.write("[Some characters were replaced due to encoding issues]\n")
+                            f.write(stdout_text)
+                    
+                    try:
+                        with open(output_dir / "stderr.txt", "w", encoding="utf-8") as f:
+                            f.write(stderr_text)
+                    except UnicodeEncodeError:
+                        with open(output_dir / "stderr.txt", "w", encoding="utf-8", errors="replace") as f:
+                            f.write("[Some characters were replaced due to encoding issues]\n")
+                            f.write(stderr_text)
                     
                     # Look for any MP4 files in the entire temp directory using glob
                     all_mp4_files = list(Path(temp_dir).glob("**/*.mp4"))
@@ -344,22 +377,34 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     
                     logger.error("No video file was found. Created a dummy file instead.")
                     error_path = output_dir / "error.txt"
-                    with open(error_path, "w", encoding="utf-8") as f:
-                        f.write("Error: No video file was found, but Manim reported success.")
+                    try:
+                        with open(error_path, "w", encoding="utf-8") as f:
+                            f.write("Error: No video file was found, but Manim reported success.")
+                    except UnicodeEncodeError:
+                        with open(error_path, "w", encoding="utf-8", errors="replace") as f:
+                            f.write("Error: No video file was found, but Manim reported success.")
                     raise FileNotFoundError("No video file was generated, but Manim reported success.")
                 
                 logger.error("No video file was generated")
                 error_path = output_dir / "error.txt"
-                with open(error_path, "w", encoding="utf-8") as f:
-                    f.write("Error: No video file was generated")
+                try:
+                    with open(error_path, "w", encoding="utf-8") as f:
+                        f.write("Error: No video file was generated")
+                except UnicodeEncodeError:
+                    with open(error_path, "w", encoding="utf-8", errors="replace") as f:
+                        f.write("Error: No video file was generated")
                 raise FileNotFoundError("No video file was generated")
                 
             except subprocess.TimeoutExpired:
                 process.kill()
                 logger.error(f"Manim execution timed out for video ID: {video_id}")
                 error_path = output_dir / "error.txt"
-                with open(error_path, "w", encoding="utf-8") as f:
-                    f.write("Error generating video: Execution timed out after 10 minutes")
+                try:
+                    with open(error_path, "w", encoding="utf-8") as f:
+                        f.write("Error generating video: Manim execution timed out after 10 minutes")
+                except UnicodeEncodeError:
+                    with open(error_path, "w", encoding="utf-8", errors="replace") as f:
+                        f.write("Error generating video: Manim execution timed out after 10 minutes")
                 raise RuntimeError("Manim execution timed out after 10 minutes")
             
         except Exception as e:
@@ -367,6 +412,11 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
             logger.error(f"Error during Manim execution: {str(e)}")
             logger.error(traceback.format_exc())
             error_path = output_dir / "error.txt"
-            with open(error_path, "w", encoding="utf-8") as f:
-                f.write(f"Error generating video: {str(e)}\n\n{traceback.format_exc()}")
+            try:
+                with open(error_path, "w", encoding="utf-8") as f:
+                    f.write(f"Error generating video: {str(e)}\n\n{traceback.format_exc()}")
+            except UnicodeEncodeError:
+                with open(error_path, "w", encoding="utf-8", errors="replace") as f:
+                    f.write(f"Error generating video: [Some characters were replaced due to encoding issues]\n\n")
+                    f.write(f"Error type: {type(e).__name__}")
             raise 

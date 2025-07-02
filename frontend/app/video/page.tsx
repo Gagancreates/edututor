@@ -211,8 +211,21 @@ function VideoPlayerContent() {
                   muted={isMuted}
                   playsInline
                   onEnded={() => setIsPlaying(false)}
+                  onLoadedData={() => console.log("Video loaded successfully")}
+                  onError={(e) => {
+                    console.error("Error loading video:", e);
+                    // Update status to failed if video fails to load
+                    setVideoStatus({
+                      status: 'failed',
+                      message: "Failed to load video. The video file may be corrupted or inaccessible.",
+                      video_url: null
+                    });
+                  }}
                 >
-                  <source src={`/api/video_stream?videoId=${videoId}`} type="video/mp4" />
+                  <source 
+                    src={`/api/video_stream?videoId=${videoId}&t=${new Date().getTime()}`} 
+                    type="video/mp4" 
+                  />
                   Your browser does not support the video tag.
                 </video>
               ) : (
