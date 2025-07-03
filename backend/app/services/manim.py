@@ -133,7 +133,7 @@ def find_video_files(directory: Path) -> List[Path]:
     
     return video_files
 
-async def execute_manim_code(video_id: str, manim_code: str) -> str:
+async def execute_manim_code(video_id: str, manim_code: str) -> Optional[str]:
     """
     Execute Manim code to generate an educational video.
     
@@ -142,7 +142,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
         manim_code: The Manim Python code to execute
         
     Returns:
-        Path to the generated video file
+        Path to the generated video file or None if failed
     """
     logger.info(f"Starting Manim execution for video ID: {video_id}")
     
@@ -383,7 +383,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     except UnicodeEncodeError:
                         with open(error_path, "w", encoding="utf-8", errors="replace") as f:
                             f.write("Error: No video file was found, but Manim reported success.")
-                    raise FileNotFoundError("No video file was generated, but Manim reported success.")
+                    return None
                 
                 logger.error("No video file was generated")
                 error_path = output_dir / "error.txt"
@@ -393,7 +393,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 except UnicodeEncodeError:
                     with open(error_path, "w", encoding="utf-8", errors="replace") as f:
                         f.write("Error: No video file was generated")
-                raise FileNotFoundError("No video file was generated")
+                return None
                 
             except subprocess.TimeoutExpired:
                 process.kill()
@@ -405,7 +405,7 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 except UnicodeEncodeError:
                     with open(error_path, "w", encoding="utf-8", errors="replace") as f:
                         f.write("Error generating video: Manim execution timed out after 10 minutes")
-                raise RuntimeError("Manim execution timed out after 10 minutes")
+                return None
             
         except Exception as e:
             # Create an error file to indicate failure
@@ -419,4 +419,4 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 with open(error_path, "w", encoding="utf-8", errors="replace") as f:
                     f.write(f"Error generating video: [Some characters were replaced due to encoding issues]\n\n")
                     f.write(f"Error type: {type(e).__name__}")
-            raise 
+            return None 

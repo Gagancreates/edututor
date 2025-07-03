@@ -4,3 +4,5 @@ manim==0.18.0
 google-generativeai==0.3.2
 python-multipart==0.0.9
 python-dotenv==1.0.1
+elevenlabs==2.6.1
+ffmpeg-python==0.2.0

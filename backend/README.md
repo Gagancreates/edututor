@@ -1,131 +1,136 @@
 # EduTutor Backend
 
-This is the backend service for EduTutor, an educational video generation platform that uses Manim to create engaging educational content.
+This is the backend service for EduTutor, an educational video generation platform.
 
-## Setup Instructions
+## Features
+
+- Generate educational videos using Manim based on text prompts
+- AI-powered content generation with Google Gemini
+- Voice narration with ElevenLabs TTS
+- RESTful API for frontend integration
+
+## Setup
 
 ### Prerequisites
 
-- Python 3.10 or higher
-- FFmpeg (required by Manim for video generation)
-- Gemini API key (get one from https://aistudio.google.com/app/apikey)
+- Python 3.8 or higher
+- FFmpeg (for audio-video processing)
 
 ### Installation
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/edututor.git
-   cd edututor/backend
-   ```
+1. Clone the repository
+2. Install dependencies:
 
-2. Create a virtual environment:
-   ```
-   python -m venv .venv
-   ```
-
-3. Activate the virtual environment:
-   - Windows:
-     ```
-     .\.venv\Scripts\activate
-     ```
-   - Linux/Mac:
-     ```
-     source .venv/bin/activate
-     ```
-
-4. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-5. Set up environment variables:
-   ```
-   python setup_env.py
-   ```
-   This will prompt you to enter your Gemini API key.
-
-6. Test the Gemini API configuration:
-   ```
-   python test_gemini_api.py
-   ```
-
-### Running the Server
-
-Start the FastAPI server:
+```bash
+pip install -r requirements.txt
 ```
+
+3. Set up environment variables:
+
+```bash
+python setup_env.py
+```
+
+This will prompt you to enter your Google Gemini API key and ElevenLabs API key.
+
+### API Keys
+
+- **Google Gemini API Key**: Required for generating educational content. Get it from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- **ElevenLabs API Key**: Required for voice narration. Get it from [ElevenLabs](https://elevenlabs.io/app/api-key).
+
+## Running the Server
+
+```bash
+cd backend
 uvicorn app.main:app --reload
 ```
 
-The API will be available at http://localhost:8000
+The server will start on http://localhost:8000.
 
-### API Endpoints
+## API Endpoints
 
-- `GET /`: Root endpoint
-- `GET /api/health`: Health check endpoint
-- `POST /api/generate`: Generate a new educational video
-- `GET /api/video/{video_id}`: Get a generated video
-- `GET /api/video/{video_id}/status`: Check the status of a video generation
+### Generate Video
 
-### Testing
+```
+POST /api/generate
+```
 
-Run the test scripts to verify different components:
+Request body:
+```json
+{
+  "prompt": "Explain the concept of gravity",
+  "topic": "Physics",
+  "grade_level": "High School",
+  "duration_minutes": 3.0,
+  "enable_narration": true,
+  "voice_id": "EXAVITQu4vr4xnSDxMaL"
+}
+```
 
-- Test Manim video generation:
-  ```
-  python test_manim_video.py
-  ```
+Response:
+```json
+{
+  "video_id": "12345678-1234-5678-1234-567812345678",
+  "status": "processing"
+}
+```
 
-- Test code cleaning functionality:
-  ```
-  python test_code_cleaning.py
-  ```
+### Get Video Status
 
-- Test Gemini API:
-  ```
-  python test_gemini.py
-  ```
+```
+GET /api/video/{video_id}/status
+```
 
-- Test API endpoints:
-  ```
-  python test_api.py
-  ```
+Response:
+```json
+{
+  "video_id": "12345678-1234-5678-1234-567812345678",
+  "status": "completed",
+  "message": "Video generation completed with narration",
+  "video_url": "/api/video/12345678-1234-5678-1234-567812345678",
+  "has_narration": true
+}
+```
 
-## Troubleshooting
+### Get Video
 
-### Video Generation Issues
+```
+GET /api/video/{video_id}
+```
 
-If videos are not being generated correctly:
+Returns the video file.
 
-1. Check the error logs in the `videos/{video_id}/error.txt` file
-2. Verify that FFmpeg is installed and accessible in your PATH
-3. Make sure Manim is installed correctly: `pip install manim`
-4. Run the test script: `python test_manim_video.py`
+### List Available Voices
 
-### API Key Issues
+```
+GET /api/voices
+```
 
-If you're having issues with the Gemini API:
+Response:
+```json
+{
+  "voices": [
+    {
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Rachel",
+      "description": "A warm and professional female voice",
+      "preview_url": "https://example.com/preview.mp3",
+      "category": "professional"
+    },
+    ...
+  ]
+}
+```
 
-1. Verify your API key is correct
-2. Run `python setup_env.py` to reconfigure your API key
-3. Test the API configuration with `python test_gemini_api.py`
+## Voice Narration
 
-## Video Serving Fix
+The system can automatically generate voice narration for educational videos using ElevenLabs' text-to-speech technology. The narration is extracted from the text content in the Manim code and synchronized with the video.
 
-We fixed an issue where videos were being generated successfully but not being served to the frontend. The following changes were made:
+To enable narration:
+1. Set `enable_narration` to `true` in your API request
+2. Optionally specify a `voice_id` (use the `/api/voices` endpoint to get available voices)
+3. Make sure you have set up your ElevenLabs API key
 
-1. **Backend Changes:**
-   - Updated `get_video_path` function to check for direct MP4 files with the same name as the video_id
-   - Updated `get_video_status` function to properly report completed videos
-   - Added better error handling and reporting for video generation failures
-   - Added timeout handling and retry logic for Gemini API calls
+## License
 
-2. **Frontend Changes:**
-   - Updated video_stream API route to handle errors better and add proper caching headers
-   - Added better error handling in the video player component
-   - Added cache-busting parameter to video source URL
-
-3. **Testing:**
-   - Created a test script (`test_video_serving.py`) to verify video serving functionality
-   - Created a test script (`test_timeout_handling.py`) to verify timeout handling in Gemini API calls
-
-These changes ensure that videos are properly detected, served, and displayed in the frontend, even when the Gemini API experiences timeouts or other issues. 
+This project is licensed under the MIT License - see the LICENSE file for details. 

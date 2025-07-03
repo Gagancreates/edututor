@@ -10,6 +10,8 @@ import json
 
 from app.services.gemini import generate_manim_code
 from app.services.manim import execute_manim_code
+from app.services.elevenlabs import NarrationManager
+from app.services.audio import AudioProcessor
 from app.utils.helpers import generate_uuid, clean_code, get_video_status
 
 # Set up logging
@@ -26,6 +28,8 @@ class GenerateRequest(BaseModel):
     topic: str = None
     grade_level: str = None
     duration_minutes: float = 3.0
+    enable_narration: bool = False
+    voice_id: str = None  # Optional voice ID for narration
 
 class GenerateResponse(BaseModel):
     """
@@ -34,7 +38,31 @@ class GenerateResponse(BaseModel):
     video_id: str
     status: str
 
-async def generate_video_task(video_id: str, prompt: str, topic: str = None, grade_level: str = None, duration_minutes: float = 3.0):
+class VoiceInfo(BaseModel):
+    """
+    Model for voice information.
+    """
+    voice_id: str
+    name: str
+    description: str = None
+    preview_url: str = None
+    category: str = None
+
+class VoicesResponse(BaseModel):
+    """
+    Response model for the list voices endpoint.
+    """
+    voices: list[VoiceInfo]
+
+async def generate_video_task(
+    video_id: str, 
+    prompt: str, 
+    topic: str = None, 
+    grade_level: str = None, 
+    duration_minutes: float = 3.0,
+    enable_narration: bool = False,
+    voice_id: str = None
+):
     """
     Background task for generating a video.
     
@@ -44,6 +72,8 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
         topic: The educational topic
         grade_level: The target grade level
         duration_minutes: The desired duration in minutes
+        enable_narration: Whether to enable voice narration
+        voice_id: The ID of the voice to use for narration
     """
     try:
         logger.info(f"Starting video generation for ID: {video_id}")
@@ -105,7 +135,64 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
             f.write(manim_code)
         
         # Execute the Manim code to generate the video
-        await execute_manim_code(video_id, manim_code)
+        video_path = await execute_manim_code(video_id, manim_code)
+        
+        # Generate narration if enabled
+        if enable_narration and video_path:
+            try:
+                logger.info(f"Generating narration for video {video_id}")
+                
+                # Initialize the narration manager
+                narration_manager = NarrationManager()
+                
+                # Generate narration audio
+                narration_result = await narration_manager.generate_full_narration(
+                    manim_code=manim_code,
+                    output_dir=video_dir,
+                    voice_id=voice_id
+                )
+                
+                if narration_result["success"]:
+                    logger.info(f"Narration generated successfully for video {video_id}")
+                    
+                    # Get the paths
+                    audio_path = narration_result["audio_path"]
+                    
+                    # Merge audio and video
+                    audio_processor = AudioProcessor()
+                    output_path = os.path.join(video_dir, f"{video_id}_narrated.mp4")
+                    
+                    # Synchronize and merge
+                    final_video = await audio_processor.sync_audio_to_video(
+                        video_path=video_path,
+                        audio_path=audio_path,
+                        output_path=output_path
+                    )
+                    
+                    if final_video:
+                        logger.info(f"Audio and video merged successfully for {video_id}")
+                        
+                        # Save metadata about narration
+                        metadata_file = os.path.join(video_dir, "metadata.json")
+                        with open(metadata_file, "w") as f:
+                            metadata = {
+                                "status": "completed",
+                                "has_narration": True,
+                                "prompt": prompt,
+                                "topic": topic,
+                                "voice_id": voice_id,
+                                "original_video": os.path.basename(video_path),
+                                "narrated_video": os.path.basename(final_video)
+                            }
+                            json.dump(metadata, f)
+                    else:
+                        logger.error(f"Failed to merge audio and video for {video_id}")
+                else:
+                    logger.error(f"Failed to generate narration: {narration_result.get('error', 'Unknown error')}")
+            except Exception as e:
+                logger.error(f"Error in narration process: {str(e)}")
+                logger.error(traceback.format_exc())
+                # Continue without narration if it fails
         
         logger.info(f"Video generation completed for ID: {video_id}")
     
@@ -145,7 +232,9 @@ async def generate_video(request: GenerateRequest, background_tasks: BackgroundT
             prompt=request.prompt,
             topic=request.topic,
             grade_level=request.grade_level,
-            duration_minutes=request.duration_minutes
+            duration_minutes=request.duration_minutes,
+            enable_narration=request.enable_narration,
+            voice_id=request.voice_id
         )
         
         return GenerateResponse(
@@ -177,4 +266,23 @@ async def get_video_status_endpoint(video_id: str):
     except Exception as e:
         logger.error(f"Error checking video status for {video_id}: {str(e)}")
         logger.error(traceback.format_exc())
-        raise HTTPException(status_code=500, detail=f"Error checking video status: {str(e)}") 
+        raise HTTPException(status_code=500, detail=f"Error checking video status: {str(e)}")
+
+@router.get("/voices", response_model=VoicesResponse)
+async def list_voices():
+    """
+    List available voices for narration.
+    
+    Returns:
+        List of available voices
+    """
+    try:
+        narration_manager = NarrationManager()
+        voices = await narration_manager.list_available_voices()
+        
+        return VoicesResponse(voices=voices)
+    
+    except Exception as e:
+        logger.error(f"Error listing voices: {str(e)}")
+        logger.error(traceback.format_exc())
+        raise HTTPException(status_code=500, detail=f"Error listing voices: {str(e)}") 

@@ -5,6 +5,7 @@ import os
 import re
 import uuid
 import glob
+import json
 from pathlib import Path
 from typing import List, Optional, Dict, Any, Union
 
@@ -117,10 +118,31 @@ def get_video_path(video_id: str) -> Optional[str]:
     if not video_dir.exists():
         return None
     
+    # Check for metadata file to see if there's a narrated version
+    metadata_path = video_dir / "metadata.json"
+    if metadata_path.exists():
+        try:
+            with open(metadata_path, "r") as f:
+                metadata = json.load(f)
+                
+            # If there's a narrated version, use that
+            if metadata.get("has_narration") and "narrated_video" in metadata:
+                narrated_video_path = video_dir / metadata["narrated_video"]
+                if narrated_video_path.exists():
+                    return str(narrated_video_path)
+        except Exception:
+            # If there's an error reading metadata, continue with normal path resolution
+            pass
+    
     # First check for a direct MP4 file with the same name as the video_id
     direct_video_path = video_dir / f"{video_id}.mp4"
     if direct_video_path.exists():
         return str(direct_video_path)
+    
+    # Check for narrated version with standard naming
+    narrated_path = video_dir / f"{video_id}_narrated.mp4"
+    if narrated_path.exists():
+        return str(narrated_path)
     
     # If direct file not found, search for any video files in the directory
     video_files = find_video_files(video_dir)
@@ -170,24 +192,68 @@ def get_video_status(video_id: str) -> Dict[str, Any]:
             "message": error_message
         }
     
+    # Check for metadata file
+    metadata_path = video_dir / "metadata.json"
+    if metadata_path.exists():
+        try:
+            with open(metadata_path, "r") as f:
+                metadata = json.load(f)
+            
+            # If metadata has status information, use it
+            if "status" in metadata:
+                has_narration = metadata.get("has_narration", False)
+                
+                if metadata["status"] == "completed":
+                    return {
+                        "video_id": video_id,
+                        "status": "completed",
+                        "message": "Video generation completed",
+                        "video_url": f"/api/video/{video_id}",
+                        "has_narration": has_narration
+                    }
+                elif metadata["status"] == "error":
+                    return {
+                        "video_id": video_id,
+                        "status": "failed",
+                        "message": metadata.get("message", "An error occurred during video generation")
+                    }
+        except Exception:
+            # If there's an error reading metadata, continue with normal status resolution
+            pass
+    
     # First check for a direct MP4 file with the same name as the video_id
     direct_video_path = video_dir / f"{video_id}.mp4"
-    if direct_video_path.exists():
+    narrated_path = video_dir / f"{video_id}_narrated.mp4"
+    
+    if narrated_path.exists():
+        return {
+            "video_id": video_id,
+            "status": "completed",
+            "message": "Video generation completed with narration",
+            "video_url": f"/api/video/{video_id}",
+            "has_narration": True
+        }
+    elif direct_video_path.exists():
         return {
             "video_id": video_id,
             "status": "completed",
             "message": "Video generation completed",
-            "video_url": f"/api/video/{video_id}"
+            "video_url": f"/api/video/{video_id}",
+            "has_narration": False
         }
     
     # If direct file not found, check for any video files
     video_files = find_video_files(video_dir)
     if video_files:
+        # Check if any of the video files has "narrated" in the name
+        has_narration = any("narrated" in str(file).lower() for file in video_files)
+        
         return {
             "video_id": video_id,
             "status": "completed",
             "message": "Video generation completed",
-            "video_url": f"/api/video/{video_id}"
+            "video_url": f"/api/video/{video_id}",
+            "has_narration": has_narration
         }
     
     # If there's a directory but no video file or error file, it's still processing
