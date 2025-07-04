@@ -79,6 +79,66 @@ function VideoPlayerContent() {
     }
   }, [isPlaying])
 
+  // Handle video loading error or status response
+  const handleVideoError = async (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.error("Error loading video:", e);
+    
+    // Try to check if this is a status response
+    try {
+      const videoSrc = `/api/video_stream?videoId=${videoId}&t=${new Date().getTime()}`;
+      const response = await fetch(videoSrc);
+      
+      // Check if we got a JSON response (status update) instead of video
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        const statusData = await response.json();
+        
+        // If this is a status response, update our status
+        if (statusData.isStatusResponse) {
+          console.log("Received status response instead of video:", statusData);
+          setVideoStatus({
+            status: statusData.status,
+            message: statusData.message,
+            video_url: statusData.video_url || null
+          });
+          
+          // If still processing, poll again in a few seconds
+          if (statusData.status === 'processing') {
+            setTimeout(() => {
+              // Force video element to reload
+              if (videoRef.current) {
+                const currentSrc = videoRef.current.src;
+                videoRef.current.src = '';
+                setTimeout(() => {
+                  if (videoRef.current) {
+                    videoRef.current.src = currentSrc;
+                    videoRef.current.load();
+                  }
+                }, 100);
+              }
+            }, 3000);
+          }
+          
+          return;
+        }
+      }
+      
+      // If we got here, it's a real error
+      setVideoStatus({
+        status: 'failed',
+        message: "Failed to load video. The video file may be corrupted or inaccessible.",
+        video_url: null
+      });
+    } catch (error) {
+      console.error("Error handling video error:", error);
+      setVideoStatus({
+        status: 'failed',
+        message: "Failed to load video. The video file may be corrupted or inaccessible.",
+        video_url: null
+      });
+    }
+  };
+
   // Update progress for placeholder animation or real video
   useEffect(() => {
     if (videoStatus.status === 'completed' && videoRef.current) {
@@ -212,15 +272,7 @@ function VideoPlayerContent() {
                   playsInline
                   onEnded={() => setIsPlaying(false)}
                   onLoadedData={() => console.log("Video loaded successfully")}
-                  onError={(e) => {
-                    console.error("Error loading video:", e);
-                    // Update status to failed if video fails to load
-                    setVideoStatus({
-                      status: 'failed',
-                      message: "Failed to load video. The video file may be corrupted or inaccessible.",
-                      video_url: null
-                    });
-                  }}
+                  onError={handleVideoError}
                 >
                   <source 
                     src={`/api/video_stream?videoId=${videoId}&t=${new Date().getTime()}`} 

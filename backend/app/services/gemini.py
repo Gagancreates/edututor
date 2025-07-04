@@ -88,6 +88,8 @@ COMPATIBILITY WARNINGS:
 - DO NOT use .align_left(), .align_right(), or .align_center() methods on Text objects
 - For text alignment, use .to_edge(LEFT), .to_edge(RIGHT), or .move_to(ORIGIN) instead
 -Do not use rotation in constructors; call .rotate() separately
+-Use only standard colors (RED, BLUE, GREEN, YELLOW, WHITE, BLACK, etc.)
+-Always call methods returning points or vectors with parentheses (e.g., get_center(), get_corner()), never use method references without parentheses in arithmetic expressions.
 
 TOPIC: {topic or 'Mathematics'}
 CONTENT: {prompt}

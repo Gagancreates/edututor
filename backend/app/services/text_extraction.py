@@ -33,15 +33,7 @@ class ManimTextExtractor:
         self.default_animation_time = 1.5
         
     def extract_script(self, manim_code: str) -> List[Dict[str, Any]]:
-        """
-        Extract a narration script from Manim code.
-        
-        Args:
-            manim_code: The Manim code to extract from
-            
-        Returns:
-            List of script segments with text and timing information
-        """
+       
         # Try to extract section comments first (most reliable for structure)
         script = self._extract_section_comments(manim_code)
         
@@ -216,6 +208,20 @@ class ManimTextExtractor:
         
         return script
 
+def extract_narration_script(manim_code: str) -> List[Dict[str, Any]]:
+    """
+    Extract narration script from Manim code.
+    This is the main entry point for extracting narration from Manim code.
+    
+    Args:
+        manim_code: The Manim code to extract from
+        
+    Returns:
+        List of script segments with text and timing information
+    """
+    logger.info("Extracting narration script from Manim code")
+    return extract_narration_from_manim(manim_code)
+
 def extract_narration_from_manim(manim_code: str) -> List[Dict[str, Any]]:
     """
     Extract narration script from Manim code.
@@ -241,4 +247,5 @@ def extract_narration_from_manim(manim_code: str) -> List[Dict[str, Any]]:
             "type": "generic"
         }]
     
+    logger.info(f"Extracted {len(script)} narration segments")
     return script

@@ -1,0 +1,274 @@
+[
+  {
+    "text": "1. Introduction (25%)",
+    "timing": {
+      "start": 0.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Binary Search: An Efficient Algorithm",
+    "timing": {
+      "start": 3.0,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Binary Search is an efficient algorithm",
+    "timing": {
+      "start": 4.7,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "for finding an item from a sorted list.",
+    "timing": {
+      "start": 6.4,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "It repeatedly divides the search interval in half.",
+    "timing": {
+      "start": 8.1,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Crucially, the list MUST be sorted.",
+    "timing": {
+      "start": 9.799999999999999,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Core Understanding (40%)",
+    "timing": {
+      "start": 11.499999999999998,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Core Idea: Divide and Conquer",
+    "timing": {
+      "start": 14.499999999999998,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Think of guessing a number between 1 and 100.",
+    "timing": {
+      "start": 15.846153846153845,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Instead of random guesses, what",
+    "timing": {
+      "start": 17.19230769230769,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The middle: 50!",
+    "timing": {
+      "start": 18.538461538461537,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Low",
+    "timing": {
+      "start": 19.884615384615383,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "High",
+    "timing": {
+      "start": 21.23076923076923,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Mid",
+    "timing": {
+      "start": 22.576923076923077,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Find the middle element.",
+    "timing": {
+      "start": 23.923076923076923,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Target: X",
+    "timing": {
+      "start": 25.26923076923077,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Compare target with middle element.",
+    "timing": {
+      "start": 26.615384615384617,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "If Target == Mid: Found!",
+    "timing": {
+      "start": 27.961538461538463,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "If Target < Mid: Search left half.",
+    "timing": {
+      "start": 29.30769230769231,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "If Target > Mid: Search right half.",
+    "timing": {
+      "start": 30.653846153846157,
+      "duration": 1.3461538461538463
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Examples (25%)",
+    "timing": {
+      "start": 32.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Example: Searching for 25",
+    "timing": {
+      "start": 35.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Low",
+    "timing": {
+      "start": 38.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "High",
+    "timing": {
+      "start": 41.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Mid",
+    "timing": {
+      "start": 44.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 1:",
+    "timing": {
+      "start": 47.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Low",
+    "timing": {
+      "start": 50.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 2:",
+    "timing": {
+      "start": 53.0,
+      "duration": 3.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "4. Applications (10%)",
+    "timing": {
+      "start": 56.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Applications & Efficiency",
+    "timing": {
+      "start": 59.0,
+      "duration": 2.4
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "- Searching in sorted databases",
+    "timing": {
+      "start": 61.4,
+      "duration": 2.4
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "- Finding specific words in a dictionary",
+    "timing": {
+      "start": 63.8,
+      "duration": 2.4
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "- Efficiently locating elements in large datasets",
+    "timing": {
+      "start": 66.2,
+      "duration": 2.4
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Extremely fast for large datasets!",
+    "timing": {
+      "start": 68.60000000000001,
+      "duration": 2.4
+    },
+    "type": "text_object"
+  }
+]

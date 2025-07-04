@@ -25,6 +25,23 @@ export async function GET(request: NextRequest) {
       signal: AbortSignal.timeout(30000), // 30 seconds timeout
     });
 
+    // Check if the response is a JSON status update instead of a video
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.includes('application/json')) {
+      // This is a status response, not a video
+      const statusData = await response.json();
+      
+      // Return the status data to the frontend
+      return NextResponse.json(
+        { 
+          ...statusData,
+          // Add a flag to indicate this is a status response, not a video
+          isStatusResponse: true 
+        },
+        { status: response.status }
+      );
+    }
+
     if (!response.ok) {
       console.error(`Error streaming video: ${response.status} ${response.statusText}`);
       

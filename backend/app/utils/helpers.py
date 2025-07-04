@@ -99,6 +99,54 @@ def find_video_files(directory: Union[str, Path]) -> List[Path]:
     
     return video_files
 
+def create_audio_processing_marker(video_id: str) -> None:
+    """
+    Create a marker file to indicate that audio processing is in progress.
+    
+    Args:
+        video_id: The ID of the video
+    """
+    videos_dir = Path("./videos")
+    video_dir = videos_dir / video_id
+    
+    # Create the directory if it doesn't exist
+    video_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Create the marker file
+    marker_path = video_dir / "audio_processing.marker"
+    with open(marker_path, "w") as f:
+        f.write("Audio narration processing in progress")
+
+def remove_audio_processing_marker(video_id: str) -> None:
+    """
+    Remove the audio processing marker file.
+    
+    Args:
+        video_id: The ID of the video
+    """
+    videos_dir = Path("./videos")
+    video_dir = videos_dir / video_id
+    marker_path = video_dir / "audio_processing.marker"
+    
+    if marker_path.exists():
+        marker_path.unlink()
+
+def is_audio_processing(video_id: str) -> bool:
+    """
+    Check if audio processing is in progress for a video.
+    
+    Args:
+        video_id: The ID of the video
+        
+    Returns:
+        True if audio processing is in progress, False otherwise
+    """
+    videos_dir = Path("./videos")
+    video_dir = videos_dir / video_id
+    marker_path = video_dir / "audio_processing.marker"
+    
+    return marker_path.exists()
+
 def get_video_path(video_id: str) -> Optional[str]:
     """
     Get the path to a generated video.
@@ -117,15 +165,45 @@ def get_video_path(video_id: str) -> Optional[str]:
     if not video_dir.exists():
         return None
     
-    # First check for a direct MP4 file with the same name as the video_id
+    # First check for a narrated video file with _with_audio suffix
+    narrated_video_path = video_dir / f"{video_id}_with_audio.mp4"
+    if narrated_video_path.exists():
+        return str(narrated_video_path)
+    
+    # If audio processing is in progress, don't return the original video yet
+    # But we'll still check if there's an original video for status reporting
+    if is_audio_processing(video_id):
+        # Check if there's an original video
+        direct_video_path = video_dir / f"{video_id}.mp4"
+        if direct_video_path.exists():
+            # We found a video, but we don't want to serve it yet
+            # Return None to indicate that the video is not ready
+            return None
+        
+        # Check for any video files
+        video_files = find_video_files(video_dir)
+        if video_files:
+            # We found a video, but we don't want to serve it yet
+            # Return None to indicate that the video is not ready
+            return None
+            
+        # No videos found
+        return None
+    
+    # Then check for a direct MP4 file with the same name as the video_id
     direct_video_path = video_dir / f"{video_id}.mp4"
     if direct_video_path.exists():
         return str(direct_video_path)
     
-    # If direct file not found, search for any video files in the directory
+    # If direct files not found, search for any video files in the directory
     video_files = find_video_files(video_dir)
     
-    # If we found video files, return the path to the first one
+    # First try to find narrated videos (with _with_audio suffix)
+    narrated_videos = [v for v in video_files if "_with_audio" in v.name]
+    if narrated_videos:
+        return str(narrated_videos[0])
+    
+    # If no narrated videos found, return any video file
     if video_files:
         return str(video_files[0])
     
@@ -170,7 +248,44 @@ def get_video_status(video_id: str) -> Dict[str, Any]:
             "message": error_message
         }
     
-    # First check for a direct MP4 file with the same name as the video_id
+    # Check if audio processing is in progress
+    if is_audio_processing(video_id):
+        # Check if there's an original video
+        direct_video_path = video_dir / f"{video_id}.mp4"
+        video_files = []
+        
+        if not direct_video_path.exists():
+            # If direct file not found, search for any video files
+            video_files = find_video_files(video_dir)
+        
+                    # If we have a video, include the video_url in the response
+            if direct_video_path.exists() or video_files:
+                return {
+                    "video_id": video_id,
+                    "status": "processing",
+                    "message": "Adding audio narration to video",
+                    "video_url": f"/api/video/{video_id}"  # This will return a status response
+                }
+        
+        # No video found yet
+        return {
+            "video_id": video_id,
+            "status": "processing",
+            "message": "Adding audio narration to video"
+        }
+    
+    # First check for a narrated video file with _with_audio suffix
+    narrated_video_path = video_dir / f"{video_id}_with_audio.mp4"
+    if narrated_video_path.exists():
+        return {
+            "video_id": video_id,
+            "status": "completed",
+            "message": "Video generation completed with audio narration",
+            "video_url": f"/api/video/{video_id}",
+            "has_audio": True
+        }
+    
+    # Then check for a direct MP4 file with the same name as the video_id
     direct_video_path = video_dir / f"{video_id}.mp4"
     if direct_video_path.exists():
         return {
@@ -180,8 +295,21 @@ def get_video_status(video_id: str) -> Dict[str, Any]:
             "video_url": f"/api/video/{video_id}"
         }
     
-    # If direct file not found, check for any video files
+    # If direct files not found, search for any video files
     video_files = find_video_files(video_dir)
+    
+    # First try to find narrated videos (with _with_audio suffix)
+    narrated_videos = [v for v in video_files if "_with_audio" in v.name]
+    if narrated_videos:
+        return {
+            "video_id": video_id,
+            "status": "completed",
+            "message": "Video generation completed with audio narration",
+            "video_url": f"/api/video/{video_id}",
+            "has_audio": True
+        }
+    
+    # If no narrated videos found, return status for any video file
     if video_files:
         return {
             "video_id": video_id,

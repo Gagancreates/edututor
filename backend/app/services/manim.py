@@ -14,6 +14,8 @@ import shutil
 from pathlib import Path
 from typing import Optional, List, Tuple
 
+from app.utils.helpers import find_video_files, create_audio_processing_marker, remove_audio_processing_marker
+
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -265,6 +267,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     shutil.copy2(video_file, dest_path)
                     logger.info(f"Copied video from {video_file} to {dest_path}")
                     
+                    # Set the audio processing marker to indicate that audio processing is starting
+                    create_audio_processing_marker(video_id)
+                    
                     # Generate audio and merge with video
                     from app.services.media_processing import process_video_with_narration
                     narrated_video_path = await process_video_with_narration(
@@ -281,6 +286,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     else:
                         logger.warning(f"Failed to generate narrated video, using original video")
                     
+                    # Remove the audio processing marker regardless of success or failure
+                    remove_audio_processing_marker(video_id)
+                    
                     return str(dest_path)
                 
                 # Search for video files in the temp_media_dir
@@ -294,6 +302,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                         dest_path = output_dir / video_file.name
                         shutil.copy2(video_file, dest_path)
                         logger.info(f"Copied video from {video_file} to {dest_path}")
+                        
+                        # Set the audio processing marker to indicate that audio processing is starting
+                        create_audio_processing_marker(video_id)
                         
                         # Generate audio and merge with video
                         from app.services.media_processing import process_video_with_narration
@@ -311,6 +322,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                         else:
                             logger.warning(f"Failed to generate narrated video, using original video")
                         
+                        # Remove the audio processing marker regardless of success or failure
+                        remove_audio_processing_marker(video_id)
+                        
                         return str(dest_path)
                 
                 # If not found in the expected location, do a more comprehensive search
@@ -325,6 +339,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     
                     # Return the path to the first video file in the output directory
                     result_video = output_dir / video_files[0].name
+                    
+                    # Set the audio processing marker to indicate that audio processing is starting
+                    create_audio_processing_marker(video_id)
                     
                     # Generate audio and merge with video
                     from app.services.media_processing import process_video_with_narration
@@ -341,6 +358,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                         logger.info(f"Replaced original video with narrated version")
                     else:
                         logger.warning(f"Failed to generate narrated video, using original video")
+                    
+                    # Remove the audio processing marker regardless of success or failure
+                    remove_audio_processing_marker(video_id)
                     
                     return str(result_video)
                 
@@ -359,6 +379,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                             # Return the path to the first video file in the output directory
                             result_video = output_dir / found_videos[0].name
                             
+                            # Set the audio processing marker to indicate that audio processing is starting
+                            create_audio_processing_marker(video_id)
+                            
                             # Generate audio and merge with video
                             from app.services.media_processing import process_video_with_narration
                             narrated_video_path = await process_video_with_narration(
@@ -374,6 +397,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                                 logger.info(f"Replaced original video with narrated version")
                             else:
                                 logger.warning(f"Failed to generate narrated video, using original video")
+                            
+                            # Remove the audio processing marker regardless of success or failure
+                            remove_audio_processing_marker(video_id)
                             
                             return str(result_video)
                 
@@ -391,6 +417,9 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     # Return the path to the first video file
                     result_video = output_dir / all_mp4_files[0].name
                     
+                    # Set the audio processing marker to indicate that audio processing is starting
+                    create_audio_processing_marker(video_id)
+                    
                     # Generate audio and merge with video
                     from app.services.media_processing import process_video_with_narration
                     narrated_video_path = await process_video_with_narration(
@@ -407,7 +436,13 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     else:
                         logger.warning(f"Failed to generate narrated video, using original video")
                     
+                    # Remove the audio processing marker regardless of success or failure
+                    remove_audio_processing_marker(video_id)
+                    
                     return str(result_video)
+                
+                # Remove the audio processing marker since no video was found
+                remove_audio_processing_marker(video_id)
                 
                 # Create a dummy file to indicate that the video should exist
                 dummy_path = output_dir / f"{video_id}_dummy.mp4"
@@ -430,6 +465,10 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                 error_path = output_dir / "error.txt"
                 with open(error_path, "w") as f:
                     f.write("Manim execution timed out after 10 minutes. The animation might be too complex.")
+                
+                # Remove the audio processing marker if it exists
+                remove_audio_processing_marker(video_id)
+                
                 raise TimeoutError("Manim execution timed out after 10 minutes")
         
         except Exception as e:

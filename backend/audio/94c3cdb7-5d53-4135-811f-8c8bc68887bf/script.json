@@ -1,0 +1,130 @@
+[
+  {
+    "text": "Understanding Selection Sort",
+    "timing": {
+      "start": 0.0,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Selection Sort: A simple, in-place comparison sorting algorithm.",
+    "timing": {
+      "start": 2.71875,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "It repeatedly finds the minimum element from the unsorted part",
+    "timing": {
+      "start": 5.4375,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "and swaps it with the first element of that unsorted part.",
+    "timing": {
+      "start": 8.15625,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Let",
+    "timing": {
+      "start": 10.875,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Array is now sorted!",
+    "timing": {
+      "start": 13.59375,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Detailed Example: [5, 2, 8, 1]",
+    "timing": {
+      "start": 16.3125,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Let",
+    "timing": {
+      "start": 19.03125,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Example sorted!",
+    "timing": {
+      "start": 21.75,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Properties & Applications",
+    "timing": {
+      "start": 24.46875,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. In-place sorting: Requires minimal extra memory.",
+    "timing": {
+      "start": 27.1875,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Time Complexity:",
+    "timing": {
+      "start": 29.90625,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "(Best, Average, Worst Case)",
+    "timing": {
+      "start": 32.625,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Applications:",
+    "timing": {
+      "start": 35.34375,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Good for very small datasets.",
+    "timing": {
+      "start": 38.0625,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Primarily for educational purposes due to its simplicity.",
+    "timing": {
+      "start": 40.78125,
+      "duration": 2.71875
+    },
+    "type": "text_object"
+  }
+]

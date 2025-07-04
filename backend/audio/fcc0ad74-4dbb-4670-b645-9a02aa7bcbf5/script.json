@@ -1,0 +1,186 @@
+[
+  {
+    "text": "1. Introduction",
+    "timing": {
+      "start": 0.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "What is Recursion?",
+    "timing": {
+      "start": 3.0,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A function calling itself.",
+    "timing": {
+      "start": 4.7,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Analogy: Russian Nesting Dolls",
+    "timing": {
+      "start": 6.4,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A doll contains a smaller doll...",
+    "timing": {
+      "start": 8.1,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "...until the smallest doll is found.",
+    "timing": {
+      "start": 9.799999999999999,
+      "duration": 1.7
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Core Understanding",
+    "timing": {
+      "start": 11.499999999999998,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Key Components of Recursion",
+    "timing": {
+      "start": 14.499999999999998,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Base Case",
+    "timing": {
+      "start": 15.428571428571427,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The stopping condition.",
+    "timing": {
+      "start": 16.357142857142854,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Prevents infinite loops.",
+    "timing": {
+      "start": 17.28571428571428,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Recursive Step",
+    "timing": {
+      "start": 18.214285714285708,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Calls itself with a modified input.",
+    "timing": {
+      "start": 19.142857142857135,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Moves towards the base case.",
+    "timing": {
+      "start": 20.071428571428562,
+      "duration": 0.9285714285714286
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Examples: Factorial",
+    "timing": {
+      "start": 20.99999999999999,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Example: Factorial (n!)",
+    "timing": {
+      "start": 23.99999999999999,
+      "duration": 7.5
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Trace factorial(3):",
+    "timing": {
+      "start": 31.49999999999999,
+      "duration": 7.5
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "4. Applications",
+    "timing": {
+      "start": 38.999999999999986,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Applications of Recursion",
+    "timing": {
+      "start": 41.999999999999986,
+      "duration": 1.3
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Tree Traversal (e.g., Depth-First Search)",
+    "timing": {
+      "start": 43.29999999999998,
+      "duration": 1.3
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Sorting Algorithms (e.g., QuickSort, MergeSort)",
+    "timing": {
+      "start": 44.59999999999998,
+      "duration": 1.3
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Fractals and Generative Art",
+    "timing": {
+      "start": 45.89999999999998,
+      "duration": 1.3
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Recursion: A powerful, elegant problem-solving technique.",
+    "timing": {
+      "start": 47.199999999999974,
+      "duration": 1.3
+    },
+    "type": "text_object"
+  }
+]

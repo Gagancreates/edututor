@@ -1,0 +1,150 @@
+{
+  "video_id": "94c3cdb7-5d53-4135-811f-8c8bc68887bf",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "Understanding Selection Sort",
+      "timing": {
+        "start": 0.0,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "Selection Sort: A simple, in-place comparison sorting algorithm.",
+      "timing": {
+        "start": 2.71875,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "It repeatedly finds the minimum element from the unsorted part",
+      "timing": {
+        "start": 5.4375,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "and swaps it with the first element of that unsorted part.",
+      "timing": {
+        "start": 8.15625,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "Let",
+      "timing": {
+        "start": 10.875,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "Array is now sorted!",
+      "timing": {
+        "start": 13.59375,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "Detailed Example: [5, 2, 8, 1]",
+      "timing": {
+        "start": 16.3125,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Let",
+      "timing": {
+        "start": 19.03125,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Example sorted!",
+      "timing": {
+        "start": 21.75,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Properties & Applications",
+      "timing": {
+        "start": 24.46875,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "1. In-place sorting: Requires minimal extra memory.",
+      "timing": {
+        "start": 27.1875,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "2. Time Complexity:",
+      "timing": {
+        "start": 29.90625,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "(Best, Average, Worst Case)",
+      "timing": {
+        "start": 32.625,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "Applications:",
+      "timing": {
+        "start": 35.34375,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "Good for very small datasets.",
+      "timing": {
+        "start": 38.0625,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Primarily for educational purposes due to its simplicity.",
+      "timing": {
+        "start": 40.78125,
+        "duration": 2.71875
+      },
+      "audio_path": "audio\\94c3cdb7-5d53-4135-811f-8c8bc68887bf\\segment_015.mp3"
+    }
+  ]
+}

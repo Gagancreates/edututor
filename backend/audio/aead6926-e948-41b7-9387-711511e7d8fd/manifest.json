@@ -1,0 +1,303 @@
+{
+  "video_id": "aead6926-e948-41b7-9387-711511e7d8fd",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "1. Introduction (25%)",
+      "timing": {
+        "start": 0.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "Binary Search: An Efficient Algorithm",
+      "timing": {
+        "start": 3.0,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "Binary Search is an efficient algorithm",
+      "timing": {
+        "start": 4.7,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "for finding an item from a sorted list.",
+      "timing": {
+        "start": 6.4,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "It repeatedly divides the search interval in half.",
+      "timing": {
+        "start": 8.1,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "Crucially, the list MUST be sorted.",
+      "timing": {
+        "start": 9.799999999999999,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "2. Core Understanding (40%)",
+      "timing": {
+        "start": 11.499999999999998,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Core Idea: Divide and Conquer",
+      "timing": {
+        "start": 14.499999999999998,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_007.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Instead of random guesses, what",
+      "timing": {
+        "start": 17.19230769230769,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "The middle: 50!",
+      "timing": {
+        "start": 18.538461538461537,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "Low",
+      "timing": {
+        "start": 19.884615384615383,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "High",
+      "timing": {
+        "start": 21.23076923076923,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "Mid",
+      "timing": {
+        "start": 22.576923076923077,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "1. Find the middle element.",
+      "timing": {
+        "start": 23.923076923076923,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Target: X",
+      "timing": {
+        "start": 25.26923076923077,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "2. Compare target with middle element.",
+      "timing": {
+        "start": 26.615384615384617,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "If Target == Mid: Found!",
+      "timing": {
+        "start": 27.961538461538463,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "If Target < Mid: Search left half.",
+      "timing": {
+        "start": 29.30769230769231,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "If Target > Mid: Search right half.",
+      "timing": {
+        "start": 30.653846153846157,
+        "duration": 1.3461538461538463
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "3. Examples (25%)",
+      "timing": {
+        "start": 32.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "Example: Searching for 25",
+      "timing": {
+        "start": 35.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "Low",
+      "timing": {
+        "start": 38.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "High",
+      "timing": {
+        "start": 41.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "Mid",
+      "timing": {
+        "start": 44.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_024.mp3"
+    },
+    {
+      "index": 25,
+      "text": "Step 1:",
+      "timing": {
+        "start": 47.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_025.mp3"
+    },
+    {
+      "index": 26,
+      "text": "Low",
+      "timing": {
+        "start": 50.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_026.mp3"
+    },
+    {
+      "index": 27,
+      "text": "Step 2:",
+      "timing": {
+        "start": 53.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_027.mp3"
+    },
+    {
+      "index": 28,
+      "text": "4. Applications (10%)",
+      "timing": {
+        "start": 56.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_028.mp3"
+    },
+    {
+      "index": 29,
+      "text": "Applications & Efficiency",
+      "timing": {
+        "start": 59.0,
+        "duration": 2.4
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_029.mp3"
+    },
+    {
+      "index": 30,
+      "text": "- Searching in sorted databases",
+      "timing": {
+        "start": 61.4,
+        "duration": 2.4
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_030.mp3"
+    },
+    {
+      "index": 31,
+      "text": "- Finding specific words in a dictionary",
+      "timing": {
+        "start": 63.8,
+        "duration": 2.4
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_031.mp3"
+    },
+    {
+      "index": 32,
+      "text": "- Efficiently locating elements in large datasets",
+      "timing": {
+        "start": 66.2,
+        "duration": 2.4
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_032.mp3"
+    },
+    {
+      "index": 33,
+      "text": "Extremely fast for large datasets!",
+      "timing": {
+        "start": 68.60000000000001,
+        "duration": 2.4
+      },
+      "audio_path": "audio\\aead6926-e948-41b7-9387-711511e7d8fd\\segment_033.mp3"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "video_id": "fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "1. Introduction",
+      "timing": {
+        "start": 0.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "What is Recursion?",
+      "timing": {
+        "start": 3.0,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "A function calling itself.",
+      "timing": {
+        "start": 4.7,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Analogy: Russian Nesting Dolls",
+      "timing": {
+        "start": 6.4,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "A doll contains a smaller doll...",
+      "timing": {
+        "start": 8.1,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "...until the smallest doll is found.",
+      "timing": {
+        "start": 9.799999999999999,
+        "duration": 1.7
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "2. Core Understanding",
+      "timing": {
+        "start": 11.499999999999998,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Key Components of Recursion",
+      "timing": {
+        "start": 14.499999999999998,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "1. Base Case",
+      "timing": {
+        "start": 15.428571428571427,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "The stopping condition.",
+      "timing": {
+        "start": 16.357142857142854,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "Prevents infinite loops.",
+      "timing": {
+        "start": 17.28571428571428,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "2. Recursive Step",
+      "timing": {
+        "start": 18.214285714285708,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Calls itself with a modified input.",
+      "timing": {
+        "start": 19.142857142857135,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "Moves towards the base case.",
+      "timing": {
+        "start": 20.071428571428562,
+        "duration": 0.9285714285714286
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "3. Examples: Factorial",
+      "timing": {
+        "start": 20.99999999999999,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Example: Factorial (n!)",
+      "timing": {
+        "start": 23.99999999999999,
+        "duration": 7.5
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "Trace factorial(3):",
+      "timing": {
+        "start": 31.49999999999999,
+        "duration": 7.5
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "4. Applications",
+      "timing": {
+        "start": 38.999999999999986,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_017.mp3"
+    },
+    {
+      "index": 19,
+      "text": "\u2022 Tree Traversal (e.g., Depth-First Search)",
+      "timing": {
+        "start": 43.29999999999998,
+        "duration": 1.3
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "\u2022 Sorting Algorithms (e.g., QuickSort, MergeSort)",
+      "timing": {
+        "start": 44.59999999999998,
+        "duration": 1.3
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "\u2022 Fractals and Generative Art",
+      "timing": {
+        "start": 45.89999999999998,
+        "duration": 1.3
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "Recursion: A powerful, elegant problem-solving technique.",
+      "timing": {
+        "start": 47.199999999999974,
+        "duration": 1.3
+      },
+      "audio_path": "audio\\fcc0ad74-4dbb-4670-b645-9a02aa7bcbf5\\segment_022.mp3"
+    }
+  ]
+}
