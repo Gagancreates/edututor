@@ -43,9 +43,9 @@ COMMON_MANIM_ERRORS = [
      "The code uses a feature not available in this version of Manim.")
 ]
 
-def clean_code(code_text):
+def clean_code(code_text: str) -> str:
     """
-    Clean the code text by removing any Markdown formatting.
+    Clean Manim code by removing Markdown formatting.
     
     Args:
         code_text: The code text to clean
@@ -64,32 +64,23 @@ def clean_code(code_text):
 
 def check_for_common_errors(code_text: str) -> Tuple[bool, str]:
     """
-    Check the code for common Manim errors before execution.
+    Check for common errors in Manim code.
     
     Args:
-        code_text: The Manim code to check
+        code_text: The code text to check
         
     Returns:
         Tuple of (has_errors, error_message)
     """
-    # Check if the code uses any known problematic features
     for pattern, message in COMMON_MANIM_ERRORS:
         if re.search(pattern, code_text):
-            return True, f"Potential error detected: {message}"
-    
-    # Check if the main scene class is named correctly
-    if not re.search(r"class\s+CreateScene\s*\(\s*Scene\s*\)", code_text):
-        return True, "The main scene class must be named 'CreateScene' and inherit from Scene"
-    
-    # Check for missing imports
-    if not re.search(r"from\s+manim\s+import", code_text) and not re.search(r"import\s+manim", code_text):
-        return True, "Missing Manim import statement"
+            return True, message
     
     return False, ""
 
 def find_video_files(directory: Path) -> List[Path]:
     """
-    Find all video files in a directory and its subdirectories.
+    Find video files in a directory.
     
     Args:
         directory: The directory to search
@@ -97,35 +88,8 @@ def find_video_files(directory: Path) -> List[Path]:
     Returns:
         List of paths to video files
     """
-    video_files = []
-    
-    # Check the main directory
-    video_files.extend(list(directory.glob("*.mp4")))
-    
-    # Check for the default Manim media structure
-    media_dir = directory / "videos"
-    if media_dir.exists():
-        # Check all quality subdirectories (480p15, 720p30, 1080p60, etc.)
-        for quality_dir in media_dir.iterdir():
-            if quality_dir.is_dir():
-                video_files.extend(list(quality_dir.glob("*.mp4")))
-    
-    # Check for media_dir structure
-    media_dir = directory / "media" / "videos"
-    if media_dir.exists():
-        for subdir in media_dir.iterdir():
-            if subdir.is_dir():
-                # Check all quality subdirectories (480p15, 720p30, 1080p60, etc.)
-                for quality_dir in subdir.iterdir():
-                    if quality_dir.is_dir():
-                        video_files.extend(list(quality_dir.glob("*.mp4")))
-    
-    # Check for the temp directory structure that might be used
-    for temp_dir in directory.glob("**/videos"):
-        if temp_dir.is_dir():
-            for quality_dir in temp_dir.iterdir():
-                if quality_dir.is_dir():
-                    video_files.extend(list(quality_dir.glob("*.mp4")))
+    # Find all MP4 files in the directory and its subdirectories
+    video_files = list(directory.glob("**/*.mp4"))
     
     logger.info(f"Found {len(video_files)} video files in {directory}")
     for video_file in video_files:
@@ -180,6 +144,16 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
     # Output directory for the video
     output_dir = VIDEOS_DIR / video_id
     os.makedirs(output_dir, exist_ok=True)
+    
+    # Extract narration text from the Manim code
+    from app.services.text_extraction import extract_narration_from_manim
+    script = extract_narration_from_manim(manim_code)
+    
+    # Save the script for reference
+    script_json_path = output_dir / "script.json"
+    import json
+    with open(script_json_path, "w") as f:
+        json.dump(script, f, indent=2)
     
     # Create a temporary directory for this generation
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -290,6 +264,23 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     dest_path = output_dir / video_file.name
                     shutil.copy2(video_file, dest_path)
                     logger.info(f"Copied video from {video_file} to {dest_path}")
+                    
+                    # Generate audio and merge with video
+                    from app.services.media_processing import process_video_with_narration
+                    narrated_video_path = await process_video_with_narration(
+                        video_id=video_id,
+                        video_path=dest_path,
+                        script=script
+                    )
+                    
+                    if narrated_video_path:
+                        logger.info(f"Generated narrated video at {narrated_video_path}")
+                        # Replace the original video with the narrated one
+                        shutil.copy2(narrated_video_path, dest_path)
+                        logger.info(f"Replaced original video with narrated version")
+                    else:
+                        logger.warning(f"Failed to generate narrated video, using original video")
+                    
                     return str(dest_path)
                 
                 # Search for video files in the temp_media_dir
@@ -303,6 +294,23 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                         dest_path = output_dir / video_file.name
                         shutil.copy2(video_file, dest_path)
                         logger.info(f"Copied video from {video_file} to {dest_path}")
+                        
+                        # Generate audio and merge with video
+                        from app.services.media_processing import process_video_with_narration
+                        narrated_video_path = await process_video_with_narration(
+                            video_id=video_id,
+                            video_path=dest_path,
+                            script=script
+                        )
+                        
+                        if narrated_video_path:
+                            logger.info(f"Generated narrated video at {narrated_video_path}")
+                            # Replace the original video with the narrated one
+                            shutil.copy2(narrated_video_path, dest_path)
+                            logger.info(f"Replaced original video with narrated version")
+                        else:
+                            logger.warning(f"Failed to generate narrated video, using original video")
+                        
                         return str(dest_path)
                 
                 # If not found in the expected location, do a more comprehensive search
@@ -317,6 +325,23 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                     
                     # Return the path to the first video file in the output directory
                     result_video = output_dir / video_files[0].name
+                    
+                    # Generate audio and merge with video
+                    from app.services.media_processing import process_video_with_narration
+                    narrated_video_path = await process_video_with_narration(
+                        video_id=video_id,
+                        video_path=result_video,
+                        script=script
+                    )
+                    
+                    if narrated_video_path:
+                        logger.info(f"Generated narrated video at {narrated_video_path}")
+                        # Replace the original video with the narrated one
+                        shutil.copy2(narrated_video_path, result_video)
+                        logger.info(f"Replaced original video with narrated version")
+                    else:
+                        logger.warning(f"Failed to generate narrated video, using original video")
+                    
                     return str(result_video)
                 
                 # If still no video files, check other locations
@@ -333,90 +358,88 @@ async def execute_manim_code(video_id: str, manim_code: str) -> str:
                             
                             # Return the path to the first video file in the output directory
                             result_video = output_dir / found_videos[0].name
+                            
+                            # Generate audio and merge with video
+                            from app.services.media_processing import process_video_with_narration
+                            narrated_video_path = await process_video_with_narration(
+                                video_id=video_id,
+                                video_path=result_video,
+                                script=script
+                            )
+                            
+                            if narrated_video_path:
+                                logger.info(f"Generated narrated video at {narrated_video_path}")
+                                # Replace the original video with the narrated one
+                                shutil.copy2(narrated_video_path, result_video)
+                                logger.info(f"Replaced original video with narrated version")
+                            else:
+                                logger.warning(f"Failed to generate narrated video, using original video")
+                            
                             return str(result_video)
                 
-                # If we still haven't found any videos, create a dummy video file
-                if "File ready at" in stdout_text:
-                    logger.warning("Manim reported a video file was created, but we couldn't find it.")
-                    
-                    # Save stdout and stderr to files for debugging
-                    try:
-                        with open(output_dir / "stdout.txt", "w", encoding="utf-8") as f:
-                            f.write(stdout_text)
-                    except UnicodeEncodeError:
-                        with open(output_dir / "stdout.txt", "w", encoding="utf-8", errors="replace") as f:
-                            f.write("[Some characters were replaced due to encoding issues]\n")
-                            f.write(stdout_text)
-                    
-                    try:
-                        with open(output_dir / "stderr.txt", "w", encoding="utf-8") as f:
-                            f.write(stderr_text)
-                    except UnicodeEncodeError:
-                        with open(output_dir / "stderr.txt", "w", encoding="utf-8", errors="replace") as f:
-                            f.write("[Some characters were replaced due to encoding issues]\n")
-                            f.write(stderr_text)
-                    
-                    # Look for any MP4 files in the entire temp directory using glob
-                    all_mp4_files = list(Path(temp_dir).glob("**/*.mp4"))
-                    if all_mp4_files:
-                        logger.info(f"Found {len(all_mp4_files)} MP4 files using glob search")
-                        for mp4_file in all_mp4_files:
-                            logger.info(f"Found MP4 file: {mp4_file}")
-                            dest_path = output_dir / mp4_file.name
-                            shutil.copy2(mp4_file, dest_path)
-                            logger.info(f"Copied video from {mp4_file} to {dest_path}")
-                        
-                        # Return the path to the first video file
-                        result_video = output_dir / all_mp4_files[0].name
-                        return str(result_video)
-                    
-                    # Create a dummy file to indicate that the video should exist
-                    dummy_path = output_dir / f"{video_id}_dummy.mp4"
-                    with open(dummy_path, "w", encoding="utf-8") as f:
-                        f.write("This is a dummy file. The actual video was not found.")
-                    
-                    logger.error("No video file was found. Created a dummy file instead.")
-                    error_path = output_dir / "error.txt"
-                    try:
-                        with open(error_path, "w", encoding="utf-8") as f:
-                            f.write("Error: No video file was found, but Manim reported success.")
-                    except UnicodeEncodeError:
-                        with open(error_path, "w", encoding="utf-8", errors="replace") as f:
-                            f.write("Error: No video file was found, but Manim reported success.")
-                    raise FileNotFoundError("No video file was generated, but Manim reported success.")
+                # Last resort: Use glob to find any MP4 files
+                all_mp4_files = list(Path(".").glob("**/*.mp4"))
                 
-                logger.error("No video file was generated")
+                if all_mp4_files:
+                    logger.info(f"Found {len(all_mp4_files)} MP4 files using glob search")
+                    for mp4_file in all_mp4_files:
+                        logger.info(f"Found MP4 file: {mp4_file}")
+                        dest_path = output_dir / mp4_file.name
+                        shutil.copy2(mp4_file, dest_path)
+                        logger.info(f"Copied video from {mp4_file} to {dest_path}")
+                    
+                    # Return the path to the first video file
+                    result_video = output_dir / all_mp4_files[0].name
+                    
+                    # Generate audio and merge with video
+                    from app.services.media_processing import process_video_with_narration
+                    narrated_video_path = await process_video_with_narration(
+                        video_id=video_id,
+                        video_path=result_video,
+                        script=script
+                    )
+                    
+                    if narrated_video_path:
+                        logger.info(f"Generated narrated video at {narrated_video_path}")
+                        # Replace the original video with the narrated one
+                        shutil.copy2(narrated_video_path, result_video)
+                        logger.info(f"Replaced original video with narrated version")
+                    else:
+                        logger.warning(f"Failed to generate narrated video, using original video")
+                    
+                    return str(result_video)
+                
+                # Create a dummy file to indicate that the video should exist
+                dummy_path = output_dir / f"{video_id}_dummy.mp4"
+                with open(dummy_path, "w", encoding="utf-8") as f:
+                    f.write("This is a dummy file. The actual video was not found.")
+                
+                logger.error("No video file was found. Created a dummy file instead.")
                 error_path = output_dir / "error.txt"
                 try:
                     with open(error_path, "w", encoding="utf-8") as f:
-                        f.write("Error: No video file was generated")
+                        f.write("Error: No video file was found, but Manim reported success.")
                 except UnicodeEncodeError:
                     with open(error_path, "w", encoding="utf-8", errors="replace") as f:
-                        f.write("Error: No video file was generated")
-                raise FileNotFoundError("No video file was generated")
-                
+                        f.write("Error: No video file was found, but Manim reported success.")
+                raise FileNotFoundError("No video file was generated, but Manim reported success.")
+            
             except subprocess.TimeoutExpired:
                 process.kill()
-                logger.error(f"Manim execution timed out for video ID: {video_id}")
+                logger.error("Manim execution timed out after 10 minutes")
                 error_path = output_dir / "error.txt"
-                try:
-                    with open(error_path, "w", encoding="utf-8") as f:
-                        f.write("Error generating video: Manim execution timed out after 10 minutes")
-                except UnicodeEncodeError:
-                    with open(error_path, "w", encoding="utf-8", errors="replace") as f:
-                        f.write("Error generating video: Manim execution timed out after 10 minutes")
-                raise RuntimeError("Manim execution timed out after 10 minutes")
-            
+                with open(error_path, "w") as f:
+                    f.write("Manim execution timed out after 10 minutes. The animation might be too complex.")
+                raise TimeoutError("Manim execution timed out after 10 minutes")
+        
         except Exception as e:
-            # Create an error file to indicate failure
-            logger.error(f"Error during Manim execution: {str(e)}")
+            logger.error(f"Error executing Manim code: {str(e)}")
             logger.error(traceback.format_exc())
             error_path = output_dir / "error.txt"
             try:
                 with open(error_path, "w", encoding="utf-8") as f:
-                    f.write(f"Error generating video: {str(e)}\n\n{traceback.format_exc()}")
+                    f.write(f"Error executing Manim code: {str(e)}\n\n{traceback.format_exc()}")
             except UnicodeEncodeError:
                 with open(error_path, "w", encoding="utf-8", errors="replace") as f:
-                    f.write(f"Error generating video: [Some characters were replaced due to encoding issues]\n\n")
-                    f.write(f"Error type: {type(e).__name__}")
+                    f.write(f"Error executing Manim code: [Some characters were replaced due to encoding issues]\n\n{traceback.format_exc()}")
             raise 

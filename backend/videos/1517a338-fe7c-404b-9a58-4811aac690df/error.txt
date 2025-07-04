@@ -1,7 +1,0 @@
-Error generating video: 'utf-8' codec can't decode byte 0xb2 in position 5283: invalid start byte
-
-Traceback (most recent call last):
-  File "G:\edututor1\backend\app\services\manim.py", line 229, in execute_manim_code
-    stderr_text = stderr.decode() if stderr else ""
-                  ^^^^^^^^^^^^^^^
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb2 in position 5283: invalid start byte

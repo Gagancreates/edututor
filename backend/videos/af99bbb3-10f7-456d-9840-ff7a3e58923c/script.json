@@ -1,0 +1,250 @@
+[
+  {
+    "text": "Understanding Linked Lists",
+    "timing": {
+      "start": 0.0,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A Linked List is a linear data structure.",
+    "timing": {
+      "start": 1.8064516129032258,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Elements are not stored at contiguous memory locations.",
+    "timing": {
+      "start": 3.6129032258064515,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Think about Arrays:",
+    "timing": {
+      "start": 5.419354838709677,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Arrays: contiguous memory, fixed size.",
+    "timing": {
+      "start": 7.225806451612903,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked Lists overcome array limitations.",
+    "timing": {
+      "start": 9.032258064516128,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Key Components: Node",
+    "timing": {
+      "start": 10.838709677419354,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Data",
+    "timing": {
+      "start": 12.64516129032258,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Next\\nPointer",
+    "timing": {
+      "start": 14.451612903225806,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Each Node stores data and a pointer to the next node.",
+    "timing": {
+      "start": 16.258064516129032,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "10",
+    "timing": {
+      "start": 18.064516129032256,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "20",
+    "timing": {
+      "start": 19.87096774193548,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "30",
+    "timing": {
+      "start": 21.677419354838705,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 23.48387096774193,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 25.290322580645153,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Like a chain, each link knows the next.",
+    "timing": {
+      "start": 27.096774193548377,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked List Operations",
+    "timing": {
+      "start": 28.9032258064516,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Traversal: Visiting each node.",
+    "timing": {
+      "start": 30.709677419354826,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Insertion: Adding a new node.",
+    "timing": {
+      "start": 32.51612903225805,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "25",
+    "timing": {
+      "start": 34.322580645161274,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "10",
+    "timing": {
+      "start": 36.1290322580645,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "20",
+    "timing": {
+      "start": 37.93548387096772,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "30",
+    "timing": {
+      "start": 39.74193548387095,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 41.54838709677417,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 43.354838709677395,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Deletion: Removing a node.",
+    "timing": {
+      "start": 45.16129032258062,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Applications",
+    "timing": {
+      "start": 46.96774193548384,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "- Music Playlists",
+    "timing": {
+      "start": 48.77419354838707,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "- Undo/Redo features",
+    "timing": {
+      "start": 50.58064516129029,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "- Web Browser History",
+    "timing": {
+      "start": 52.387096774193516,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Also fundamental for Stacks, Queues, Graphs.",
+    "timing": {
+      "start": 54.19354838709674,
+      "duration": 1.8064516129032258
+    },
+    "type": "text_object"
+  }
+]

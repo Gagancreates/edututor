@@ -1,108 +1,0 @@
-Error: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  import pkg_resources
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-Animation 0: Write(Text('Pythagoras Theorem')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 0: Write(Text('Pythagoras Theorem')):   4%|4         | 1/23 [00:01<00:26,  1.22s/it]Animation 0: Write(Text('Pythagoras Theorem')):  52%|#####2    | 12/23 [00:01<00:00, 12.08it/s]Animation 0: Write(Text('Pythagoras Theorem')): 100%|##########| 23/23 [00:01<00:00, 24.66it/s]                                                                                               Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):   3%|3         | 1/30 [00:00<00:24,  1.21it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  20%|##        | 6/30 [00:00<00:02,  8.28it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  40%|####      | 12/30 [00:01<00:01, 16.77it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  57%|#####6    | 17/30 [00:01<00:00, 23.09it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  73%|#######3  | 22/30 [00:01<00:00, 27.88it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  90%|######### | 27/30 [00:01<00:00, 29.57it/s]                                                                                                                               Animation 4: Write(Text('The fundamental formula:')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 4: Write(Text('The fundamental formula:')):   4%|4         | 1/23 [00:01<00:27,  1.24s/it]Animation 4: Write(Text('The fundamental formula:')):  48%|####7     | 11/23 [00:01<00:01, 11.06it/s]Animation 4: Write(Text('The fundamental formula:')):  83%|########2 | 19/23 [00:01<00:00, 19.93it/s]                                                                                                     latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 6: Write(MathTex('a^2 + b^2 = c^2')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 6: Write(MathTex('a^2 + b^2 = c^2')):   3%|3         | 1/30 [00:01<00:37,  1.28s/it]Animation 6: Write(MathTex('a^2 + b^2 = c^2')):  60%|######    | 18/30 [00:01<00:00, 17.73it/s]                                                                                               Animation 8: FadeOut(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 8: FadeOut(Group):   4%|4         | 1/23 [00:00<00:20,  1.07it/s]Animation 8: FadeOut(Group):  22%|##1       | 5/23 [00:01<00:03,  5.98it/s]Animation 8: FadeOut(Group):  35%|###4      | 8/23 [00:01<00:01,  9.42it/s]Animation 8: FadeOut(Group):  48%|####7     | 11/23 [00:01<00:00, 12.87it/s]Animation 8: FadeOut(Group):  61%|######    | 14/23 [00:01<00:00, 16.14it/s]Animation 8: FadeOut(Group):  74%|#######3  | 17/23 [00:01<00:00, 19.02it/s]Animation 8: FadeOut(Group):  87%|########6 | 20/23 [00:01<00:00, 21.02it/s]Animation 8: FadeOut(Group): 100%|##########| 23/23 [00:01<00:00, 22.97it/s]                                                                            Animation 10: Write(Text('Understanding the Components')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 10: Write(Text('Understanding the Components')):   4%|4         | 1/23 [00:01<00:27,  1.23s/it]Animation 10: Write(Text('Understanding the Components')):  48%|####7     | 11/23 [00:01<00:01, 11.11it/s]Animation 10: Write(Text('Understanding the Components')):  83%|########2 | 19/23 [00:01<00:00, 20.00it/s]                                                                                                          latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 12: Create(Polygon), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 12: Create(Polygon), etc.:   4%|4         | 1/23 [00:01<00:27,  1.24s/it]                                                                                   Animation 14: FadeIn(Group):   0%|          | 0/15 [00:00<?, ?it/s]Animation 14: FadeIn(Group):   7%|6         | 1/15 [00:01<00:18,  1.35s/it]                                                                           Animation 16: FadeIn(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 16: FadeIn(Group):   4%|4         | 1/23 [00:01<00:29,  1.33s/it]                                                                           +--------------------- Traceback (most recent call last) ---------------------+
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
-| 15 in render                                                                |
-|                                                                             |
-|   112             try:                                                      |
-|   113                 with tempconfig({}):                                  |
-|   114                     scene = SceneClass()                              |
-| > 115                     scene.render()                                    |
-|   116             except Exception:                                         |
-|   117                 error_console.print_exception()                       |
-|   118                 sys.exit(1)                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
-| render                                                                      |
-|                                                                             |
-|    220         """                                                          |
-|    221         self.setup()                                                 |
-|    222         try:                                                         |
-| >  223             self.construct()                                         |
-|    224         except EndSceneEarlyException:                               |
-|    225             pass                                                     |
-|    226         except RerunSceneException as e:                             |
-|                                                                             |
-| C:\Users\Gagan\AppData\Local\Temp\tmptfyyx1mr\812f6f20-c978-4ebe-a9b7-121ee |
-| 3fb1cba.py:56 in construct                                                  |
-|                                                                             |
-|    53         self.wait(1.5)                                                |
-|    54                                                                       |
-|    55         hyp_text = Text("The longest side 'c' is called the Hypotenus |
-| >  56         hyp_text.set_color_by_tex("Hypotenuse", PURPLE)               |
-|    57         hyp_arrow = Arrow(start=hyp_text.get_top(), end=side_c_label. |
-|    58                                                                       |
-|    59         self.play(Write(hyp_text), Create(hyp_arrow), run_time=2)     |
-+-----------------------------------------------------------------------------+
-TypeError: Mobject.__getattr__.<locals>.setter() takes 2 positional arguments 
-but 3 were given
-
-
-Traceback (most recent call last):
-  File "G:\edututor1\backend\app\routers\generate.py", line 108, in generate_video_task
-    await execute_manim_code(video_id, manim_code)
-  File "G:\edututor1\backend\app\services\manim.py", line 271, in execute_manim_code
-    raise RuntimeError(f"Manim execution failed: {error_message}")
-RuntimeError: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  import pkg_resources
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-Animation 0: Write(Text('Pythagoras Theorem')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 0: Write(Text('Pythagoras Theorem')):   4%|4         | 1/23 [00:01<00:26,  1.22s/it]Animation 0: Write(Text('Pythagoras Theorem')):  52%|#####2    | 12/23 [00:01<00:00, 12.08it/s]Animation 0: Write(Text('Pythagoras Theorem')): 100%|##########| 23/23 [00:01<00:00, 24.66it/s]                                                                                               Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):   3%|3         | 1/30 [00:00<00:24,  1.21it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  20%|##        | 6/30 [00:00<00:02,  8.28it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  40%|####      | 12/30 [00:01<00:01, 16.77it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  57%|#####6    | 17/30 [00:01<00:00, 23.09it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  73%|#######3  | 22/30 [00:01<00:00, 27.88it/s]Animation 2: Write(Text('Unlocking relationships in Right-Angled Triangles.')):  90%|######### | 27/30 [00:01<00:00, 29.57it/s]                                                                                                                               Animation 4: Write(Text('The fundamental formula:')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 4: Write(Text('The fundamental formula:')):   4%|4         | 1/23 [00:01<00:27,  1.24s/it]Animation 4: Write(Text('The fundamental formula:')):  48%|####7     | 11/23 [00:01<00:01, 11.06it/s]Animation 4: Write(Text('The fundamental formula:')):  83%|########2 | 19/23 [00:01<00:00, 19.93it/s]                                                                                                     latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 6: Write(MathTex('a^2 + b^2 = c^2')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 6: Write(MathTex('a^2 + b^2 = c^2')):   3%|3         | 1/30 [00:01<00:37,  1.28s/it]Animation 6: Write(MathTex('a^2 + b^2 = c^2')):  60%|######    | 18/30 [00:01<00:00, 17.73it/s]                                                                                               Animation 8: FadeOut(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 8: FadeOut(Group):   4%|4         | 1/23 [00:00<00:20,  1.07it/s]Animation 8: FadeOut(Group):  22%|##1       | 5/23 [00:01<00:03,  5.98it/s]Animation 8: FadeOut(Group):  35%|###4      | 8/23 [00:01<00:01,  9.42it/s]Animation 8: FadeOut(Group):  48%|####7     | 11/23 [00:01<00:00, 12.87it/s]Animation 8: FadeOut(Group):  61%|######    | 14/23 [00:01<00:00, 16.14it/s]Animation 8: FadeOut(Group):  74%|#######3  | 17/23 [00:01<00:00, 19.02it/s]Animation 8: FadeOut(Group):  87%|########6 | 20/23 [00:01<00:00, 21.02it/s]Animation 8: FadeOut(Group): 100%|##########| 23/23 [00:01<00:00, 22.97it/s]                                                                            Animation 10: Write(Text('Understanding the Components')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 10: Write(Text('Understanding the Components')):   4%|4         | 1/23 [00:01<00:27,  1.23s/it]Animation 10: Write(Text('Understanding the Components')):  48%|####7     | 11/23 [00:01<00:01, 11.11it/s]Animation 10: Write(Text('Understanding the Components')):  83%|########2 | 19/23 [00:01<00:00, 20.00it/s]                                                                                                          latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-latex: major issue: So far, no MiKTeX administrator has checked for updates.
-Animation 12: Create(Polygon), etc.:   0%|          | 0/23 [00:00<?, ?it/s]Animation 12: Create(Polygon), etc.:   4%|4         | 1/23 [00:01<00:27,  1.24s/it]                                                                                   Animation 14: FadeIn(Group):   0%|          | 0/15 [00:00<?, ?it/s]Animation 14: FadeIn(Group):   7%|6         | 1/15 [00:01<00:18,  1.35s/it]                                                                           Animation 16: FadeIn(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 16: FadeIn(Group):   4%|4         | 1/23 [00:01<00:29,  1.33s/it]                                                                           +--------------------- Traceback (most recent call last) ---------------------+
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
-| 15 in render                                                                |
-|                                                                             |
-|   112             try:                                                      |
-|   113                 with tempconfig({}):                                  |
-|   114                     scene = SceneClass()                              |
-| > 115                     scene.render()                                    |
-|   116             except Exception:                                         |
-|   117                 error_console.print_exception()                       |
-|   118                 sys.exit(1)                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
-| render                                                                      |
-|                                                                             |
-|    220         """                                                          |
-|    221         self.setup()                                                 |
-|    222         try:                                                         |
-| >  223             self.construct()                                         |
-|    224         except EndSceneEarlyException:                               |
-|    225             pass                                                     |
-|    226         except RerunSceneException as e:                             |
-|                                                                             |
-| C:\Users\Gagan\AppData\Local\Temp\tmptfyyx1mr\812f6f20-c978-4ebe-a9b7-121ee |
-| 3fb1cba.py:56 in construct                                                  |
-|                                                                             |
-|    53         self.wait(1.5)                                                |
-|    54                                                                       |
-|    55         hyp_text = Text("The longest side 'c' is called the Hypotenus |
-| >  56         hyp_text.set_color_by_tex("Hypotenuse", PURPLE)               |
-|    57         hyp_arrow = Arrow(start=hyp_text.get_top(), end=side_c_label. |
-|    58                                                                       |
-|    59         self.play(Write(hyp_text), Create(hyp_arrow), run_time=2)     |
-+-----------------------------------------------------------------------------+
-TypeError: Mobject.__getattr__.<locals>.setter() takes 2 positional arguments 
-but 3 were given
-

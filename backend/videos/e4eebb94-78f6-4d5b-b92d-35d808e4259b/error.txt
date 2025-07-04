@@ -1,168 +1,0 @@
-Error generating video: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  import pkg_resources
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-Animation 0: Write(Text('Understanding Machine Learning')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 0: Write(Text('Understanding Machine Learning')):   4%|4         | 1/23 [00:01<00:25,  1.17s/it]Animation 0: Write(Text('Understanding Machine Learning')):  30%|###       | 7/23 [00:01<00:02,  7.27it/s]Animation 0: Write(Text('Understanding Machine Learning')):  61%|######    | 14/23 [00:01<00:00, 15.35it/s]Animation 0: Write(Text('Understanding Machine Learning')):  87%|########6 | 20/23 [00:01<00:00, 22.39it/s]                                                                                                           Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):   3%|3         | 1/30 [00:01<00:29,  1.00s/it]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  27%|##6       | 8/30 [00:01<00:02,  9.46it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  43%|####3     | 13/30 [00:01<00:01, 15.30it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  60%|######    | 18/30 [00:01<00:00, 20.95it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  77%|#######6  | 23/30 [00:01<00:00, 26.16it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  93%|#########3| 28/30 [00:01<00:00, 30.31it/s]                                                                                                                                       Animation 3: Write(Text('without explicit programming.')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 3: Write(Text('without explicit programming.')):   4%|4         | 1/23 [00:00<00:21,  1.01it/s]Animation 3: Write(Text('without explicit programming.')):  43%|####3     | 10/23 [00:01<00:01, 12.05it/s]Animation 3: Write(Text('without explicit programming.')):  74%|#######3  | 17/23 [00:01<00:00, 20.49it/s]Animation 3: Write(Text('without explicit programming.')): 100%|##########| 23/23 [00:01<00:00, 26.96it/s]                                                                                                          Animation 5: FadeOut(Group):   0%|          | 0/15 [00:00<?, ?it/s]Animation 5: FadeOut(Group):   7%|6         | 1/15 [00:00<00:04,  3.04it/s]Animation 5: FadeOut(Group):  20%|##        | 3/15 [00:00<00:01,  7.83it/s]Animation 5: FadeOut(Group):  40%|####      | 6/15 [00:00<00:00, 13.92it/s]Animation 5: FadeOut(Group):  60%|######    | 9/15 [00:00<00:00, 17.31it/s]Animation 5: FadeOut(Group):  80%|########  | 12/15 [00:00<00:00, 19.46it/s]Animation 5: FadeOut(Group): 100%|##########| 15/15 [00:00<00:00, 21.20it/s]                                                                            Animation 7: Write(Text('How Machine Learning Works')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 7: Write(Text('How Machine Learning Works')):   4%|4         | 1/23 [00:00<00:16,  1.32it/s]Animation 7: Write(Text('How Machine Learning Works')):  48%|####7     | 11/23 [00:00<00:00, 16.95it/s]Animation 7: Write(Text('How Machine Learning Works')):  87%|########6 | 20/23 [00:00<00:00, 29.83it/s]                                                                                                       Animation 9: FadeIn(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 9: FadeIn(Group):   4%|4         | 1/23 [00:00<00:16,  1.31it/s]Animation 9: FadeIn(Group):  52%|#####2    | 12/23 [00:00<00:00, 18.17it/s]Animation 9: FadeIn(Group): 100%|##########| 23/23 [00:00<00:00, 33.99it/s]                                                                           +--------------------- Traceback (most recent call last) ---------------------+
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
-| 15 in render                                                                |
-|                                                                             |
-|   112             try:                                                      |
-|   113                 with tempconfig({}):                                  |
-|   114                     scene = SceneClass()                              |
-| > 115                     scene.render()                                    |
-|   116             except Exception:                                         |
-|   117                 error_console.print_exception()                       |
-|   118                 sys.exit(1)                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
-| render                                                                      |
-|                                                                             |
-|    220         """                                                          |
-|    221         self.setup()                                                 |
-|    222         try:                                                         |
-| >  223             self.construct()                                         |
-|    224         except EndSceneEarlyException:                               |
-|    225             pass                                                     |
-|    226         except RerunSceneException as e:                             |
-|                                                                             |
-| C:\Users\Gagan\AppData\Local\Temp\tmp62dxsei4\e4eebb94-78f6-4d5b-b92d-35d80 |
-| 8e4259b.py:60 in construct                                                  |
-|                                                                             |
-|    57         model_text = Text("2. Model/Algorithm", font_size=32, color=C |
-|    58         model_box = Rectangle(width=3, height=2, color=COLOR_MODEL, f |
-|    59         model_label = Text("ML Model", color=BLACK).move_to(model_box |
-| >  60         model_brain = ImageMobject("brain_icon.png").scale(0.5).move_ |
-|    61         # Replacing ImageMobject with a simple shape to adhere to con |
-|    62         model_brain = Polygon(                                        |
-|    63             [-0.5, 0.5, 0], [0.5, 0.5, 0], [0.7, 0, 0], [0.5, -0.5, 0 |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\types\image_mobj |
-| ect.py:183 in __init__                                                      |
-|                                                                             |
-|   180         self.invert = invert                                          |
-|   181         self.image_mode = image_mode                                  |
-|   182         if isinstance(filename_or_array, (str, pathlib.PurePath)):    |
-| > 183             path = get_full_raster_image_path(filename_or_array)      |
-|   184             image = Image.open(path).convert(self.image_mode)         |
-|   185             self.pixel_array = np.array(image)                        |
-|   186             self.path = path                                          |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\images.py:22 in    |
-| get_full_raster_image_path                                                  |
-|                                                                             |
-|   19                                                                        |
-|   20                                                                        |
-|   21 def get_full_raster_image_path(image_file_name: str) -> Path:          |
-| > 22     return seek_full_path_from_defaults(                               |
-|   23         image_file_name,                                               |
-|   24         default_dir=config.get_dir("assets_dir"),                      |
-|   25         extensions=[".jpg", ".jpeg", ".png", ".gif", ".ico"],          |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\file_ops.py:175 in |
-| seek_full_path_from_defaults                                                |
-|                                                                             |
-|   172         f"From: {Path.cwd()}, could not find {file_name} at either "  |
-|   173         f"of these locations: {list(map(str, possible_paths))}"       |
-|   174     )                                                                 |
-| > 175     raise OSError(error)                                              |
-|   176                                                                       |
-|   177                                                                       |
-|   178 def modify_atime(file_path: str) -> None:                             |
-+-----------------------------------------------------------------------------+
-OSError: From: G:\edututor1\backend, could not find brain_icon.png at either of
-these locations: ['brain_icon.png', 'brain_icon.png', 'brain_icon.png.jpg', 
-'brain_icon.png.jpeg', 'brain_icon.png.png', 'brain_icon.png.gif', 
-'brain_icon.png.ico']
-
-
-Traceback (most recent call last):
-  File "G:\edututor1\backend\app\services\manim.py", line 249, in execute_manim_code
-    raise RuntimeError(f"Manim execution failed: {error_message}")
-RuntimeError: Manim execution failed: G:\edututor1\backend\.venv\Lib\site-packages\manim\__init__.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  import pkg_resources
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\click\core.py:1193: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  parser = self.make_parser(ctx)
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter -s is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-G:\edututor1\backend\.venv\Lib\site-packages\cloup\constraints\_support.py:183: UserWarning: The parameter --save_last_frame is used more than once. Remove its duplicate as parameters should be unique.
-  args = super().parse_args(ctx, args)  # type: ignore
-Animation 0: Write(Text('Understanding Machine Learning')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 0: Write(Text('Understanding Machine Learning')):   4%|4         | 1/23 [00:01<00:25,  1.17s/it]Animation 0: Write(Text('Understanding Machine Learning')):  30%|###       | 7/23 [00:01<00:02,  7.27it/s]Animation 0: Write(Text('Understanding Machine Learning')):  61%|######    | 14/23 [00:01<00:00, 15.35it/s]Animation 0: Write(Text('Understanding Machine Learning')):  87%|########6 | 20/23 [00:01<00:00, 22.39it/s]                                                                                                           Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):   3%|3         | 1/30 [00:01<00:29,  1.00s/it]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  27%|##6       | 8/30 [00:01<00:02,  9.46it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  43%|####3     | 13/30 [00:01<00:01, 15.30it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  60%|######    | 18/30 [00:01<00:00, 20.95it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  77%|#######6  | 23/30 [00:01<00:00, 26.16it/s]Animation 2: Write(Text('Machine Learning (ML) teaches computers to learn from data')):  93%|#########3| 28/30 [00:01<00:00, 30.31it/s]                                                                                                                                       Animation 3: Write(Text('without explicit programming.')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 3: Write(Text('without explicit programming.')):   4%|4         | 1/23 [00:00<00:21,  1.01it/s]Animation 3: Write(Text('without explicit programming.')):  43%|####3     | 10/23 [00:01<00:01, 12.05it/s]Animation 3: Write(Text('without explicit programming.')):  74%|#######3  | 17/23 [00:01<00:00, 20.49it/s]Animation 3: Write(Text('without explicit programming.')): 100%|##########| 23/23 [00:01<00:00, 26.96it/s]                                                                                                          Animation 5: FadeOut(Group):   0%|          | 0/15 [00:00<?, ?it/s]Animation 5: FadeOut(Group):   7%|6         | 1/15 [00:00<00:04,  3.04it/s]Animation 5: FadeOut(Group):  20%|##        | 3/15 [00:00<00:01,  7.83it/s]Animation 5: FadeOut(Group):  40%|####      | 6/15 [00:00<00:00, 13.92it/s]Animation 5: FadeOut(Group):  60%|######    | 9/15 [00:00<00:00, 17.31it/s]Animation 5: FadeOut(Group):  80%|########  | 12/15 [00:00<00:00, 19.46it/s]Animation 5: FadeOut(Group): 100%|##########| 15/15 [00:00<00:00, 21.20it/s]                                                                            Animation 7: Write(Text('How Machine Learning Works')):   0%|          | 0/23 [00:00<?, ?it/s]Animation 7: Write(Text('How Machine Learning Works')):   4%|4         | 1/23 [00:00<00:16,  1.32it/s]Animation 7: Write(Text('How Machine Learning Works')):  48%|####7     | 11/23 [00:00<00:00, 16.95it/s]Animation 7: Write(Text('How Machine Learning Works')):  87%|########6 | 20/23 [00:00<00:00, 29.83it/s]                                                                                                       Animation 9: FadeIn(Group):   0%|          | 0/23 [00:00<?, ?it/s]Animation 9: FadeIn(Group):   4%|4         | 1/23 [00:00<00:16,  1.31it/s]Animation 9: FadeIn(Group):  52%|#####2    | 12/23 [00:00<00:00, 18.17it/s]Animation 9: FadeIn(Group): 100%|##########| 23/23 [00:00<00:00, 33.99it/s]                                                                           +--------------------- Traceback (most recent call last) ---------------------+
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\cli\render\commands.py:1 |
-| 15 in render                                                                |
-|                                                                             |
-|   112             try:                                                      |
-|   113                 with tempconfig({}):                                  |
-|   114                     scene = SceneClass()                              |
-| > 115                     scene.render()                                    |
-|   116             except Exception:                                         |
-|   117                 error_console.print_exception()                       |
-|   118                 sys.exit(1)                                           |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\scene\scene.py:223 in    |
-| render                                                                      |
-|                                                                             |
-|    220         """                                                          |
-|    221         self.setup()                                                 |
-|    222         try:                                                         |
-| >  223             self.construct()                                         |
-|    224         except EndSceneEarlyException:                               |
-|    225             pass                                                     |
-|    226         except RerunSceneException as e:                             |
-|                                                                             |
-| C:\Users\Gagan\AppData\Local\Temp\tmp62dxsei4\e4eebb94-78f6-4d5b-b92d-35d80 |
-| 8e4259b.py:60 in construct                                                  |
-|                                                                             |
-|    57         model_text = Text("2. Model/Algorithm", font_size=32, color=C |
-|    58         model_box = Rectangle(width=3, height=2, color=COLOR_MODEL, f |
-|    59         model_label = Text("ML Model", color=BLACK).move_to(model_box |
-| >  60         model_brain = ImageMobject("brain_icon.png").scale(0.5).move_ |
-|    61         # Replacing ImageMobject with a simple shape to adhere to con |
-|    62         model_brain = Polygon(                                        |
-|    63             [-0.5, 0.5, 0], [0.5, 0.5, 0], [0.7, 0, 0], [0.5, -0.5, 0 |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\mobject\types\image_mobj |
-| ect.py:183 in __init__                                                      |
-|                                                                             |
-|   180         self.invert = invert                                          |
-|   181         self.image_mode = image_mode                                  |
-|   182         if isinstance(filename_or_array, (str, pathlib.PurePath)):    |
-| > 183             path = get_full_raster_image_path(filename_or_array)      |
-|   184             image = Image.open(path).convert(self.image_mode)         |
-|   185             self.pixel_array = np.array(image)                        |
-|   186             self.path = path                                          |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\images.py:22 in    |
-| get_full_raster_image_path                                                  |
-|                                                                             |
-|   19                                                                        |
-|   20                                                                        |
-|   21 def get_full_raster_image_path(image_file_name: str) -> Path:          |
-| > 22     return seek_full_path_from_defaults(                               |
-|   23         image_file_name,                                               |
-|   24         default_dir=config.get_dir("assets_dir"),                      |
-|   25         extensions=[".jpg", ".jpeg", ".png", ".gif", ".ico"],          |
-|                                                                             |
-| G:\edututor1\backend\.venv\Lib\site-packages\manim\utils\file_ops.py:175 in |
-| seek_full_path_from_defaults                                                |
-|                                                                             |
-|   172         f"From: {Path.cwd()}, could not find {file_name} at either "  |
-|   173         f"of these locations: {list(map(str, possible_paths))}"       |
-|   174     )                                                                 |
-| > 175     raise OSError(error)                                              |
-|   176                                                                       |
-|   177                                                                       |
-|   178 def modify_atime(file_path: str) -> None:                             |
-+-----------------------------------------------------------------------------+
-OSError: From: G:\edututor1\backend, could not find brain_icon.png at either of
-these locations: ['brain_icon.png', 'brain_icon.png', 'brain_icon.png.jpg', 
-'brain_icon.png.jpeg', 'brain_icon.png.png', 'brain_icon.png.gif', 
-'brain_icon.png.ico']
-
