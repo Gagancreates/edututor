@@ -52,6 +52,9 @@ __pycache__/
 *.py[cod]
 
 
+backend/videos/
+backend/audios/
+
 .venv/
 env/
 ENV/
