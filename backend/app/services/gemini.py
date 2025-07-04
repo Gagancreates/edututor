@@ -67,6 +67,7 @@ class ManimEducationalAgent:
 GENERATE PURE PYTHON CODE ONLY - NO MARKDOWN, NO EXPLANATIONS OUTSIDE CODE
 
 CRITICAL MANIM REQUIREMENTS:
+-add comments before each scene - a concise comment about the scene (example: let us now see what is linked lists with an example)
 -**make sure that you dont overwrite the text from the previous scene**
 -**make sure that all the text rendered does not overlap**
 - from manim import * (required import)

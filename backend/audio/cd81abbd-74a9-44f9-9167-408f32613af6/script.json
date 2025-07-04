@@ -1,0 +1,186 @@
+[
+  {
+    "text": "What are Neural Networks?",
+    "timing": {
+      "start": 0.0,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Inspired by the human brain,",
+    "timing": {
+      "start": 1.565217391304348,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Neural Networks are computational models",
+    "timing": {
+      "start": 3.130434782608696,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "that learn to perform tasks by considering examples,",
+    "timing": {
+      "start": 4.695652173913044,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "without being explicitly programmed.",
+    "timing": {
+      "start": 6.260869565217392,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The Neuron: A Basic Building Block",
+    "timing": {
+      "start": 7.826086956521739,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Neuron",
+    "timing": {
+      "start": 9.391304347826088,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Inputs ($x$)",
+    "timing": {
+      "start": 10.956521739130435,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Weights ($w$)",
+    "timing": {
+      "start": 12.521739130434783,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Bias ($b$)",
+    "timing": {
+      "start": 14.08695652173913,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Activation Function ($f$)",
+    "timing": {
+      "start": 15.652173913043478,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Output ($y$)",
+    "timing": {
+      "start": 17.217391304347828,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Neural Network Architecture: Layers",
+    "timing": {
+      "start": 18.782608695652176,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Input Layer",
+    "timing": {
+      "start": 20.347826086956523,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Hidden Layer(s)",
+    "timing": {
+      "start": 21.91304347826087,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Output Layer",
+    "timing": {
+      "start": 23.47826086956522,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Learning occurs by adjusting weights and biases",
+    "timing": {
+      "start": 25.043478260869566,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "to minimize the difference between predicted and actual outputs.",
+    "timing": {
+      "start": 26.608695652173914,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Applications of Neural Networks",
+    "timing": {
+      "start": 28.17391304347826,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Image Recognition",
+    "timing": {
+      "start": 29.73913043478261,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Natural Language Processing (NLP)",
+    "timing": {
+      "start": 31.304347826086957,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Medical Diagnosis",
+    "timing": {
+      "start": 32.869565217391305,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Financial Forecasting",
+    "timing": {
+      "start": 34.434782608695656,
+      "duration": 1.565217391304348
+    },
+    "type": "text_object"
+  }
+]

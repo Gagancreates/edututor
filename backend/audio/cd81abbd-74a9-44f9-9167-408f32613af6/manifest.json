@@ -1,0 +1,204 @@
+{
+  "video_id": "cd81abbd-74a9-44f9-9167-408f32613af6",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "What are Neural Networks?",
+      "timing": {
+        "start": 0.0,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "Inspired by the human brain,",
+      "timing": {
+        "start": 1.565217391304348,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_001.mp3"
+    },
+    {
+      "index": 3,
+      "text": "that learn to perform tasks by considering examples,",
+      "timing": {
+        "start": 4.695652173913044,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "without being explicitly programmed.",
+      "timing": {
+        "start": 6.260869565217392,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "The Neuron: A Basic Building Block",
+      "timing": {
+        "start": 7.826086956521739,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "Neuron",
+      "timing": {
+        "start": 9.391304347826088,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Inputs ($x$)",
+      "timing": {
+        "start": 10.956521739130435,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Weights ($w$)",
+      "timing": {
+        "start": 12.521739130434783,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Bias ($b$)",
+      "timing": {
+        "start": 14.08695652173913,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "Activation Function ($f$)",
+      "timing": {
+        "start": 15.652173913043478,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "Output ($y$)",
+      "timing": {
+        "start": 17.217391304347828,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Neural Network Architecture: Layers",
+      "timing": {
+        "start": 18.782608695652176,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "Input Layer",
+      "timing": {
+        "start": 20.347826086956523,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "Hidden Layer(s)",
+      "timing": {
+        "start": 21.91304347826087,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Output Layer",
+      "timing": {
+        "start": 23.47826086956522,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "Learning occurs by adjusting weights and biases",
+      "timing": {
+        "start": 25.043478260869566,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "to minimize the difference between predicted and actual outputs.",
+      "timing": {
+        "start": 26.608695652173914,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "Applications of Neural Networks",
+      "timing": {
+        "start": 28.17391304347826,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "Image Recognition",
+      "timing": {
+        "start": 29.73913043478261,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "Natural Language Processing (NLP)",
+      "timing": {
+        "start": 31.304347826086957,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "Medical Diagnosis",
+      "timing": {
+        "start": 32.869565217391305,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "Financial Forecasting",
+      "timing": {
+        "start": 34.434782608695656,
+        "duration": 1.565217391304348
+      },
+      "audio_path": "audio\\cd81abbd-74a9-44f9-9167-408f32613af6\\segment_022.mp3"
+    }
+  ]
+}
