@@ -83,6 +83,7 @@ CRITICAL MANIM REQUIREMENTS:
 
 
 COMPATIBILITY WARNINGS:
+-Ensure all methods are properly called with parentheses and correct arguments, so that variables used in arithmetic are numeric values, not method objects, to avoid TypeError issues
 - DO NOT use .align_left(), .align_right(), or .align_center() methods on Text objects
 - For text alignment, use .to_edge(LEFT), .to_edge(RIGHT), or .move_to(ORIGIN) instead
 -Do not use rotation in constructors; call .rotate() separately
