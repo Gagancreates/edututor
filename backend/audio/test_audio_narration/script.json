@@ -1,0 +1,42 @@
+[
+  {
+    "text": "1. Introduction to Calculus",
+    "timing": {
+      "start": 0.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Introduction to Calculus",
+    "timing": {
+      "start": 3.0,
+      "duration": 2.0
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Derivatives",
+    "timing": {
+      "start": 5.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Derivatives",
+    "timing": {
+      "start": 8.0,
+      "duration": 1.5
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The derivative measures the rate of change",
+    "timing": {
+      "start": 9.5,
+      "duration": 1.5
+    },
+    "type": "text_object"
+  }
+]

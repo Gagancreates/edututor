@@ -1,0 +1,87 @@
+{
+  "video_id": "5f9fa82d-abeb-49c5-b51f-915bace130d5",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "1. New node points to Node B",
+      "timing": {
+        "start": 0.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "2. Node A points to New Node X",
+      "timing": {
+        "start": 4.5,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "Deletion Example",
+      "timing": {
+        "start": 7.5,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Node to Delete",
+      "timing": {
+        "start": 10.342857142857142,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "Applications",
+      "timing": {
+        "start": 13.185714285714283,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "\u2022 Implementing Stacks and Queues",
+      "timing": {
+        "start": 16.028571428571425,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "\u2022 Music Playlists & Browser History",
+      "timing": {
+        "start": 18.871428571428567,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "\u2022 Dynamic memory allocation",
+      "timing": {
+        "start": 21.714285714285708,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Linked lists are versatile for dynamic data!",
+      "timing": {
+        "start": 24.55714285714285,
+        "duration": 2.8428571428571425
+      },
+      "audio_path": "audio\\5f9fa82d-abeb-49c5-b51f-915bace130d5\\segment_008.mp3"
+    }
+  ]
+}

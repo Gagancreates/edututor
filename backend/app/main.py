@@ -12,19 +12,23 @@ import traceback
 from app.routers import generate
 from app.utils.helpers import get_video_path, generate_uuid
 
-# Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+# Set debug level for media processing module
+logging.getLogger("app.services.media_processing").setLevel(logging.DEBUG)
 
 app = FastAPI(title="EduTutor API", version="0.1.0")
 
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For development; restrict in production
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
 )
 
 # Include routers
@@ -56,7 +60,7 @@ async def get_video(video_id: str):
         The video file or an error message
     """
     try:
-        logger.info(f"Fetching video with ID: {video_id}")
+        app.logger.info(f"Fetching video with ID: {video_id}")
         
         # Get the path to the video file
         video_path = get_video_path(video_id)
@@ -67,13 +71,13 @@ async def get_video(video_id: str):
             if error_path.exists():
                 with open(error_path, "r") as f:
                     error_message = f.read()
-                logger.error(f"Error for video {video_id}: {error_message}")
+                app.logger.error(f"Error for video {video_id}: {error_message}")
                 raise HTTPException(status_code=500, detail=f"Video generation failed: {error_message}")
             
-            logger.error(f"Video with ID {video_id} not found")
+            app.logger.error(f"Video with ID {video_id} not found")
             raise HTTPException(status_code=404, detail=f"Video with ID {video_id} not found")
         
-        logger.info(f"Returning video from path: {video_path}")
+        app.logger.info(f"Returning video from path: {video_path}")
         return FileResponse(
             path=video_path,
             media_type="video/mp4",
@@ -85,8 +89,8 @@ async def get_video(video_id: str):
         raise
     
     except Exception as e:
-        logger.error(f"Error fetching video {video_id}: {str(e)}")
-        logger.error(traceback.format_exc())
+        app.logger.error(f"Error fetching video {video_id}: {str(e)}")
+        app.logger.error(traceback.format_exc())
         raise HTTPException(status_code=500, detail=f"Error fetching video: {str(e)}")
 
 @app.exception_handler(Exception)
@@ -94,12 +98,20 @@ async def global_exception_handler(request: Request, exc: Exception):
     """
     Global exception handler for the application.
     """
-    logger.error(f"Unhandled exception: {str(exc)}")
-    logger.error(traceback.format_exc())
+    app.logger.error(f"Unhandled exception: {str(exc)}")
+    app.logger.error(traceback.format_exc())
     return JSONResponse(
         status_code=500,
         content={"detail": "An unexpected error occurred"}
     )
+
+# Add logger to the app for convenience
+app.logger = logging.getLogger("app.main")
+
+# Ensure required directories exist
+os.makedirs("videos", exist_ok=True)
+os.makedirs("audio", exist_ok=True)
+os.makedirs("temp", exist_ok=True)
 
 if __name__ == "__main__":
     import uvicorn

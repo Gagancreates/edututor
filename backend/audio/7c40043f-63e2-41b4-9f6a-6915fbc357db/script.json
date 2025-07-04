@@ -1,0 +1,354 @@
+[
+  {
+    "text": "1. Introduction (25%)",
+    "timing": {
+      "start": 0.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Dynamic Programming",
+    "timing": {
+      "start": 3.0,
+      "duration": 1.0833333333333333
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A powerful technique for optimization.",
+    "timing": {
+      "start": 4.083333333333333,
+      "duration": 1.0833333333333333
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Solves complex problems by breaking them into simpler parts.",
+    "timing": {
+      "start": 5.166666666666666,
+      "duration": 1.0833333333333333
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Builds on:",
+    "timing": {
+      "start": 6.249999999999999,
+      "duration": 1.0833333333333333
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Recursion",
+    "timing": {
+      "start": 7.333333333333332,
+      "duration": 1.0833333333333333
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Optimization",
+    "timing": {
+      "start": 8.416666666666666,
+      "duration": 1.0833333333333333
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Core Understanding - Properties (40%)",
+    "timing": {
+      "start": 9.5,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Two Key Properties:",
+    "timing": {
+      "start": 12.5,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Optimal Substructure",
+    "timing": {
+      "start": 13.631578947368421,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Optimal solution to a problem contains optimal solutions to its subproblems.",
+    "timing": {
+      "start": 14.763157894736842,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Overlapping Subproblems",
+    "timing": {
+      "start": 15.894736842105264,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Problem can be broken into subproblems which are reused multiple times.",
+    "timing": {
+      "start": 17.026315789473685,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(5)",
+    "timing": {
+      "start": 18.157894736842106,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(4)",
+    "timing": {
+      "start": 19.289473684210527,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(3)",
+    "timing": {
+      "start": 20.42105263157895,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(3)",
+    "timing": {
+      "start": 21.55263157894737,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(2)",
+    "timing": {
+      "start": 22.68421052631579,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(2)",
+    "timing": {
+      "start": 23.815789473684212,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(1)",
+    "timing": {
+      "start": 24.947368421052634,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Overlapping Subproblems Visualized",
+    "timing": {
+      "start": 26.078947368421055,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(3) is calculated multiple times!",
+    "timing": {
+      "start": 27.210526315789476,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Two Main Approaches:",
+    "timing": {
+      "start": 28.342105263157897,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Memoization (Top-Down)",
+    "timing": {
+      "start": 29.47368421052632,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Store results of expensive function calls to avoid re-computation.",
+    "timing": {
+      "start": 30.60526315789474,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Tabulation (Bottom-Up)",
+    "timing": {
+      "start": 31.73684210526316,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Solve subproblems first, building up solutions to larger problems.",
+    "timing": {
+      "start": 32.86842105263158,
+      "duration": 1.131578947368421
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Examples (25%)",
+    "timing": {
+      "start": 34.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Example: Fibonacci Sequence",
+    "timing": {
+      "start": 37.0,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Memoization (Top-Down) for F(5):",
+    "timing": {
+      "start": 38.81111111111111,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "F(5) calls F(4), F(3)...",
+    "timing": {
+      "start": 40.62222222222222,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Memoization Table (Cache)",
+    "timing": {
+      "start": 42.43333333333333,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Tabulation (Bottom-Up) for F(5):",
+    "timing": {
+      "start": 44.24444444444444,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Calculates F(0), F(1), then F(2)=F(1)+F(0), etc...",
+    "timing": {
+      "start": 46.05555555555555,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Other Problems Solved by DP:",
+    "timing": {
+      "start": 47.86666666666666,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Knapsack Problem",
+    "timing": {
+      "start": 49.67777777777777,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Longest Common Subsequence",
+    "timing": {
+      "start": 51.48888888888888,
+      "duration": 1.8111111111111111
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "4. Applications (10%)",
+    "timing": {
+      "start": 53.29999999999999,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Applications of Dynamic Programming",
+    "timing": {
+      "start": 56.29999999999999,
+      "duration": 1.1666666666666667
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Route Planning (e.g., Google Maps)",
+    "timing": {
+      "start": 57.466666666666654,
+      "duration": 1.1666666666666667
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 DNA Sequence Alignment",
+    "timing": {
+      "start": 58.63333333333332,
+      "duration": 1.1666666666666667
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Financial Modeling",
+    "timing": {
+      "start": 59.79999999999998,
+      "duration": 1.1666666666666667
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 AI and Game Development",
+    "timing": {
+      "start": 60.96666666666665,
+      "duration": 1.1666666666666667
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Dynamic Programming: A powerful tool for efficiency and optimization.",
+    "timing": {
+      "start": 62.13333333333331,
+      "duration": 1.1666666666666667
+    },
+    "type": "text_object"
+  }
+]
