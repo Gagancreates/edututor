@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, Suspense } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Download, Play, Pause, Volume2, VolumeX, Share2, RotateCcw, Heart, Loader2 } from "lucide-react"
+import { ArrowLeft, Download, Play, Pause, Volume2, VolumeX, Share2, RotateCcw, Heart, Loader2, Maximize, Minimize } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
@@ -17,6 +17,11 @@ function VideoPlayerContent() {
   const [progress, setProgress] = useState(0)
   const [duration, setDuration] = useState(0)
   const [currentSubtitle, setCurrentSubtitle] = useState("")
+  const [isFullscreen, setIsFullscreen] = useState(false)
+  const [showTimeTooltip, setShowTimeTooltip] = useState(false)
+  const [tooltipTime, setTooltipTime] = useState(0)
+  const [tooltipPosition, setTooltipPosition] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
   const [videoStatus, setVideoStatus] = useState({
     status: "loading", // loading, processing, completed, failed
     message: "Checking video status...",
@@ -24,6 +29,8 @@ function VideoPlayerContent() {
   })
   
   const videoRef = useRef<HTMLVideoElement>(null)
+  const videoContainerRef = useRef<HTMLDivElement>(null)
+  const progressBarRef = useRef<HTMLDivElement>(null)
 
   const subtitles = [
     "Welcome to this educational video about " + topic,
@@ -216,6 +223,106 @@ function VideoPlayerContent() {
     }
   }
 
+  // Handle fullscreen toggle
+  const toggleFullscreen = () => {
+    if (!videoContainerRef.current) return
+    
+    if (!isFullscreen) {
+      if (videoContainerRef.current.requestFullscreen) {
+        videoContainerRef.current.requestFullscreen()
+      } else if ((videoContainerRef.current as any).webkitRequestFullscreen) {
+        (videoContainerRef.current as any).webkitRequestFullscreen()
+      } else if ((videoContainerRef.current as any).msRequestFullscreen) {
+        (videoContainerRef.current as any).msRequestFullscreen()
+      }
+      setIsFullscreen(true)
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      } else if ((document as any).webkitExitFullscreen) {
+        (document as any).webkitExitFullscreen()
+      } else if ((document as any).msExitFullscreen) {
+        (document as any).msExitFullscreen()
+      }
+      setIsFullscreen(false)
+    }
+  }
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement)
+    }
+    
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange)
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange)
+    
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
+    }
+  }, [])
+  
+  // Handle progress bar hover and seeking
+  const handleProgressHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!progressBarRef.current || videoStatus.status !== 'completed') return
+    
+    const rect = progressBarRef.current.getBoundingClientRect()
+    const pos = (e.clientX - rect.left) / rect.width
+    const time = duration * pos
+    
+    setTooltipTime(time)
+    setTooltipPosition(pos * 100)
+    setShowTimeTooltip(true)
+  }
+  
+  const handleProgressLeave = () => {
+    if (!isDragging) {
+      setShowTimeTooltip(false)
+    }
+  }
+  
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!videoRef.current || !progressBarRef.current || videoStatus.status !== 'completed') return
+    
+    const rect = progressBarRef.current.getBoundingClientRect()
+    const pos = (e.clientX - rect.left) / rect.width
+    videoRef.current.currentTime = pos * duration
+  }
+  
+  // Handle mouse down, move, up for dragging the progress bar
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (videoStatus.status !== 'completed') return
+    
+    setIsDragging(true)
+    handleProgressClick(e)
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!videoRef.current || !progressBarRef.current) return
+      
+      const rect = progressBarRef.current.getBoundingClientRect()
+      const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
+      videoRef.current.currentTime = pos * duration
+      
+      setTooltipTime(pos * duration)
+      setTooltipPosition(pos * 100)
+    }
+    
+    const handleMouseUp = () => {
+      setIsDragging(false)
+      setShowTimeTooltip(false)
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+    }
+    
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseup', handleMouseUp)
+  }
+
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Background effects */}
@@ -260,7 +367,10 @@ function VideoPlayerContent() {
           </div>
 
           {/* Main Video Container */}
-          <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
+          <div 
+            ref={videoContainerRef}
+            className={`relative bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-gray-800 shadow-2xl ${isFullscreen ? 'fullscreen-video' : ''}`}
+          >
             {/* Video Canvas Area */}
             <div className="relative aspect-video bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10">
               {videoStatus.status === 'completed' && videoId ? (
@@ -371,19 +481,38 @@ function VideoPlayerContent() {
                     </span>
                   </div>
                   <div 
-                    className="w-full bg-gray-700 rounded-full h-2 cursor-pointer"
-                    onClick={(e) => {
-                      if (videoRef.current && videoStatus.status === 'completed') {
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        const pos = (e.clientX - rect.left) / rect.width
-                        videoRef.current.currentTime = pos * videoRef.current.duration
-                      }
-                    }}
+                    ref={progressBarRef}
+                    className="w-full bg-gray-700 rounded-full h-2 cursor-pointer relative"
+                    onClick={handleProgressClick}
+                    onMouseMove={handleProgressHover}
+                    onMouseLeave={handleProgressLeave}
+                    onMouseDown={handleMouseDown}
                   >
                     <div
                       className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${progress}%` }}
                     />
+                    
+                    {/* Time tooltip on hover */}
+                    {showTimeTooltip && videoStatus.status === 'completed' && (
+                      <div 
+                        className="absolute bottom-5 bg-black/80 text-white px-2 py-1 rounded text-xs transform -translate-x-1/2 pointer-events-none"
+                        style={{ left: `${tooltipPosition}%` }}
+                      >
+                        {formatTime(tooltipTime)}
+                      </div>
+                    )}
+                    
+                    {/* Draggable progress handle */}
+                    {videoStatus.status === 'completed' && (
+                      <div 
+                        className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-md transform -translate-y-1/2 -translate-x-1/2 cursor-pointer"
+                        style={{ 
+                          left: `${progress}%`,
+                          display: (showTimeTooltip || isDragging) ? 'block' : 'none'
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
 
@@ -418,6 +547,16 @@ function VideoPlayerContent() {
                       disabled={videoStatus.status !== 'completed'}
                     >
                       <RotateCcw className="h-5 w-5" />
+                    </Button>
+                    
+                    <Button
+                      onClick={toggleFullscreen}
+                      variant="ghost"
+                      size="icon"
+                      className="text-white hover:bg-white/10 rounded-full w-12 h-12"
+                      disabled={videoStatus.status !== 'completed'}
+                    >
+                      {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
                     </Button>
                   </div>
 
@@ -456,6 +595,29 @@ function VideoPlayerContent() {
           </motion.div>
         </motion.div>
       </div>
+      
+      {/* Add fullscreen styles */}
+      <style jsx global>{`
+        .fullscreen-video {
+          position: fixed !important;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100vw;
+          height: 100vh;
+          z-index: 9999;
+          border-radius: 0 !important;
+          border: none !important;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .fullscreen-video > div:first-child {
+          flex: 1;
+          aspect-ratio: auto !important;
+        }
+      `}</style>
     </div>
   )
 }

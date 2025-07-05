@@ -1,0 +1,170 @@
+[
+  {
+    "text": "Understanding Quadratic Equations",
+    "timing": {
+      "start": 0.0,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A quadratic equation is a polynomial equation of the second degree.",
+    "timing": {
+      "start": 2.880952380952381,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Standard Form:",
+    "timing": {
+      "start": 5.761904761904762,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Here, ",
+    "timing": {
+      "start": 8.642857142857142,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Our goal is to solve for the variable ",
+    "timing": {
+      "start": 11.523809523809524,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Let",
+    "timing": {
+      "start": 14.404761904761905,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Strategy: Using the Quadratic Formula",
+    "timing": {
+      "start": 17.285714285714285,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step-by-Step Solution",
+    "timing": {
+      "start": 20.166666666666664,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 1: Identify Coefficients",
+    "timing": {
+      "start": 23.047619047619044,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "By comparing with ax^2 + bx + c = 0.",
+    "timing": {
+      "start": 25.928571428571423,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 2: Substitute Values",
+    "timing": {
+      "start": 28.809523809523803,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Replace ",
+    "timing": {
+      "start": 31.690476190476183,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 3: Calculate Discriminant",
+    "timing": {
+      "start": 34.57142857142856,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "This value determines the nature of the roots.",
+    "timing": {
+      "start": 37.45238095238094,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 4: Simplify Square Root",
+    "timing": {
+      "start": 40.33333333333332,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Since it",
+    "timing": {
+      "start": 43.2142857142857,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Step 5: Calculate x1 and x2",
+    "timing": {
+      "start": 46.09523809523808,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "These are the two roots of the quadratic equation.",
+    "timing": {
+      "start": 48.97619047619046,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Verification",
+    "timing": {
+      "start": 51.85714285714284,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Let",
+    "timing": {
+      "start": 54.73809523809522,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Since the equation evaluates to 0, x = -1 is a valid solution!",
+    "timing": {
+      "start": 57.6190476190476,
+      "duration": 2.880952380952381
+    },
+    "type": "text_object"
+  }
+]
