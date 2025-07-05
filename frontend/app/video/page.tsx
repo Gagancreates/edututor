@@ -160,8 +160,14 @@ function VideoPlayerContent() {
       videoRef.current.addEventListener('loadedmetadata', () => {
         if (videoRef.current) {
           setDuration(videoRef.current.duration)
+          console.log("Video duration loaded:", videoRef.current.duration)
         }
       })
+      
+      // Set duration if already loaded
+      if (videoRef.current.duration) {
+        setDuration(videoRef.current.duration)
+      }
       
       return () => {
         if (videoRef.current) {
@@ -190,7 +196,7 @@ function VideoPlayerContent() {
         clearInterval(subtitleInterval)
       }
     }
-  }, [isPlaying, progress, subtitles, videoStatus.status])
+  }, [isPlaying, subtitles, videoStatus.status]) // Removed progress from dependencies to avoid circular updates
 
   const togglePlay = () => setIsPlaying(!isPlaying)
   
@@ -269,15 +275,17 @@ function VideoPlayerContent() {
   
   // Handle progress bar hover and seeking
   const handleProgressHover = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!progressBarRef.current || videoStatus.status !== 'completed') return
+    if (!progressBarRef.current || videoStatus.status !== 'completed' || !videoRef.current) return
     
     const rect = progressBarRef.current.getBoundingClientRect()
-    const pos = (e.clientX - rect.left) / rect.width
-    const time = duration * pos
+    const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
     
-    setTooltipTime(time)
-    setTooltipPosition(pos * 100)
-    setShowTimeTooltip(true)
+    if (videoRef.current.duration && !isNaN(videoRef.current.duration)) {
+      const time = pos * videoRef.current.duration
+      setTooltipTime(time)
+      setTooltipPosition(pos * 100)
+      setShowTimeTooltip(true)
+    }
   }
   
   const handleProgressLeave = () => {
@@ -286,35 +294,93 @@ function VideoPlayerContent() {
     }
   }
   
+  // Fixed seek function
+  const seekVideo = (timePercent: number) => {
+    if (!videoRef.current || videoStatus.status !== 'completed') return;
+    
+    // Wait for video to be fully loaded
+    if (!videoRef.current.duration || isNaN(videoRef.current.duration)) {
+      console.warn("Video duration not available yet");
+      return;
+    }
+    
+    try {
+      const seekTime = Math.max(0, Math.min(videoRef.current.duration, (timePercent / 100) * videoRef.current.duration));
+      console.log(`Seeking video to ${seekTime}s (${timePercent}%)`);
+      
+      // Pause the video before seeking to prevent issues
+      const wasPlaying = !videoRef.current.paused;
+      videoRef.current.pause();
+      
+      videoRef.current.currentTime = seekTime;
+      
+      // Resume playing if it was playing before
+      if (wasPlaying) {
+        videoRef.current.play().catch(console.error);
+      }
+    } catch (error) {
+      console.error("Error seeking video:", error);
+    }
+  }
+  
+  // Fixed progress click handler
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
     if (!videoRef.current || !progressBarRef.current || videoStatus.status !== 'completed') return
     
     const rect = progressBarRef.current.getBoundingClientRect()
-    const pos = (e.clientX - rect.left) / rect.width
-    videoRef.current.currentTime = pos * duration
+    const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
+    const timePercent = pos * 100;
+    
+    console.log(`Progress clicked at ${timePercent}%`);
+    
+    seekVideo(timePercent);
+    
+    if (videoRef.current.duration && !isNaN(videoRef.current.duration)) {
+      setTooltipTime(pos * videoRef.current.duration)
+      setTooltipPosition(timePercent)
+    }
   }
   
-  // Handle mouse down, move, up for dragging the progress bar
+  // Fixed mouse down handler for dragging
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (videoStatus.status !== 'completed') return
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (videoStatus.status !== 'completed' || !videoRef.current || !progressBarRef.current) return
     
     setIsDragging(true)
-    handleProgressClick(e)
+    
+    // Initial click position
+    const rect = progressBarRef.current.getBoundingClientRect()
+    const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
+    const timePercent = pos * 100;
+    
+    seekVideo(timePercent);
     
     const handleMouseMove = (e: MouseEvent) => {
       if (!videoRef.current || !progressBarRef.current) return
       
       const rect = progressBarRef.current.getBoundingClientRect()
       const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
-      videoRef.current.currentTime = pos * duration
+      const timePercent = pos * 100;
       
-      setTooltipTime(pos * duration)
-      setTooltipPosition(pos * 100)
+      // Update progress and seek during drag
+      setProgress(timePercent);
+      seekVideo(timePercent);
+      
+      if (videoRef.current.duration && !isNaN(videoRef.current.duration)) {
+        setTooltipTime(pos * videoRef.current.duration)
+        setTooltipPosition(timePercent)
+      }
     }
     
     const handleMouseUp = () => {
       setIsDragging(false)
       setShowTimeTooltip(false)
+      
       document.removeEventListener('mousemove', handleMouseMove)
       document.removeEventListener('mouseup', handleMouseUp)
     }
@@ -381,7 +447,13 @@ function VideoPlayerContent() {
                   muted={isMuted}
                   playsInline
                   onEnded={() => setIsPlaying(false)}
-                  onLoadedData={() => console.log("Video loaded successfully")}
+                  onLoadedData={() => {
+                    console.log("Video loaded successfully")
+                    if (videoRef.current) {
+                      console.log("Video duration on load:", videoRef.current.duration)
+                      setDuration(videoRef.current.duration)
+                    }
+                  }}
                   onError={handleVideoError}
                 >
                   <source 
@@ -467,7 +539,7 @@ function VideoPlayerContent() {
             {(videoStatus.status === 'completed' || videoStatus.status === 'processing') && (
               <div className="p-6 bg-gradient-to-r from-gray-900/90 to-black/90 backdrop-blur-sm">
                 {/* Progress Bar */}
-                <div className="mb-4">
+                <div className="mb-4" onClick={(e) => e.stopPropagation()}>
                   <div className="flex items-center justify-between text-sm text-gray-400 mb-2">
                     <span>
                       {videoStatus.status === 'completed' && duration > 0
@@ -482,21 +554,22 @@ function VideoPlayerContent() {
                   </div>
                   <div 
                     ref={progressBarRef}
-                    className="w-full bg-gray-700 rounded-full h-2 cursor-pointer relative"
+                    className="w-full bg-gray-700 rounded-full h-6 cursor-pointer relative flex items-center"
                     onClick={handleProgressClick}
                     onMouseMove={handleProgressHover}
                     onMouseLeave={handleProgressLeave}
                     onMouseDown={handleMouseDown}
+                    style={{ zIndex: 10 }}
                   >
                     <div
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
+                      className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-150"
                       style={{ width: `${progress}%` }}
                     />
                     
                     {/* Time tooltip on hover */}
                     {showTimeTooltip && videoStatus.status === 'completed' && (
                       <div 
-                        className="absolute bottom-5 bg-black/80 text-white px-2 py-1 rounded text-xs transform -translate-x-1/2 pointer-events-none"
+                        className="absolute bottom-8 bg-black/80 text-white px-2 py-1 rounded text-xs transform -translate-x-1/2 pointer-events-none whitespace-nowrap"
                         style={{ left: `${tooltipPosition}%` }}
                       >
                         {formatTime(tooltipTime)}
@@ -506,10 +579,10 @@ function VideoPlayerContent() {
                     {/* Draggable progress handle */}
                     {videoStatus.status === 'completed' && (
                       <div 
-                        className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-md transform -translate-y-1/2 -translate-x-1/2 cursor-pointer"
+                        className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-md transform -translate-y-1/2 -translate-x-1/2 cursor-pointer transition-opacity duration-150"
                         style={{ 
                           left: `${progress}%`,
-                          display: (showTimeTooltip || isDragging) ? 'block' : 'none'
+                          opacity: (showTimeTooltip || isDragging) ? 1 : 0
                         }}
                       />
                     )}
