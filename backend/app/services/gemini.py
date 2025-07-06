@@ -71,6 +71,7 @@ CRITICAL MANIM REQUIREMENTS:
 -**make sure that you dont overwrite the text from the previous scene**
 -**make sure that all the text rendered does not overlap**
 - from manim import * (required import)
+-"Ensure all code uses consistent 4-space indentation with no mixed tabs/spaces, and validate proper Python syntax structure.
 - class CreateScene(Scene): (exact class name and inheritance)
 - Complete, executable Python code only
 - No external assets (images, videos, audio)
