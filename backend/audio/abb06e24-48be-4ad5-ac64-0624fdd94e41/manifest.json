@@ -1,0 +1,213 @@
+{
+  "video_id": "abb06e24-48be-4ad5-ac64-0624fdd94e41",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 1,
+      "text": "A Linked List is a linear data structure.",
+      "timing": {
+        "start": 1.54,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "It",
+      "timing": {
+        "start": 3.08,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Analogy: A chain of clues, each leading to the next.",
+      "timing": {
+        "start": 4.62,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "Data",
+      "timing": {
+        "start": 6.16,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "Next",
+      "timing": {
+        "start": 7.7,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "Node Structure",
+      "timing": {
+        "start": 9.24,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_006.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Head",
+      "timing": {
+        "start": 12.32,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Null",
+      "timing": {
+        "start": 13.86,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "This chain of nodes forms our linked list.",
+      "timing": {
+        "start": 15.399999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "Insertion Example",
+      "timing": {
+        "start": 16.939999999999998,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Inserting a new node ",
+      "timing": {
+        "start": 18.479999999999997,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "Node ",
+      "timing": {
+        "start": 20.019999999999996,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "Deletion Example",
+      "timing": {
+        "start": 21.559999999999995,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Deleting node ",
+      "timing": {
+        "start": 23.099999999999994,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "Node ",
+      "timing": {
+        "start": 24.639999999999993,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "List Traversal",
+      "timing": {
+        "start": 26.179999999999993,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "Start at ",
+      "timing": {
+        "start": 27.71999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "Current",
+      "timing": {
+        "start": 29.25999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "Applications of Linked Lists",
+      "timing": {
+        "start": 30.79999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "- Implementing Stacks and Queues",
+      "timing": {
+        "start": 32.33999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "- Image Viewers (Previous/Next)",
+      "timing": {
+        "start": 33.87999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "- Polynomial Representation",
+      "timing": {
+        "start": 35.41999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "Linked Lists: Dynamic, flexible, and efficient for insertions/deletions.",
+      "timing": {
+        "start": 36.95999999999999,
+        "duration": 1.54
+      },
+      "audio_path": "audio\\abb06e24-48be-4ad5-ac64-0624fdd94e41\\segment_024.mp3"
+    }
+  ]
+}

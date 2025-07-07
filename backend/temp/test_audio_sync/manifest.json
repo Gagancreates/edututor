@@ -1,0 +1,93 @@
+{
+  "video_id": "test_sync",
+  "segments": [
+    {
+      "index": 0,
+      "text": "<prosody rate='medium'>r</prosody>",
+      "timing": {
+        "start": 0.0,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_000.mp3",
+      "type": "text_element",
+      "duration": 1.0
+    },
+    {
+      "index": 2,
+      "text": "<prosody rate='medium'>d = 2r</prosody>",
+      "timing": {
+        "start": 3.25,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_002.mp3",
+      "type": "text_element",
+      "duration": 1.6
+    },
+    {
+      "index": 4,
+      "text": "<prosody rate='medium'>Circles are fundamental shapes in mathematics</prosody>",
+      "timing": {
+        "start": 6.5,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_004.mp3",
+      "type": "text_element",
+      "duration": 2.8
+    },
+    {
+      "index": 6,
+      "text": "<prosody rate='medium'>C = d</prosody>",
+      "timing": {
+        "start": 9.75,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_006.mp3",
+      "type": "text_element",
+      "duration": 1.6
+    },
+    {
+      "index": 8,
+      "text": "<prosody rate='medium'>A = r^2</prosody>",
+      "timing": {
+        "start": 13.0,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_008.mp3",
+      "type": "text_element",
+      "duration": 1.6
+    },
+    {
+      "index": 10,
+      "text": "<prosody rate='medium'>C = d</prosody>",
+      "timing": {
+        "start": 16.25,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_010.mp3",
+      "type": "text_element",
+      "duration": 1.6
+    },
+    {
+      "index": 12,
+      "text": "<prosody rate='medium'>A = r^2</prosody>",
+      "timing": {
+        "start": 19.5,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_012.mp3",
+      "type": "text_element",
+      "duration": 1.6
+    },
+    {
+      "index": 14,
+      "text": "<prosody rate='medium'>Exploring Circles</prosody>",
+      "timing": {
+        "start": 22.75,
+        "duration": 3.25
+      },
+      "audio_path": "temp\\test_audio_sync\\segment_014.mp3",
+      "type": "text_element",
+      "duration": 1.2
+    }
+  ]
+}

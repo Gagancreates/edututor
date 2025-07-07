@@ -1,0 +1,285 @@
+{
+  "video_id": "9352c394-3d95-40a4-835c-03bef49903a9",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "1. Introduction (25%)",
+      "timing": {
+        "start": 0.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "What are Linked Lists?",
+      "timing": {
+        "start": 3.0,
+        "duration": 1.875
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "A collection of nodes, where each node contains data and a reference (or link) to the next node in the sequence.",
+      "timing": {
+        "start": 4.875,
+        "duration": 1.875
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Think of a train: each car is a node, holding cargo (data) and linked to the next car.",
+      "timing": {
+        "start": 6.75,
+        "duration": 1.875
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "Why important? Dynamic size, efficient insertions/deletions.",
+      "timing": {
+        "start": 8.625,
+        "duration": 1.875
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "2. Core Understanding (40%)",
+      "timing": {
+        "start": 10.5,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "Core Components: Node",
+      "timing": {
+        "start": 13.5,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Data",
+      "timing": {
+        "start": 15.071428571428571,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Next Pointer",
+      "timing": {
+        "start": 16.642857142857142,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "HEAD",
+      "timing": {
+        "start": 18.214285714285715,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "Linked List Structure",
+      "timing": {
+        "start": 19.78571428571429,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "NULL",
+      "timing": {
+        "start": 21.35714285714286,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "TAIL",
+      "timing": {
+        "start": 22.928571428571434,
+        "duration": 1.5714285714285714
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "3. Examples (25%)",
+      "timing": {
+        "start": 24.500000000000007,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "Example: Building a Linked List",
+      "timing": {
+        "start": 27.500000000000007,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Head = NULL",
+      "timing": {
+        "start": 29.136363636363644,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "HEAD",
+      "timing": {
+        "start": 30.77272727272728,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "NULL",
+      "timing": {
+        "start": 32.409090909090914,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "Adding Node (10)",
+      "timing": {
+        "start": 34.04545454545455,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "NULL",
+      "timing": {
+        "start": 35.68181818181818,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "Adding Node (20)",
+      "timing": {
+        "start": 37.31818181818181,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "NULL",
+      "timing": {
+        "start": 38.954545454545446,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "Adding Node (30)",
+      "timing": {
+        "start": 40.59090909090908,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "Traversing the List:",
+      "timing": {
+        "start": 42.22727272727271,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "Current Node: Head",
+      "timing": {
+        "start": 43.863636363636346,
+        "duration": 1.6363636363636365
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_024.mp3"
+    },
+    {
+      "index": 25,
+      "text": "4. Applications (10%)",
+      "timing": {
+        "start": 45.49999999999998,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_025.mp3"
+    },
+    {
+      "index": 26,
+      "text": "Real-World Applications",
+      "timing": {
+        "start": 48.49999999999998,
+        "duration": 1.1
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_026.mp3"
+    },
+    {
+      "index": 27,
+      "text": "1. Music Playlists:",
+      "timing": {
+        "start": 49.59999999999998,
+        "duration": 1.1
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_027.mp3"
+    },
+    {
+      "index": 28,
+      "text": "Each song is a node, linked to the next song.",
+      "timing": {
+        "start": 50.69999999999998,
+        "duration": 1.1
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_028.mp3"
+    },
+    {
+      "index": 29,
+      "text": "2. Browser History:",
+      "timing": {
+        "start": 51.79999999999998,
+        "duration": 1.1
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_029.mp3"
+    },
+    {
+      "index": 30,
+      "text": "Each page is a node, linking to previous/next pages (Doubly Linked List).",
+      "timing": {
+        "start": 52.899999999999984,
+        "duration": 1.1
+      },
+      "audio_path": "audio\\9352c394-3d95-40a4-835c-03bef49903a9\\segment_030.mp3"
+    }
+  ]
+}

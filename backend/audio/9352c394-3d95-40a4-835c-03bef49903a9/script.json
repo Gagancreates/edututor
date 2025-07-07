@@ -1,0 +1,250 @@
+[
+  {
+    "text": "1. Introduction (25%)",
+    "timing": {
+      "start": 0.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "What are Linked Lists?",
+    "timing": {
+      "start": 3.0,
+      "duration": 1.875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A collection of nodes, where each node contains data and a reference (or link) to the next node in the sequence.",
+    "timing": {
+      "start": 4.875,
+      "duration": 1.875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Think of a train: each car is a node, holding cargo (data) and linked to the next car.",
+    "timing": {
+      "start": 6.75,
+      "duration": 1.875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Why important? Dynamic size, efficient insertions/deletions.",
+    "timing": {
+      "start": 8.625,
+      "duration": 1.875
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Core Understanding (40%)",
+    "timing": {
+      "start": 10.5,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Core Components: Node",
+    "timing": {
+      "start": 13.5,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Data",
+    "timing": {
+      "start": 15.071428571428571,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Next Pointer",
+    "timing": {
+      "start": 16.642857142857142,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 18.214285714285715,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked List Structure",
+    "timing": {
+      "start": 19.78571428571429,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 21.35714285714286,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "TAIL",
+    "timing": {
+      "start": 22.928571428571434,
+      "duration": 1.5714285714285714
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Examples (25%)",
+    "timing": {
+      "start": 24.500000000000007,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Example: Building a Linked List",
+    "timing": {
+      "start": 27.500000000000007,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Head = NULL",
+    "timing": {
+      "start": 29.136363636363644,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 30.77272727272728,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 32.409090909090914,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Adding Node (10)",
+    "timing": {
+      "start": 34.04545454545455,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 35.68181818181818,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Adding Node (20)",
+    "timing": {
+      "start": 37.31818181818181,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 38.954545454545446,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Adding Node (30)",
+    "timing": {
+      "start": 40.59090909090908,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Traversing the List:",
+    "timing": {
+      "start": 42.22727272727271,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Current Node: Head",
+    "timing": {
+      "start": 43.863636363636346,
+      "duration": 1.6363636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "4. Applications (10%)",
+    "timing": {
+      "start": 45.49999999999998,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "Real-World Applications",
+    "timing": {
+      "start": 48.49999999999998,
+      "duration": 1.1
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Music Playlists:",
+    "timing": {
+      "start": 49.59999999999998,
+      "duration": 1.1
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Each song is a node, linked to the next song.",
+    "timing": {
+      "start": 50.69999999999998,
+      "duration": 1.1
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Browser History:",
+    "timing": {
+      "start": 51.79999999999998,
+      "duration": 1.1
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Each page is a node, linking to previous/next pages (Doubly Linked List).",
+    "timing": {
+      "start": 52.899999999999984,
+      "duration": 1.1
+    },
+    "type": "text_object"
+  }
+]

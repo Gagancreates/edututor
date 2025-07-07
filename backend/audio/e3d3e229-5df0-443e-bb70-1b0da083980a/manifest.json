@@ -1,0 +1,357 @@
+{
+  "video_id": "e3d3e229-5df0-443e-bb70-1b0da083980a",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "Understanding Linked Lists",
+      "timing": {
+        "start": 0.0,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "A linear data structure where elements are NOT stored at contiguous memory locations.",
+      "timing": {
+        "start": 0.1794871794871795,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "Instead, each element, called a ",
+      "timing": {
+        "start": 0.358974358974359,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Array",
+      "timing": {
+        "start": 0.5384615384615384,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "10",
+      "timing": {
+        "start": 0.717948717948718,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "20",
+      "timing": {
+        "start": 0.8974358974358975,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "30",
+      "timing": {
+        "start": 1.0769230769230769,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Linked List",
+      "timing": {
+        "start": 1.2564102564102564,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "The Node: Building Block of Linked Lists",
+      "timing": {
+        "start": 1.435897435897436,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Data",
+      "timing": {
+        "start": 1.6153846153846154,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "Next Pointer",
+      "timing": {
+        "start": 1.794871794871795,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "Data: Stores the actual value or information (e.g., a number, name, object).",
+      "timing": {
+        "start": 1.9743589743589745,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Next Pointer: Stores the memory address (reference) of the next node in the sequence.",
+      "timing": {
+        "start": 2.1538461538461537,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "NULL",
+      "timing": {
+        "start": 2.333333333333333,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "If a node is the last in the list, its ",
+      "timing": {
+        "start": 2.5128205128205123,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Building a Linked List",
+      "timing": {
+        "start": 2.6923076923076916,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "HEAD",
+      "timing": {
+        "start": 2.871794871794871,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "NULL",
+      "timing": {
+        "start": 3.05128205128205,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "Elements are scattered in memory but logically linked via pointers.",
+      "timing": {
+        "start": 3.2307692307692295,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "Insertion into a Linked List",
+      "timing": {
+        "start": 3.410256410256409,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "HEAD",
+      "timing": {
+        "start": 3.589743589743588,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "NULL",
+      "timing": {
+        "start": 3.7692307692307674,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "New Node: 25",
+      "timing": {
+        "start": 3.9487179487179467,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "1. New node",
+      "timing": {
+        "start": 4.128205128205126,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "2. Node 20",
+      "timing": {
+        "start": 4.307692307692306,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_024.mp3"
+    },
+    {
+      "index": 25,
+      "text": "Deletion from a Linked List",
+      "timing": {
+        "start": 4.4871794871794854,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_025.mp3"
+    },
+    {
+      "index": 26,
+      "text": "HEAD",
+      "timing": {
+        "start": 4.666666666666665,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_026.mp3"
+    },
+    {
+      "index": 27,
+      "text": "NULL",
+      "timing": {
+        "start": 4.846153846153845,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_027.mp3"
+    },
+    {
+      "index": 28,
+      "text": "Deleting Node: 30",
+      "timing": {
+        "start": 5.025641025641025,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_028.mp3"
+    },
+    {
+      "index": 29,
+      "text": "1. Update Node 20",
+      "timing": {
+        "start": 5.205128205128204,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_029.mp3"
+    },
+    {
+      "index": 30,
+      "text": "2. Node 30 is effectively removed; its memory can be reclaimed.",
+      "timing": {
+        "start": 5.384615384615384,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_030.mp3"
+    },
+    {
+      "index": 31,
+      "text": "Advantages and Applications",
+      "timing": {
+        "start": 5.564102564102564,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_031.mp3"
+    },
+    {
+      "index": 32,
+      "text": "1. Dynamic Size: Can grow or shrink as needed at runtime.",
+      "timing": {
+        "start": 5.743589743589744,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_032.mp3"
+    },
+    {
+      "index": 33,
+      "text": "2. Efficient Insertions/Deletions: Only pointer adjustments needed (O(1)) once position found.",
+      "timing": {
+        "start": 5.923076923076923,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_033.mp3"
+    },
+    {
+      "index": 34,
+      "text": "Disadvantage: No random access (e.g., cannot directly access the 5th element).",
+      "timing": {
+        "start": 6.102564102564103,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_034.mp3"
+    },
+    {
+      "index": 35,
+      "text": "Common Applications:",
+      "timing": {
+        "start": 6.282051282051283,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_035.mp3"
+    },
+    {
+      "index": 36,
+      "text": "\u2022 Implement Stacks and Queues",
+      "timing": {
+        "start": 6.461538461538463,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_036.mp3"
+    },
+    {
+      "index": 37,
+      "text": "\u2022 Dynamic Memory Allocation",
+      "timing": {
+        "start": 6.641025641025642,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_037.mp3"
+    },
+    {
+      "index": 38,
+      "text": "\u2022 Represent Polynomials and Symbol Tables",
+      "timing": {
+        "start": 6.820512820512822,
+        "duration": 0.1794871794871795
+      },
+      "audio_path": "audio\\e3d3e229-5df0-443e-bb70-1b0da083980a\\segment_038.mp3"
+    }
+  ]
+}

@@ -67,9 +67,11 @@ class ManimEducationalAgent:
 GENERATE PURE PYTHON CODE ONLY - NO MARKDOWN, NO EXPLANATIONS OUTSIDE CODE
 
 CRITICAL MANIM REQUIREMENTS:
--add comments before each scene - a concise comment about the scene (example: let us now see what is linked lists with an example)
+-CRITCIAL: Generate ManimCE 0.18-compliant code only; do not call set_fill() or set_stroke() with unsupported parameters like ‘family’ — use only arguments officially documented in ManimCE 0.18
 -**make sure that you dont overwrite the text from the previous scene**
 -**make sure that all the text rendered does not overlap**
+-*"Only use VGroup.add() for VMobjects; never add animations like .animate to VGroups — instead, collect animations in a list and play them with self.play(animations)."
+-"Before calling self.play(animations), check that the animations list is not empty — only call self.play if animations exist.  
 - from manim import * (required import)
 -"Ensure all code uses consistent 4-space indentation with no mixed tabs/spaces, and validate proper Python syntax structure.
 - class CreateScene(Scene): (exact class name and inheritance)
@@ -81,10 +83,12 @@ CRITICAL MANIM REQUIREMENTS:
 - Always include self.wait() between animations (1-3 seconds)
 - End with self.play(FadeOut(*self.mobjects))
 - run_time between 0.5-2 seconds for all animations
+-do not include unsupported keywords like ‘word_wrap’ or others not in the official Manim documentation
 - Avoid display_frame, ZoomedScene, TransformMatchingTex errors
 
 
 COMPATIBILITY WARNINGS:
+-Generate Manim code compatible with the latest stable version of Manim Community Edition (v0.18+), avoiding deprecated methods and unsupported keyword arguments by strictly following the current official Manim API.
 -Ensure all LaTeX strings are valid and escape special characters (like underscores as \_) to avoid LaTeX compilation errors
 -Ensure all methods are properly called with parentheses and correct arguments, so that variables used in arithmetic are numeric values, not method objects, to avoid TypeError issues
 - DO NOT use .align_left(), .align_right(), or .align_center() methods on Text objects

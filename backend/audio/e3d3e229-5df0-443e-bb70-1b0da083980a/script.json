@@ -1,0 +1,314 @@
+[
+  {
+    "text": "Understanding Linked Lists",
+    "timing": {
+      "start": 0.0,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "A linear data structure where elements are NOT stored at contiguous memory locations.",
+    "timing": {
+      "start": 0.1794871794871795,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Instead, each element, called a ",
+    "timing": {
+      "start": 0.358974358974359,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Array",
+    "timing": {
+      "start": 0.5384615384615384,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "10",
+    "timing": {
+      "start": 0.717948717948718,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "20",
+    "timing": {
+      "start": 0.8974358974358975,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "30",
+    "timing": {
+      "start": 1.0769230769230769,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked List",
+    "timing": {
+      "start": 1.2564102564102564,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The Node: Building Block of Linked Lists",
+    "timing": {
+      "start": 1.435897435897436,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Data",
+    "timing": {
+      "start": 1.6153846153846154,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Next Pointer",
+    "timing": {
+      "start": 1.794871794871795,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Data: Stores the actual value or information (e.g., a number, name, object).",
+    "timing": {
+      "start": 1.9743589743589745,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Next Pointer: Stores the memory address (reference) of the next node in the sequence.",
+    "timing": {
+      "start": 2.1538461538461537,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 2.333333333333333,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "If a node is the last in the list, its ",
+    "timing": {
+      "start": 2.5128205128205123,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Building a Linked List",
+    "timing": {
+      "start": 2.6923076923076916,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 2.871794871794871,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 3.05128205128205,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Elements are scattered in memory but logically linked via pointers.",
+    "timing": {
+      "start": 3.2307692307692295,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Insertion into a Linked List",
+    "timing": {
+      "start": 3.410256410256409,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 3.589743589743588,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 3.7692307692307674,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "New Node: 25",
+    "timing": {
+      "start": 3.9487179487179467,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. New node",
+    "timing": {
+      "start": 4.128205128205126,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Node 20",
+    "timing": {
+      "start": 4.307692307692306,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Deletion from a Linked List",
+    "timing": {
+      "start": 4.4871794871794854,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 4.666666666666665,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 4.846153846153845,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Deleting Node: 30",
+    "timing": {
+      "start": 5.025641025641025,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Update Node 20",
+    "timing": {
+      "start": 5.205128205128204,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Node 30 is effectively removed; its memory can be reclaimed.",
+    "timing": {
+      "start": 5.384615384615384,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Advantages and Applications",
+    "timing": {
+      "start": 5.564102564102564,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Dynamic Size: Can grow or shrink as needed at runtime.",
+    "timing": {
+      "start": 5.743589743589744,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Efficient Insertions/Deletions: Only pointer adjustments needed (O(1)) once position found.",
+    "timing": {
+      "start": 5.923076923076923,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Disadvantage: No random access (e.g., cannot directly access the 5th element).",
+    "timing": {
+      "start": 6.102564102564103,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Common Applications:",
+    "timing": {
+      "start": 6.282051282051283,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Implement Stacks and Queues",
+    "timing": {
+      "start": 6.461538461538463,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Dynamic Memory Allocation",
+    "timing": {
+      "start": 6.641025641025642,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Represent Polynomials and Symbol Tables",
+    "timing": {
+      "start": 6.820512820512822,
+      "duration": 0.1794871794871795
+    },
+    "type": "text_object"
+  }
+]

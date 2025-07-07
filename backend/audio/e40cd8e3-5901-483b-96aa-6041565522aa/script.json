@@ -1,0 +1,354 @@
+[
+  {
+    "text": "Understanding Data Structures: Linked Lists",
+    "timing": {
+      "start": 0.0,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "What is a Linked List?",
+    "timing": {
+      "start": 1.5113636363636365,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. A linear collection of data elements.",
+    "timing": {
+      "start": 3.022727272727273,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Elements are not stored at contiguous memory locations.",
+    "timing": {
+      "start": 4.534090909090909,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Each element is a ",
+    "timing": {
+      "start": 6.045454545454546,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Arrays vs. Linked Lists",
+    "timing": {
+      "start": 7.5568181818181825,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Arrays: Fixed size, contiguous memory.",
+    "timing": {
+      "start": 9.068181818181818,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked Lists: Dynamic size, scattered memory.",
+    "timing": {
+      "start": 10.579545454545455,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Components of a Linked List: The Node",
+    "timing": {
+      "start": 12.090909090909092,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Each element in a Linked List is called a ",
+    "timing": {
+      "start": 13.602272727272728,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Data",
+    "timing": {
+      "start": 15.113636363636365,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Next",
+    "timing": {
+      "start": 16.625,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Node",
+    "timing": {
+      "start": 18.136363636363637,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The ",
+    "timing": {
+      "start": 19.647727272727273,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The last node",
+    "timing": {
+      "start": 21.15909090909091,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Building a Linked List",
+    "timing": {
+      "start": 22.670454545454547,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "10",
+    "timing": {
+      "start": 24.181818181818183,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Node 1",
+    "timing": {
+      "start": 25.69318181818182,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 27.204545454545457,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "20",
+    "timing": {
+      "start": 28.715909090909093,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Node 2",
+    "timing": {
+      "start": 30.22727272727273,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "30",
+    "timing": {
+      "start": 31.738636363636367,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Node 3",
+    "timing": {
+      "start": 33.25,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 34.76136363636363,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Traversal: Visiting Each Node",
+    "timing": {
+      "start": 36.272727272727266,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Current",
+    "timing": {
+      "start": 37.7840909090909,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Insertion: Adding a New Node",
+    "timing": {
+      "start": 39.29545454545453,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "40",
+    "timing": {
+      "start": 40.806818181818166,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "New Node",
+    "timing": {
+      "start": 42.3181818181818,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Create a new node.",
+    "timing": {
+      "start": 43.82954545454543,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Point the last node",
+    "timing": {
+      "start": 45.340909090909065,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. New node",
+    "timing": {
+      "start": 46.8522727272727,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 48.36363636363633,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Deletion: Removing a Node",
+    "timing": {
+      "start": 49.874999999999964,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Target: Node 2 (20)",
+    "timing": {
+      "start": 51.3863636363636,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Find the node BEFORE the target node.",
+    "timing": {
+      "start": 52.89772727272723,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Update its ",
+    "timing": {
+      "start": 54.409090909090864,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Remove the target node.",
+    "timing": {
+      "start": 55.9204545454545,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Applications of Linked Lists",
+    "timing": {
+      "start": 57.43181818181813,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "1. Implementing Stacks and Queues.",
+    "timing": {
+      "start": 58.94318181818176,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "2. Image Viewers (next/previous image).",
+    "timing": {
+      "start": 60.454545454545396,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "3. Music Playlists (next/previous song).",
+    "timing": {
+      "start": 61.96590909090903,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "4. Dynamic Memory Allocation.",
+    "timing": {
+      "start": 63.47727272727266,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked Lists offer flexible memory management for dynamic data.",
+    "timing": {
+      "start": 64.9886363636363,
+      "duration": 1.5113636363636365
+    },
+    "type": "text_object"
+  }
+]

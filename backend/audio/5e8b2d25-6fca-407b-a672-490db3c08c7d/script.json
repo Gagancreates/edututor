@@ -1,0 +1,26 @@
+[
+  {
+    "text": "1. New node's next points to old head",
+    "timing": {
+      "start": 0.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "2. Head points to new node",
+    "timing": {
+      "start": 4.0,
+      "duration": 3.0
+    },
+    "type": "section_title"
+  },
+  {
+    "text": "NEW HEAD",
+    "timing": {
+      "start": 7.0,
+      "duration": 5.0
+    },
+    "type": "text_object"
+  }
+]

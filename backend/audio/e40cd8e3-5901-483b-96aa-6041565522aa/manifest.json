@@ -1,0 +1,384 @@
+{
+  "video_id": "e40cd8e3-5901-483b-96aa-6041565522aa",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "Understanding Data Structures: Linked Lists",
+      "timing": {
+        "start": 0.0,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_000.mp3"
+    },
+    {
+      "index": 2,
+      "text": "1. A linear collection of data elements.",
+      "timing": {
+        "start": 3.022727272727273,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_002.mp3"
+    },
+    {
+      "index": 4,
+      "text": "3. Each element is a ",
+      "timing": {
+        "start": 6.045454545454546,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "Arrays vs. Linked Lists",
+      "timing": {
+        "start": 7.5568181818181825,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "Arrays: Fixed size, contiguous memory.",
+      "timing": {
+        "start": 9.068181818181818,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Linked Lists: Dynamic size, scattered memory.",
+      "timing": {
+        "start": 10.579545454545455,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Components of a Linked List: The Node",
+      "timing": {
+        "start": 12.090909090909092,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Each element in a Linked List is called a ",
+      "timing": {
+        "start": 13.602272727272728,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "Data",
+      "timing": {
+        "start": 15.113636363636365,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "Next",
+      "timing": {
+        "start": 16.625,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Node",
+      "timing": {
+        "start": 18.136363636363637,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "The ",
+      "timing": {
+        "start": 19.647727272727273,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "The last node",
+      "timing": {
+        "start": 21.15909090909091,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Building a Linked List",
+      "timing": {
+        "start": 22.670454545454547,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "10",
+      "timing": {
+        "start": 24.181818181818183,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "Node 1",
+      "timing": {
+        "start": 25.69318181818182,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "HEAD",
+      "timing": {
+        "start": 27.204545454545457,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "20",
+      "timing": {
+        "start": 28.715909090909093,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "Node 2",
+      "timing": {
+        "start": 30.22727272727273,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "30",
+      "timing": {
+        "start": 31.738636363636367,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "Node 3",
+      "timing": {
+        "start": 33.25,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "NULL",
+      "timing": {
+        "start": 34.76136363636363,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "Traversal: Visiting Each Node",
+      "timing": {
+        "start": 36.272727272727266,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_024.mp3"
+    },
+    {
+      "index": 25,
+      "text": "Current",
+      "timing": {
+        "start": 37.7840909090909,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_025.mp3"
+    },
+    {
+      "index": 26,
+      "text": "Insertion: Adding a New Node",
+      "timing": {
+        "start": 39.29545454545453,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_026.mp3"
+    },
+    {
+      "index": 27,
+      "text": "40",
+      "timing": {
+        "start": 40.806818181818166,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_027.mp3"
+    },
+    {
+      "index": 28,
+      "text": "New Node",
+      "timing": {
+        "start": 42.3181818181818,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_028.mp3"
+    },
+    {
+      "index": 29,
+      "text": "1. Create a new node.",
+      "timing": {
+        "start": 43.82954545454543,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_029.mp3"
+    },
+    {
+      "index": 30,
+      "text": "2. Point the last node",
+      "timing": {
+        "start": 45.340909090909065,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_030.mp3"
+    },
+    {
+      "index": 31,
+      "text": "3. New node",
+      "timing": {
+        "start": 46.8522727272727,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_031.mp3"
+    },
+    {
+      "index": 32,
+      "text": "NULL",
+      "timing": {
+        "start": 48.36363636363633,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_032.mp3"
+    },
+    {
+      "index": 33,
+      "text": "Deletion: Removing a Node",
+      "timing": {
+        "start": 49.874999999999964,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_033.mp3"
+    },
+    {
+      "index": 34,
+      "text": "Target: Node 2 (20)",
+      "timing": {
+        "start": 51.3863636363636,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_034.mp3"
+    },
+    {
+      "index": 35,
+      "text": "1. Find the node BEFORE the target node.",
+      "timing": {
+        "start": 52.89772727272723,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_035.mp3"
+    },
+    {
+      "index": 36,
+      "text": "2. Update its ",
+      "timing": {
+        "start": 54.409090909090864,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_036.mp3"
+    },
+    {
+      "index": 37,
+      "text": "3. Remove the target node.",
+      "timing": {
+        "start": 55.9204545454545,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_037.mp3"
+    },
+    {
+      "index": 38,
+      "text": "Applications of Linked Lists",
+      "timing": {
+        "start": 57.43181818181813,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_038.mp3"
+    },
+    {
+      "index": 39,
+      "text": "1. Implementing Stacks and Queues.",
+      "timing": {
+        "start": 58.94318181818176,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_039.mp3"
+    },
+    {
+      "index": 40,
+      "text": "2. Image Viewers (next/previous image).",
+      "timing": {
+        "start": 60.454545454545396,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_040.mp3"
+    },
+    {
+      "index": 41,
+      "text": "3. Music Playlists (next/previous song).",
+      "timing": {
+        "start": 61.96590909090903,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_041.mp3"
+    },
+    {
+      "index": 42,
+      "text": "4. Dynamic Memory Allocation.",
+      "timing": {
+        "start": 63.47727272727266,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_042.mp3"
+    },
+    {
+      "index": 43,
+      "text": "Linked Lists offer flexible memory management for dynamic data.",
+      "timing": {
+        "start": 64.9886363636363,
+        "duration": 1.5113636363636365
+      },
+      "audio_path": "audio\\e40cd8e3-5901-483b-96aa-6041565522aa\\segment_043.mp3"
+    }
+  ]
+}

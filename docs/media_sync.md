@@ -169,96 +169,7 @@ This document outlines the technical approach for improving audio-video synchron
    - Create markers for pauses and pace changes
    - Generate a sequence of narration segments with timing information
 
-## LLM-Enhanced Narration
 
-### Generating Contextual Narration
-
-1. **Scene Context Generation**
-   - Send scene content to LLM for analysis
-   - Request educational narration for each scene
-   - Generate transition phrases between scenes
-
-   ```python
-   def generate_scene_narration(scene_data):
-       # Prepare prompt for the LLM
-       prompt = f"""
-       You are an educational narrator for a mathematics visualization.
-       Below is the code for a scene in a Manim animation:
-       
-       ```python
-       {scene_data['content']}
-       ```
-       
-       The scene contains these text elements: {scene_data['text_elements']}
-       
-       Please generate:
-       1. A brief introduction to this scene (1-2 sentences)
-       2. Educational narration that explains what's happening
-       3. A smooth transition to the next scene
-       
-       Format your response as JSON with keys: "intro", "narration", "transition"
-       """
-       
-       # Call Gemini API
-       response = gemini_service.generate_content(prompt)
-       
-       # Parse the JSON response
-       try:
-           narration_data = json.loads(response)
-           return narration_data
-       except:
-           # Fallback if JSON parsing fails
-           return {
-               "intro": "In this scene, we'll explore the concept.",
-               "narration": "The visualization demonstrates the key principles.",
-               "transition": "Now, let's move on to the next part."
-           }
-   ```
-
-2. **Narration Script Assembly**
-   - Combine LLM-generated narration with extracted text
-   - Structure the script with timing information
-   - Add SSML tags for pacing and pauses
-
-   ```python
-   def assemble_narration_script(timing_map):
-       script_segments = []
-       
-       for scene in timing_map:
-           # Generate narration for this scene
-           narration = generate_scene_narration(scene)
-           
-           # Add scene introduction with pause
-           script_segments.append({
-               "text": f"<prosody rate='medium'>{narration['intro']}</prosody><break time='1s'/>",
-               "time": scene["start_time"],
-               "type": "intro"
-           })
-           
-           # Add text elements with appropriate timing
-           for text_elem in scene["text_elements"]:
-               script_segments.append({
-                   "text": f"<prosody rate='medium'>{text_elem['content']}</prosody><break time='0.5s'/>",
-                   "time": scene["start_time"] + (scene["duration"] * 0.3),  # Approximate timing
-                   "type": "content"
-               })
-           
-           # Add educational narration
-           script_segments.append({
-               "text": f"<prosody rate='medium'>{narration['narration']}</prosody><break time='0.7s'/>",
-               "time": scene["start_time"] + (scene["duration"] * 0.6),  # Later in the scene
-               "type": "explanation"
-           })
-           
-           # Add transition to next scene
-           script_segments.append({
-               "text": f"<prosody rate='medium'>{narration['transition']}</prosody><break time='1.2s'/>",
-               "time": scene["end_time"] - 2.0,  # Near the end of the scene
-               "type": "transition"
-           })
-       
-       return script_segments
-   ```
 
 ## Audio Generation with SSML
 
@@ -440,11 +351,7 @@ This document outlines the technical approach for improving audio-video synchron
 3. Parse comments and narration instructions
 4. Generate initial timing map
 
-### Phase 2: LLM Narration Integration
-1. Implement scene context generation
-2. Create narration script assembly
-3. Add SSML tags for pacing control
-4. Test narration quality and relevance
+
 
 ### Phase 3: Audio Generation Enhancements
 1. Implement chunked audio generation
@@ -472,19 +379,3 @@ This document outlines the technical approach for improving audio-video synchron
 3. Test with different video lengths and complexities
 4. Ensure graceful handling of edge cases
 
-## Future Improvements
-
-1. **Machine Learning-based Timing**
-   - Train a model to predict optimal narration timing
-   - Use computer vision to detect key visual moments
-   - Automatically adjust narration pacing
-
-2. **Interactive Synchronization**
-   - Allow users to adjust timing parameters
-   - Implement real-time feedback for synchronization issues
-   - Create an interactive editor for narration timing
-
-3. **Multi-language Support**
-   - Extend synchronization approach to multiple languages
-   - Account for different speech rates across languages
-   - Maintain timing consistency across translations 

@@ -1,0 +1,33 @@
+{
+  "video_id": "5e8b2d25-6fca-407b-a672-490db3c08c7d",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "1. New node's next points to old head",
+      "timing": {
+        "start": 0.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\5e8b2d25-6fca-407b-a672-490db3c08c7d\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "2. Head points to new node",
+      "timing": {
+        "start": 4.0,
+        "duration": 3.0
+      },
+      "audio_path": "audio\\5e8b2d25-6fca-407b-a672-490db3c08c7d\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "NEW HEAD",
+      "timing": {
+        "start": 7.0,
+        "duration": 5.0
+      },
+      "audio_path": "audio\\5e8b2d25-6fca-407b-a672-490db3c08c7d\\segment_002.mp3"
+    }
+  ]
+}
