@@ -1,0 +1,294 @@
+{
+  "video_id": "test_script_gen",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "Data Structures",
+      "timing": {
+        "start": 0.0,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "Ways to organize and store data efficiently.",
+      "timing": {
+        "start": 1.84375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "Arrays: Fixed Size, Contiguous Memory",
+      "timing": {
+        "start": 3.6875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Limitations: Fixed size, expensive insertions/deletions.",
+      "timing": {
+        "start": 5.53125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "Linked Lists: Dynamic, Flexible",
+      "timing": {
+        "start": 7.375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "Overcome array limitations with dynamic memory allocation.",
+      "timing": {
+        "start": 9.21875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "The Building Block: A Node",
+      "timing": {
+        "start": 11.0625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_006.mp3"
+    },
+    {
+      "index": 7,
+      "text": "Data",
+      "timing": {
+        "start": 12.90625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_007.mp3"
+    },
+    {
+      "index": 8,
+      "text": "Next",
+      "timing": {
+        "start": 14.75,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Node",
+      "timing": {
+        "start": 16.59375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "Stores the actual value.",
+      "timing": {
+        "start": 18.4375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "Points to the next node.",
+      "timing": {
+        "start": 20.28125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Building a Linked List",
+      "timing": {
+        "start": 22.125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "HEAD",
+      "timing": {
+        "start": 23.96875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "NULL",
+      "timing": {
+        "start": 25.8125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "Each node",
+      "timing": {
+        "start": 27.65625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "Insertion: Adding a Node",
+      "timing": {
+        "start": 29.5,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "HEAD",
+      "timing": {
+        "start": 31.34375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "NULL",
+      "timing": {
+        "start": 33.1875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "Case 1: Insert at the Beginning (e.g., value 5)",
+      "timing": {
+        "start": 35.03125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "Case 2: Insert in the Middle (e.g., value 15 between 10 and 20)",
+      "timing": {
+        "start": 36.875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "Deletion: Removing a Node",
+      "timing": {
+        "start": 38.71875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "HEAD",
+      "timing": {
+        "start": 40.5625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "NULL",
+      "timing": {
+        "start": 42.40625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "Case 1: Delete from the Beginning (e.g., value 10)",
+      "timing": {
+        "start": 44.25,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_024.mp3"
+    },
+    {
+      "index": 25,
+      "text": "Case 2: Delete from the Middle (e.g., value 20)",
+      "timing": {
+        "start": 46.09375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_025.mp3"
+    },
+    {
+      "index": 26,
+      "text": "Applications of Linked Lists",
+      "timing": {
+        "start": 47.9375,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_026.mp3"
+    },
+    {
+      "index": 27,
+      "text": "\u2022 Implementing Stacks and Queues",
+      "timing": {
+        "start": 49.78125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_027.mp3"
+    },
+    {
+      "index": 28,
+      "text": "\u2022 Music Playlists (next/previous song)",
+      "timing": {
+        "start": 51.625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_028.mp3"
+    },
+    {
+      "index": 29,
+      "text": "\u2022 Image Viewers (next/previous image)",
+      "timing": {
+        "start": 53.46875,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_029.mp3"
+    },
+    {
+      "index": 30,
+      "text": "\u2022 Undo/Redo Functionality",
+      "timing": {
+        "start": 55.3125,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_030.mp3"
+    },
+    {
+      "index": 31,
+      "text": "Linked Lists: Essential for dynamic data management.",
+      "timing": {
+        "start": 57.15625,
+        "duration": 1.84375
+      },
+      "audio_path": "audio\\test_script_gen\\segment_031.mp3"
+    }
+  ]
+}

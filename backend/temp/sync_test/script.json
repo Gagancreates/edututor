@@ -1,0 +1,66 @@
+[
+  {
+    "text": "Welcome to this demonstration of circle properties.",
+    "timing": {
+      "start": 0.0,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "Let's start by creating a circle with radius 2.",
+    "timing": {
+      "start": 1.375,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "The center of a circle is the point from which all points on the circle are equidistant.",
+    "timing": {
+      "start": 2.75,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "The radius is the distance from the center to any point on the circle.",
+    "timing": {
+      "start": 4.125,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "The diameter is twice the radius and passes through the center.",
+    "timing": {
+      "start": 5.5,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "The circumference of a circle equals pi times the diameter.",
+    "timing": {
+      "start": 6.875,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "The area of a circle equals pi times the radius squared.",
+    "timing": {
+      "start": 8.25,
+      "duration": 1.375
+    },
+    "type": "narration"
+  },
+  {
+    "text": "Understanding these properties is fundamental to mathematics.",
+    "timing": {
+      "start": 9.625,
+      "duration": 1.375
+    },
+    "type": "narration"
+  }
+]

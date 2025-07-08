@@ -1,0 +1,258 @@
+[
+  {
+    "text": "Data Structures",
+    "timing": {
+      "start": 0.0,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Ways to organize and store data efficiently.",
+    "timing": {
+      "start": 1.84375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Arrays: Fixed Size, Contiguous Memory",
+    "timing": {
+      "start": 3.6875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Limitations: Fixed size, expensive insertions/deletions.",
+    "timing": {
+      "start": 5.53125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked Lists: Dynamic, Flexible",
+    "timing": {
+      "start": 7.375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Overcome array limitations with dynamic memory allocation.",
+    "timing": {
+      "start": 9.21875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "The Building Block: A Node",
+    "timing": {
+      "start": 11.0625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Data",
+    "timing": {
+      "start": 12.90625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Next",
+    "timing": {
+      "start": 14.75,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Node",
+    "timing": {
+      "start": 16.59375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Stores the actual value.",
+    "timing": {
+      "start": 18.4375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Points to the next node.",
+    "timing": {
+      "start": 20.28125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Building a Linked List",
+    "timing": {
+      "start": 22.125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 23.96875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 25.8125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Each node",
+    "timing": {
+      "start": 27.65625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Insertion: Adding a Node",
+    "timing": {
+      "start": 29.5,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 31.34375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 33.1875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Case 1: Insert at the Beginning (e.g., value 5)",
+    "timing": {
+      "start": 35.03125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Case 2: Insert in the Middle (e.g., value 15 between 10 and 20)",
+    "timing": {
+      "start": 36.875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Deletion: Removing a Node",
+    "timing": {
+      "start": 38.71875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "HEAD",
+    "timing": {
+      "start": 40.5625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "NULL",
+    "timing": {
+      "start": 42.40625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Case 1: Delete from the Beginning (e.g., value 10)",
+    "timing": {
+      "start": 44.25,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Case 2: Delete from the Middle (e.g., value 20)",
+    "timing": {
+      "start": 46.09375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Applications of Linked Lists",
+    "timing": {
+      "start": 47.9375,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Implementing Stacks and Queues",
+    "timing": {
+      "start": 49.78125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Music Playlists (next/previous song)",
+    "timing": {
+      "start": 51.625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Image Viewers (next/previous image)",
+    "timing": {
+      "start": 53.46875,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "\u2022 Undo/Redo Functionality",
+    "timing": {
+      "start": 55.3125,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  },
+  {
+    "text": "Linked Lists: Essential for dynamic data management.",
+    "timing": {
+      "start": 57.15625,
+      "duration": 1.84375
+    },
+    "type": "text_object"
+  }
+]

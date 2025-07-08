@@ -1,0 +1,366 @@
+{
+  "video_id": "test_narration_extraction",
+  "voice_id": "EXAVITQu4vr4xnSDxMaL",
+  "segments": [
+    {
+      "index": 0,
+      "text": "Welcome to our exploration of algebra! Today, we're going to demystify",
+      "timing": {
+        "start": 0.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_000.mp3"
+    },
+    {
+      "index": 1,
+      "text": "one of the most powerful tools for solving quadratic equations:",
+      "timing": {
+        "start": 2.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_001.mp3"
+    },
+    {
+      "index": 2,
+      "text": "the quadratic formula. Let's begin by understanding what a quadratic equation looks like.",
+      "timing": {
+        "start": 4.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_002.mp3"
+    },
+    {
+      "index": 3,
+      "text": "A quadratic equation is a polynomial equation of the second degree,",
+      "timing": {
+        "start": 6.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_003.mp3"
+    },
+    {
+      "index": 4,
+      "text": "meaning it contains at least one term where the variable is squared.",
+      "timing": {
+        "start": 8.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_004.mp3"
+    },
+    {
+      "index": 5,
+      "text": "Its standard form is `ax^2 + bx + c = 0`, where 'a', 'b', and 'c' are coefficients,",
+      "timing": {
+        "start": 10.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_005.mp3"
+    },
+    {
+      "index": 6,
+      "text": "and 'a' cannot be zero.",
+      "timing": {
+        "start": 12.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_006.mp3"
+    },
+    {
+      "index": 8,
+      "text": "We'll solve the equation: `2x^2 + 5x - 3 = 0`.",
+      "timing": {
+        "start": 16.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_008.mp3"
+    },
+    {
+      "index": 9,
+      "text": "Here, we need to identify the values of 'a', 'b', and 'c'.",
+      "timing": {
+        "start": 18.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_009.mp3"
+    },
+    {
+      "index": 10,
+      "text": "By comparing our example to the standard form,",
+      "timing": {
+        "start": 20.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_010.mp3"
+    },
+    {
+      "index": 11,
+      "text": "we can clearly see that 'a' is 2, 'b' is 5, and 'c' is -3.",
+      "timing": {
+        "start": 22.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_011.mp3"
+    },
+    {
+      "index": 12,
+      "text": "Now that we've identified our coefficients, let's introduce the strategy:",
+      "timing": {
+        "start": 24.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_012.mp3"
+    },
+    {
+      "index": 13,
+      "text": "the Quadratic Formula itself. This formula provides a direct way",
+      "timing": {
+        "start": 26.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_013.mp3"
+    },
+    {
+      "index": 14,
+      "text": "to find the values of 'x' that satisfy a quadratic equation.",
+      "timing": {
+        "start": 28.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_014.mp3"
+    },
+    {
+      "index": 15,
+      "text": "This is the quadratic formula. It looks complex at first,",
+      "timing": {
+        "start": 30.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_015.mp3"
+    },
+    {
+      "index": 16,
+      "text": "but by breaking it down, we'll see how straightforward it is to use.",
+      "timing": {
+        "start": 32.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_016.mp3"
+    },
+    {
+      "index": 17,
+      "text": "Our goal is to substitute the values of 'a', 'b', and 'c' from our example",
+      "timing": {
+        "start": 34.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_017.mp3"
+    },
+    {
+      "index": 18,
+      "text": "into this formula, and then simplify the expression to find the solutions for 'x'.",
+      "timing": {
+        "start": 36.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_018.mp3"
+    },
+    {
+      "index": 19,
+      "text": "These solutions are also known as the roots of the equation.",
+      "timing": {
+        "start": 38.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_019.mp3"
+    },
+    {
+      "index": 20,
+      "text": "Let's begin our step-by-step solution.",
+      "timing": {
+        "start": 40.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_020.mp3"
+    },
+    {
+      "index": 21,
+      "text": "Step 1 involves substituting the identified values of 'a', 'b', and 'c'",
+      "timing": {
+        "start": 42.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_021.mp3"
+    },
+    {
+      "index": 22,
+      "text": "into the quadratic formula. This is the foundation for all subsequent calculations.",
+      "timing": {
+        "start": 44.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_022.mp3"
+    },
+    {
+      "index": 23,
+      "text": "Step 2 focuses on calculating the discriminant, which is the part under the square root:",
+      "timing": {
+        "start": 46.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_023.mp3"
+    },
+    {
+      "index": 24,
+      "text": "`b^2 - 4ac`. This value tells us about the nature of the roots.",
+      "timing": {
+        "start": 48.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_024.mp3"
+    },
+    {
+      "index": 25,
+      "text": "Step 3 is to take the square root of the discriminant.",
+      "timing": {
+        "start": 50.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_025.mp3"
+    },
+    {
+      "index": 26,
+      "text": "Since our discriminant is 49, its square root is simply 7.",
+      "timing": {
+        "start": 52.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_026.mp3"
+    },
+    {
+      "index": 27,
+      "text": "Step 4 is to calculate the denominator of the quadratic formula, which is `2a`.",
+      "timing": {
+        "start": 54.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_027.mp3"
+    },
+    {
+      "index": 28,
+      "text": "For our problem, with 'a' being 2, this simply becomes 2 times 2.",
+      "timing": {
+        "start": 56.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_028.mp3"
+    },
+    {
+      "index": 29,
+      "text": "Now, for Step 5, we reassemble the simplified parts back into the quadratic formula.",
+      "timing": {
+        "start": 58.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_029.mp3"
+    },
+    {
+      "index": 30,
+      "text": "We have -b which is -5, plus or minus the square root of D which is 7,",
+      "timing": {
+        "start": 60.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_030.mp3"
+    },
+    {
+      "index": 31,
+      "text": "all divided by 2a which is 4.",
+      "timing": {
+        "start": 62.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_031.mp3"
+    },
+    {
+      "index": 32,
+      "text": "In Step 6, we finally separate the formula into two distinct solutions:",
+      "timing": {
+        "start": 64.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_032.mp3"
+    },
+    {
+      "index": 33,
+      "text": "one using the positive sign, and one using the negative sign.",
+      "timing": {
+        "start": 66.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_033.mp3"
+    },
+    {
+      "index": 34,
+      "text": "This is because quadratic equations can have up to two real solutions.",
+      "timing": {
+        "start": 68.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_034.mp3"
+    },
+    {
+      "index": 35,
+      "text": "Finally, let's verify one of our solutions to ensure it's correct.",
+      "timing": {
+        "start": 70.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_035.mp3"
+    },
+    {
+      "index": 36,
+      "text": "We'll take `x = 1/2` and substitute it back into our original equation:",
+      "timing": {
+        "start": 72.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_036.mp3"
+    },
+    {
+      "index": 37,
+      "text": "`2x^2 + 5x - 3 = 0`. If our calculation is correct, the equation should balance to zero.",
+      "timing": {
+        "start": 74.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_037.mp3"
+    },
+    {
+      "index": 38,
+      "text": "Since we arrived at `0 = 0`, our solution `x = 1/2` is indeed correct!",
+      "timing": {
+        "start": 76.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_038.mp3"
+    },
+    {
+      "index": 39,
+      "text": "This process confirms the validity of the quadratic formula and our steps.",
+      "timing": {
+        "start": 78.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_039.mp3"
+    },
+    {
+      "index": 40,
+      "text": "Thank you for joining this explanation of the quadratic formula!",
+      "timing": {
+        "start": 80.0,
+        "duration": 2.0
+      },
+      "audio_path": "audio\\test_narration_extraction\\segment_040.mp3"
+    }
+  ]
+}

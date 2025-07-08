@@ -1,104 +1,52 @@
 {
-  "video_id": "circle_example",
   "segments": [
     {
-      "index": 0,
-      "text": "<prosody rate='medium'>Scene: Circle Example</prosody>",
-      "timing": {
-        "start": 0.0,
-        "duration": 3.0
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_000.mp3",
-      "type": "scene_title",
-      "duration": 1.6
+      "text": "<speak>Welcome to this demonstration of <emphasis level='moderate'>circle</emphasis> properties.<break time='500ms'/></speak>",
+      "start": 0.0,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_000.mp3"
     },
     {
-      "index": 2,
-      "text": "<prosody rate='medium'>r</prosody>",
-      "timing": {
-        "start": 3.0,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_002.mp3",
-      "type": "text_element",
-      "duration": 1.0
+      "text": "<speak>Let's start by creating a <emphasis level='moderate'>circle</emphasis> with <emphasis level='moderate'>radius</emphasis> 2.<break time='500ms'/></speak>",
+      "start": 1.375,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_001.mp3"
     },
     {
-      "index": 4,
-      "text": "<prosody rate='medium'>d = 2r</prosody>",
-      "timing": {
-        "start": 5.875,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_004.mp3",
-      "type": "text_element",
-      "duration": 1.6
+      "text": "<speak>The center of a <emphasis level='moderate'>circle</emphasis> is the point from which all points on the <emphasis level='moderate'>circle</emphasis> are equidistant.<break time='500ms'/></speak>",
+      "start": 2.75,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_002.mp3"
     },
     {
-      "index": 6,
-      "text": "<prosody rate='medium'>Circles are fundamental shapes</prosody>",
-      "timing": {
-        "start": 8.75,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_006.mp3",
-      "type": "text_element",
-      "duration": 2.0
+      "text": "<speak>The <emphasis level='moderate'>radius</emphasis> is the distance from the center to any point on the <emphasis level='moderate'>circle</emphasis>.<break time='500ms'/></speak>",
+      "start": 4.125,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_003.mp3"
     },
     {
-      "index": 8,
-      "text": "<prosody rate='medium'>C = d</prosody>",
-      "timing": {
-        "start": 11.625,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_008.mp3",
-      "type": "text_element",
-      "duration": 1.6
+      "text": "<speak>The <emphasis level='moderate'>diameter</emphasis> is twice the <emphasis level='moderate'>radius</emphasis> and passes through the center.<break time='500ms'/></speak>",
+      "start": 5.5,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_004.mp3"
     },
     {
-      "index": 10,
-      "text": "<prosody rate='medium'>A = r^2</prosody>",
-      "timing": {
-        "start": 14.5,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_010.mp3",
-      "type": "text_element",
-      "duration": 1.6
+      "text": "<speak>The <emphasis level='moderate'>circumference</emphasis> of a <emphasis level='moderate'>circle</emphasis> equals <emphasis level='moderate'>pi</emphasis> times the <emphasis level='moderate'>diameter</emphasis>.<break time='500ms'/></speak>",
+      "start": 6.875,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_005.mp3"
     },
     {
-      "index": 12,
-      "text": "<prosody rate='medium'>C = d</prosody>",
-      "timing": {
-        "start": 17.375,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_012.mp3",
-      "type": "text_element",
-      "duration": 1.6
+      "text": "<speak>The <emphasis level='moderate'>area</emphasis> of a <emphasis level='moderate'>circle</emphasis> equals <emphasis level='moderate'>pi</emphasis> times the <emphasis level='moderate'>radius</emphasis> <emphasis level='moderate'>squared</emphasis>.<break time='500ms'/></speak>",
+      "start": 8.25,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_006.mp3"
     },
     {
-      "index": 14,
-      "text": "<prosody rate='medium'>A = r^2</prosody>",
-      "timing": {
-        "start": 20.25,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_014.mp3",
-      "type": "text_element",
-      "duration": 1.6
-    },
-    {
-      "index": 16,
-      "text": "<prosody rate='medium'>Circle Properties</prosody>",
-      "timing": {
-        "start": 23.125,
-        "duration": 2.875
-      },
-      "audio_path": "temp\\full_sync_test\\audio\\segment_016.mp3",
-      "type": "text_element",
-      "duration": 1.2
+      "text": "<speak>Understanding these properties is fundamental to mathematics.<break time='500ms'/></speak>",
+      "start": 9.625,
+      "duration": 1.375,
+      "audio_path": "temp\\full_sync_test\\audio\\segment_007.mp3"
     }
   ]
 }

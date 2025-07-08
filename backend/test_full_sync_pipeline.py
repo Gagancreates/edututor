@@ -1,25 +1,30 @@
 #!/usr/bin/env python
 """
-Full Audio-Video Synchronization Pipeline Test
+Full synchronization pipeline test for EduTutor.
 
-This script tests the complete audio-video synchronization pipeline:
-1. Generate a simple Manim scene
-2. Extract narration text with timing
-3. Generate audio for the narration
-4. Merge audio with the video
-5. Verify the output
-
-Usage:
-    python test_full_sync_pipeline.py [--output-dir OUTPUT_DIR] [--use-elevenlabs]
+This script tests the complete flow from:
+1. Generating Manim code
+2. Extracting narration from NARRATION comments
+3. Generating video from Manim code
+4. Generating audio from the script
+5. Merging the audio and video together
 """
 import os
 import sys
-import asyncio
 import logging
-import argparse
-import tempfile
+import asyncio
 import subprocess
+import json
+import time
+import traceback
 from pathlib import Path
+
+from app.services.gemini import generate_manim_code
+from app.services.manim import execute_manim_code_without_audio
+from app.services.tts import generate_audio_for_script
+from app.services.media_processing import merge_audio_segments_with_video
+from app.services.text_extraction import extract_narration_from_manim
+from app.routers.generate import generate_video_task
 
 # Configure logging
 logging.basicConfig(
@@ -34,34 +39,34 @@ from manim import *
 
 class CircleExample(Scene):
     def construct(self):
-        # narration: Welcome to this demonstration of circle properties.
+        # NARRATION: Welcome to this demonstration of circle properties.
         title = Title("Circle Properties")
         self.play(Write(title))
         self.wait(1)
         
-        # narration: Let's start by creating a circle with radius 2.
+        # NARRATION: Let's start by creating a circle with radius 2.
         circle = Circle(radius=2, color=BLUE)
         self.play(Create(circle))
         self.wait(1)
         
-        # narration: The center of a circle is the point from which all points on the circle are equidistant.
+        # NARRATION: The center of a circle is the point from which all points on the circle are equidistant.
         center_dot = Dot(ORIGIN, color=RED)
         self.play(FadeIn(center_dot))
         self.wait(1)
         
-        # narration: The radius is the distance from the center to any point on the circle.
+        # NARRATION: The radius is the distance from the center to any point on the circle.
         radius = Line(ORIGIN, circle.point_at_angle(45 * DEGREES), color=YELLOW)
         radius_label = Text("r", font_size=24).next_to(radius.get_center(), UP)
         self.play(Create(radius), Write(radius_label))
         self.wait(1.5)
         
-        # narration: The diameter is twice the radius and passes through the center.
+        # NARRATION: The diameter is twice the radius and passes through the center.
         diameter = Line(circle.point_at_angle(225 * DEGREES), circle.point_at_angle(45 * DEGREES), color=GREEN)
         diameter_label = Text("d = 2r", font_size=24).next_to(diameter.get_center(), DOWN)
         self.play(Create(diameter), Write(diameter_label))
         self.wait(1.5)
         
-        # narration: The circumference of a circle equals pi times the diameter.
+        # NARRATION: The circumference of a circle equals pi times the diameter.
         circumference_formula = MathTex("C = \\pi \\times d").scale(1.5)
         self.play(
             FadeOut(title),
@@ -71,12 +76,12 @@ class CircleExample(Scene):
         )
         self.wait(1.5)
         
-        # narration: The area of a circle equals pi times the radius squared.
+        # NARRATION: The area of a circle equals pi times the radius squared.
         area_formula = MathTex("A = \\pi \\times r^2").scale(1.5)
         self.play(Transform(circle, area_formula))
         self.wait(1.5)
         
-        # narration: Understanding these properties is fundamental to mathematics.
+        # NARRATION: Understanding these properties is fundamental to mathematics.
         final_text = Text("Circles are fundamental shapes", font_size=36)
         self.play(Transform(circle, final_text))
         self.wait(2)
@@ -208,13 +213,7 @@ async def create_dummy_video(output_dir):
         return video_path
     except subprocess.SubprocessError as e:
         logger.error(f"Error creating dummy video: {e}")
-        
-        # Create an empty file as fallback
-        with open(video_path, "w") as f:
-            f.write("Dummy video file")
-        
-        logger.warning(f"Created empty dummy video file at {video_path}")
-        return video_path
+        return None
 
 async def extract_narration(manim_code):
     """
@@ -227,15 +226,12 @@ async def extract_narration(manim_code):
         List of script segments with timing information
     """
     try:
-        from app.services.text_extraction import ManimTextExtractor
-        
         logger.info("Extracting narration from Manim code")
-        extractor = ManimTextExtractor()
-        script = extractor.extract_script(manim_code)
+        script = extract_narration_from_manim(manim_code)
         
         logger.info(f"Extracted {len(script)} script segments")
         for i, segment in enumerate(script[:3]):  # Show first 3 segments
-            logger.info(f"Segment {i}: {segment['text'][:50]}... (start: {segment['timing']['start']}s, duration: {segment['timing']['duration']}s)")
+            logger.info(f"Segment {i+1}: {segment['text'][:50]}... (start: {segment['timing']['start']}s, duration: {segment['timing']['duration']}s)")
         
         return script
     except Exception as e:
@@ -245,18 +241,18 @@ async def extract_narration(manim_code):
             {
                 "text": "Welcome to this demonstration of circle properties.",
                 "timing": {"start": 0.0, "duration": 2.0},
-                "type": "text"
+                "type": "narration"
             },
             {
                 "text": "Let's start by creating a circle with radius 2.",
                 "timing": {"start": 2.0, "duration": 2.0},
-                "type": "text"
+                "type": "narration"
             }
         ]
 
 async def enhance_script_with_ssml(script):
     """
-    Enhance script with SSML tags for better timing control.
+    Enhance the script with SSML (Speech Synthesis Markup Language) tags.
     
     Args:
         script: List of script segments
@@ -264,214 +260,326 @@ async def enhance_script_with_ssml(script):
     Returns:
         Enhanced script with SSML tags
     """
-    try:
-        from app.services.sync import enhance_script_with_ssml
+    enhanced_script = []
+    
+    for segment in script:
+        text = segment['text']
         
-        logger.info("Enhancing script with SSML tags")
-        enhanced_script = enhance_script_with_ssml(script)
+        # Add pauses after punctuation
+        text = text.replace(".", ".<break time='500ms'/>")
+        text = text.replace("!", "!<break time='500ms'/>")
+        text = text.replace("?", "?<break time='500ms'/>")
+        text = text.replace(",", ",<break time='300ms'/>")
+        text = text.replace(";", ";<break time='400ms'/>")
         
-        logger.info(f"Enhanced {len(enhanced_script)} script segments with SSML")
-        for i, segment in enumerate(enhanced_script[:3]):  # Show first 3 segments
-            logger.info(f"Segment {i}: {segment['text'][:50]}...")
+        # Add emphasis to mathematical terms
+        # This is a simple example, could be expanded with more sophisticated patterns
+        math_terms = ["circle", "radius", "diameter", "circumference", "area", "pi", "squared"]
+        for term in math_terms:
+            if term in text.lower():
+                text = text.replace(term, f"<emphasis level='moderate'>{term}</emphasis>")
         
-        return enhanced_script
-    except Exception as e:
-        logger.error(f"Error enhancing script with SSML: {e}")
-        
-        # Create enhanced script manually
-        from test_audio_sync import add_ssml_tags, insert_strategic_pauses
-        
-        enhanced_script = []
-        for segment in script:
-            enhanced_segment = segment.copy()
-            enhanced_segment["text"] = add_ssml_tags(segment["text"], segment["timing"]["duration"])
-            enhanced_script.append(enhanced_segment)
-        
-        logger.info(f"Created {len(enhanced_script)} enhanced script segments manually")
-        
-        # Add strategic pauses
-        enhanced_script = insert_strategic_pauses(script)
-        
-        return enhanced_script
+        # Create enhanced segment
+        enhanced_segment = segment.copy()
+        enhanced_segment['text'] = f"<speak>{text}</speak>"
+        enhanced_script.append(enhanced_segment)
+    
+    return enhanced_script
 
 async def generate_audio(script, output_dir, use_elevenlabs=False):
     """
-    Generate audio for the script segments.
+    Generate audio for the script.
     
     Args:
-        script: List of script segments
-        output_dir: Directory to save audio files
-        use_elevenlabs: Whether to use ElevenLabs for TTS
+        script: List of script segments with text and timing
+        output_dir: Directory to save the audio files
+        use_elevenlabs: Whether to use the ElevenLabs API
         
     Returns:
-        Audio manifest with paths to audio segments
+        Audio manifest with segment information
     """
     try:
-        # Ensure output directory exists
-        output_dir = Path(output_dir)
-        os.makedirs(output_dir, exist_ok=True)
+        # Create audio directory
+        audio_dir = Path(output_dir) / "audio"
+        os.makedirs(audio_dir, exist_ok=True)
         
-        if use_elevenlabs:
-            # Check if ElevenLabs API key is set
-            api_key = os.getenv("ELEVEN_LABS_API_KEY")
-            if not api_key:
-                logger.warning("ELEVEN_LABS_API_KEY not set, falling back to dummy audio")
-                use_elevenlabs = False
+        # Process audio segments
+        logger.info("Generating audio segments...")
+        
+        # Create manifest structure
+        manifest = {
+            "segments": []
+        }
         
         if use_elevenlabs:
             try:
-                from app.services.tts import generate_chunked_audio
+                audio_manifest = await generate_audio_for_script(script, "sync_test")
+                logger.info(f"Generated {len(audio_manifest['segments'])} audio segments using ElevenLabs")
                 
-                logger.info("Generating audio with ElevenLabs TTS")
-                audio_chunks = await generate_chunked_audio(
-                    script_segments=script,
-                    voice_id=None,  # Use default voice
-                    output_dir=output_dir
-                )
+                # Copy audio files to our directory
+                for segment in audio_manifest["segments"]:
+                    src_path = Path(segment["audio_path"])
+                    if src_path.exists():
+                        import shutil
+                        dest_path = audio_dir / src_path.name
+                        shutil.copy2(src_path, dest_path)
+                        
+                        # Update path in our manifest
+                        manifest["segments"].append({
+                            "text": segment["text"],
+                            "start": segment["timing"]["start"],
+                            "duration": segment["timing"]["duration"],
+                            "audio_path": str(dest_path)
+                        })
+                
+                return manifest
+                
             except Exception as e:
-                logger.error(f"Error generating audio with ElevenLabs: {e}")
+                logger.error(f"Error using ElevenLabs: {e}")
                 use_elevenlabs = False
         
+        # Fallback: Generate simple audio files using FFmpeg
         if not use_elevenlabs:
-            # Use dummy audio generation
-            from test_audio_sync import generate_dummy_audio_chunks
+            for i, segment in enumerate(script):
+                output_path = audio_dir / f"segment_{i:03d}.mp3"
+                
+                # Create a silent audio file for testing
+                duration_secs = segment["timing"]["duration"]
+                try:
+                    subprocess.run([
+                        "ffmpeg", "-y",
+                        "-f", "lavfi", 
+                        "-i", f"sine=frequency=1000:duration={duration_secs}",
+                        "-af", f"afade=t=in:ss=0:d=0.5,afade=t=out:st={duration_secs-0.5}:d=0.5",
+                        str(output_path)
+                    ], check=True, capture_output=True)
+                    
+                    # Add to manifest using audio_path key
+                    manifest["segments"].append({
+                        "text": segment["text"],
+                        "start": segment["timing"]["start"],
+                        "duration": segment["timing"]["duration"],
+                        "audio_path": str(output_path)
+                    })
+                    
+                except subprocess.SubprocessError as e:
+                    logger.error(f"Error generating audio segment {i}: {e}")
             
-            logger.info("Generating dummy audio")
-            audio_chunks = await generate_dummy_audio_chunks(script, output_dir)
-        
-        logger.info(f"Generated {len(audio_chunks)} audio chunks")
-        
         # Save manifest
-        import json
-        manifest = {
-            "video_id": "circle_example",
-            "segments": audio_chunks
-        }
-        
-        manifest_path = output_dir / "manifest.json"
+        manifest_path = audio_dir / "manifest.json"
         with open(manifest_path, "w") as f:
             json.dump(manifest, f, indent=2)
-        
-        logger.info(f"Saved audio manifest to {manifest_path}")
-        
+            
+        logger.info(f"Generated {len(manifest['segments'])} audio segments")
         return manifest
+    
     except Exception as e:
         logger.error(f"Error generating audio: {e}")
-        return {"video_id": "circle_example", "segments": []}
+        return {"segments": []}
 
 async def merge_audio_video(video_path, audio_manifest, output_path):
     """
-    Merge audio with video.
+    Merge audio segments with the video using FFmpeg.
     
     Args:
         video_path: Path to the video file
-        audio_manifest: Audio manifest with paths to audio segments
-        output_path: Path to save the output file
+        audio_manifest: Audio manifest with segment information
+        output_path: Path to save the output video
         
     Returns:
         Path to the merged video file
     """
     try:
-        logger.info(f"Merging audio with video: {video_path}")
+        logger.info("Merging audio and video...")
+        merged_video = await merge_audio_segments_with_video(
+            video_path=video_path,
+            audio_manifest=audio_manifest,
+            output_path=output_path
+        )
         
-        try:
-            from app.services.media_processing import merge_audio_segments_with_video_direct
-            
-            result = await merge_audio_segments_with_video_direct(
-                video_path=video_path,
-                audio_manifest=audio_manifest,
-                output_path=output_path
-            )
-        except ImportError:
-            logger.warning("Could not import merge_audio_segments_with_video_direct, using simple implementation")
-            
-            from test_audio_sync import simple_merge_audio_video
-            
-            result = await simple_merge_audio_video(
-                video_path=video_path,
-                audio_manifest=audio_manifest,
-                output_path=output_path
-            )
-        
-        if result:
-            logger.info(f"Successfully created synchronized video at {result}")
-            return result
+        if merged_video and Path(merged_video).exists():
+            logger.info(f"Successfully merged audio and video: {merged_video}")
+            return merged_video
         else:
-            logger.error("Failed to create synchronized video")
+            logger.error("Failed to merge audio and video")
             return None
+    
     except Exception as e:
         logger.error(f"Error merging audio and video: {e}")
         return None
 
 async def run_full_pipeline(output_dir, use_elevenlabs=False):
     """
-    Run the full audio-video synchronization pipeline.
+    Run the full synchronization pipeline.
     
     Args:
-        output_dir: Directory to save output files
+        output_dir: Directory to save outputs
         use_elevenlabs: Whether to use ElevenLabs for TTS
         
     Returns:
-        Path to the final synchronized video
+        Boolean indicating success
     """
-    # Check dependencies
-    if not await check_dependencies():
-        logger.error("Missing required dependencies. Exiting.")
-        return None
+    try:
+        # Create output directory
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Step 1: Check dependencies
+        if not await check_dependencies():
+            logger.error("Missing required dependencies")
+            return False
+        
+        # Step 2: Generate video
+        video_path = await generate_manim_video(output_dir)
+        
+        # If video generation failed, create a dummy video
+        if not video_path:
+            logger.warning("Using dummy video instead")
+            video_path = await create_dummy_video(output_dir)
+            if not video_path:
+                logger.error("Failed to create even a dummy video")
+                return False
+        
+        # Step 3: Extract narration
+        script = await extract_narration(SAMPLE_MANIM_CODE)
+        if not script:
+            logger.error("Failed to extract narration")
+            return False
+        
+        # Save the script
+        script_path = Path(output_dir) / "script.json"
+        with open(script_path, "w") as f:
+            json.dump(script, f, indent=2)
+        
+        # Step 4: Enhance script with SSML (optional)
+        enhanced_script = await enhance_script_with_ssml(script)
+        
+        # Step 5: Generate audio
+        audio_manifest = await generate_audio(enhanced_script, output_dir, use_elevenlabs)
+        if not audio_manifest or not audio_manifest["segments"]:
+            logger.error("Failed to generate audio")
+            return False
+        
+        # Step 6: Merge audio and video
+        final_path = Path(output_dir) / "circle_example_narrated.mp4"
+        merged_video = await merge_audio_video(video_path, audio_manifest, final_path)
+        if not merged_video:
+            logger.error("Failed to merge audio and video")
+            return False
+        
+        logger.info(f"Full pipeline completed successfully. Output: {merged_video}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Error in full pipeline: {e}")
+        logger.error(traceback.format_exc())
+        return False
+
+async def test_full_pipeline():
+    """
+    Test the full pipeline with the sample Manim code.
+    """
+    logger.info("=== Testing Full Pipeline ===")
+    output_dir = Path("./temp/full_sync_test")
     
-    # Step 1: Generate Manim video
-    video_path = await generate_manim_video(output_dir)
+    start_time = time.time()
+    result = await run_full_pipeline(output_dir)
+    end_time = time.time()
     
-    # If video generation failed, create a dummy video
-    if not video_path:
-        logger.warning("Video generation failed or skipped, creating dummy video")
-        video_path = await create_dummy_video(output_dir)
-    
-    # Step 2: Extract narration
-    script = await extract_narration(SAMPLE_MANIM_CODE)
-    
-    # Step 3: Enhance script with SSML
-    enhanced_script = await enhance_script_with_ssml(script)
-    
-    # Step 4: Generate audio
-    audio_dir = Path(output_dir) / "audio"
-    os.makedirs(audio_dir, exist_ok=True)
-    
-    audio_manifest = await generate_audio(enhanced_script, audio_dir, use_elevenlabs)
-    
-    # Step 5: Merge audio with video
-    output_video_path = Path(output_dir) / "circle_example_narrated.mp4"
-    
-    final_video = await merge_audio_video(video_path, audio_manifest, output_video_path)
-    
-    if final_video:
-        logger.info(f"Full pipeline completed successfully. Output: {final_video}")
+    if result:
+        logger.info(f"✅ Full pipeline test passed in {end_time - start_time:.2f} seconds")
+        
+        # Open the video if on a desktop OS
+        final_video = output_dir / "circle_example_narrated.mp4"
+        if final_video.exists():
+            logger.info(f"Final video available at: {final_video}")
+            try:
+                if sys.platform == "win32":
+                    os.startfile(final_video)
+                elif sys.platform == "darwin":  # macOS
+                    subprocess.run(["open", final_video])
+                else:  # Linux
+                    subprocess.run(["xdg-open", final_video])
+            except Exception as e:
+                logger.warning(f"Could not open video automatically: {e}")
     else:
-        logger.error("Full pipeline failed.")
+        logger.error(f"❌ Full pipeline test failed after {end_time - start_time:.2f} seconds")
     
-    return final_video
+    return result
+
+async def test_component_pipeline():
+    """
+    Test each component of the pipeline individually.
+    """
+    logger.info("=== Testing Individual Components ===")
+    output_dir = Path("./temp/sync_test")
+    
+    # Create output directory
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Save the sample Manim code
+    manim_path = output_dir / "circle_example.py"
+    with open(manim_path, "w") as f:
+        f.write(SAMPLE_MANIM_CODE)
+        
+    # Test the dependencies
+    logger.info("Testing dependencies...")
+    dependencies_ok = await check_dependencies()
+    logger.info(f"Dependencies check: {'✅' if dependencies_ok else '❌'}")
+    
+    # Test script extraction
+    logger.info("Testing script extraction...")
+    script = await extract_narration(SAMPLE_MANIM_CODE)
+    script_ok = len(script) > 0
+    logger.info(f"Script extraction: {'✅' if script_ok else '❌'} ({len(script)} segments)")
+    
+    # Save the script
+    script_path = output_dir / "script.json"
+    with open(script_path, "w") as f:
+        json.dump(script, f, indent=2)
+    
+    # Test audio generation (with dummy audio)
+    logger.info("Testing audio generation...")
+    audio_manifest = await generate_audio(script, output_dir, use_elevenlabs=False)
+    audio_ok = len(audio_manifest["segments"]) > 0
+    logger.info(f"Audio generation: {'✅' if audio_ok else '❌'} ({len(audio_manifest['segments'])} segments)")
+    
+    # Test video generation (create a dummy video)
+    logger.info("Testing video generation...")
+    video_path = await create_dummy_video(output_dir)
+    video_ok = video_path and Path(video_path).exists()
+    logger.info(f"Video generation: {'✅' if video_ok else '❌'}")
+    
+    # Test audio-video merging
+    if video_ok and audio_ok:
+        logger.info("Testing audio-video merging...")
+        final_path = output_dir / "circle_example_narrated.mp4"
+        merged_video = await merge_audio_video(video_path, audio_manifest, final_path)
+        merging_ok = merged_video and Path(merged_video).exists()
+        logger.info(f"Audio-video merging: {'✅' if merging_ok else '❌'}")
+    
+    return dependencies_ok and script_ok and audio_ok and video_ok
+
+async def run_tests():
+    """Run all tests."""
+    logger.info("Starting tests...")
+    
+    # Test component pipeline first
+    component_result = await test_component_pipeline()
+    logger.info(f"Component tests: {'✅' if component_result else '❌'}")
+    
+    # Then test the full pipeline
+    full_result = await test_full_pipeline()
+    logger.info(f"Full pipeline test: {'✅' if full_result else '❌'}")
+    
+    return component_result and full_result
 
 def main():
     """Main function."""
-    parser = argparse.ArgumentParser(description="Test the full audio-video synchronization pipeline")
-    parser.add_argument("--output-dir", default="./temp/full_sync_test", help="Directory to save output files")
-    parser.add_argument("--use-elevenlabs", action="store_true", help="Use ElevenLabs for TTS (requires API key)")
+    # Run the tests
+    success = asyncio.run(run_tests())
     
-    args = parser.parse_args()
-    
-    # Create output directory
-    os.makedirs(args.output_dir, exist_ok=True)
-    
-    # Run the full pipeline
-    result = asyncio.run(run_full_pipeline(args.output_dir, args.use_elevenlabs))
-    
-    if result:
-        print(f"\nFull pipeline test completed successfully!")
-        print(f"Synchronized video: {result}")
-        return 0
-    else:
-        print("\nFull pipeline test failed.")
-        return 1
+    # Exit with status code
+    sys.exit(0 if success else 1)
 
 if __name__ == "__main__":
-    sys.exit(main()) 
+    main() 
