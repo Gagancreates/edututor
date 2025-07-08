@@ -7,9 +7,13 @@ import logging
 import traceback
 import os
 import json
+import asyncio
 
 from app.services.gemini import generate_manim_code
-from app.services.manim import execute_manim_code
+from app.services.manim import execute_manim_code, execute_manim_code_without_audio
+from app.services.text_extraction import extract_narration_from_manim
+from app.services.tts import generate_audio_for_script
+from app.services.media_processing import merge_audio_segments_with_video
 from app.utils.helpers import generate_uuid, clean_code, get_video_status
 
 # Set up logging
@@ -34,6 +38,51 @@ class GenerateResponse(BaseModel):
     video_id: str
     status: str
 
+def handle_manim_generation_error(video_id: str, error: Exception, prompt: str = "", topic: str = None):
+    """
+    Handle errors during Manim code generation.
+    
+    Args:
+        video_id: The ID of the video
+        error: The exception that was raised
+        prompt: The prompt that was used
+        topic: The topic that was specified
+    """
+    logger.error(f"Failed to generate Manim code for video {video_id}: {str(error)}")
+    logger.error(traceback.format_exc())
+    
+    # Create videos directory for this video_id if it doesn't exist
+    video_dir = os.path.join("videos", video_id)
+    os.makedirs(video_dir, exist_ok=True)
+    
+    # Save the error to a file
+    error_file = os.path.join(video_dir, "error.txt")
+    with open(error_file, "w") as f:
+        error_message = f"Failed to generate Manim code: {str(error)}\n\n"
+        error_message += "This might be due to:\n"
+        error_message += "- The prompt being too complex or broad\n"
+        error_message += "- The Gemini API experiencing high traffic\n\n"
+        error_message += "Please try:\n"
+        error_message += "- Using a more specific and focused prompt\n"
+        error_message += "- Breaking down complex topics into smaller parts\n"
+        error_message += "- Trying again in a few minutes\n\n"
+        error_message += traceback.format_exc()
+        f.write(error_message)
+    
+    # Save metadata for frontend to display
+    metadata_file = os.path.join(video_dir, "metadata.json")
+    with open(metadata_file, "w") as f:
+        metadata = {
+            "status": "error",
+            "error_type": "generation_failed",
+            "prompt": prompt,
+            "topic": topic,
+            "message": f"Failed to generate code: {str(error)}"
+        }
+        json.dump(metadata, f)
+    
+    logger.error(f"Generation failed for video {video_id}. Error saved to {error_file}")
+
 async def generate_video_task(video_id: str, prompt: str, topic: str = None, grade_level: str = None, duration_minutes: float = 3.0):
     """
     Background task for generating a video.
@@ -52,8 +101,9 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
         video_dir = os.path.join("videos", video_id)
         os.makedirs(video_dir, exist_ok=True)
         
-        # Generate Manim code using Gemini with timeout handling
+        # STEP 1: Generate Manim code using Gemini (first LLM call)
         try:
+            logger.info("Generating Manim code with NARRATION comments...")
             manim_code = await generate_manim_code(
                 prompt=prompt, 
                 topic=topic, 
@@ -63,35 +113,7 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
                 timeout=180.0  # 3 minutes timeout
             )
         except Exception as e:
-            logger.error(f"Error generating Manim code: {str(e)}")
-            
-            # Save detailed error information
-            error_file = os.path.join(video_dir, "error.txt")
-            with open(error_file, "w") as f:
-                error_message = f"Failed to generate Manim code: {str(e)}\n\n"
-                error_message += "This might be due to:\n"
-                error_message += "- The prompt being too complex or broad\n"
-                error_message += "- The Gemini API experiencing high traffic\n\n"
-                error_message += "Please try:\n"
-                error_message += "- Using a more specific and focused prompt\n"
-                error_message += "- Breaking down complex topics into smaller parts\n"
-                error_message += "- Trying again in a few minutes\n\n"
-                error_message += traceback.format_exc()
-                f.write(error_message)
-            
-            # Save metadata for frontend to display
-            metadata_file = os.path.join(video_dir, "metadata.json")
-            with open(metadata_file, "w") as f:
-                metadata = {
-                    "status": "error",
-                    "error_type": "generation_failed",
-                    "prompt": prompt,
-                    "topic": topic,
-                    "message": f"Failed to generate code: {str(e)}"
-                }
-                json.dump(metadata, f)
-            
-            logger.error(f"Generation failed for video {video_id}. Error saved to {error_file}")
+            handle_manim_generation_error(video_id, e, prompt, topic)
             return
         
         # Clean the code to remove any Markdown formatting
@@ -104,8 +126,81 @@ async def generate_video_task(video_id: str, prompt: str, topic: str = None, gra
         with open(code_file, "w") as f:
             f.write(manim_code)
         
-        # Execute the Manim code to generate the video
-        await execute_manim_code(video_id, manim_code)
+        # STEP 2: Generate video from Manim code
+        logger.info("Generating video from Manim code...")
+        try:
+            video_path = await execute_manim_code_without_audio(video_id, manim_code)
+        except Exception as e:
+            logger.error(f"Error executing Manim code: {str(e)}")
+            error_file = os.path.join(video_dir, "error.txt")
+            with open(error_file, "a") as f:
+                f.write(f"\nError executing Manim code: {str(e)}")
+            return
+            
+        # STEP 3: Extract narration from NARRATION comments in the Manim code
+        logger.info("Extracting narration from NARRATION comments...")
+        try:
+            script = extract_narration_from_manim(manim_code)
+            logger.info(f"Extracted {len(script)} narration segments")
+            
+            # Save the script
+            script_path = os.path.join(video_dir, "script.json")
+            with open(script_path, "w") as f:
+                json.dump(script, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error extracting narration: {str(e)}")
+            logger.error(traceback.format_exc())
+            
+            # Create a generic script if narration extraction fails
+            script = [{
+                "text": "Welcome to this educational video created with Manim.",
+                "timing": {
+                    "start": 0.0,
+                    "duration": 3.0
+                },
+                "type": "generic"
+            }]
+            logger.info("Using generic script due to extraction failure")
+        
+        # STEP 4: Generate audio for the script
+        logger.info("Generating audio for the script...")
+        try:
+            audio_manifest = await generate_audio_for_script(script, video_id)
+            
+            # Save the manifest
+            manifest_path = os.path.join(video_dir, "manifest.json")
+            with open(manifest_path, "w") as f:
+                json.dump(audio_manifest, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error generating audio: {str(e)}")
+            logger.error(traceback.format_exc())
+            return
+        
+        # STEP 5: Merge audio and video
+        logger.info("Merging audio and video...")
+        try:
+            output_path = await merge_audio_segments_with_video(
+                video_path=video_path,
+                audio_manifest=audio_manifest,
+                output_path=os.path.join(video_dir, f"{video_id}_final.mp4")
+            )
+        except Exception as e:
+            logger.error(f"Error merging audio and video: {str(e)}")
+            logger.error(traceback.format_exc())
+            return
+        
+        # Update metadata
+        metadata_file = os.path.join(video_dir, "metadata.json")
+        with open(metadata_file, "w") as f:
+            metadata = {
+                "status": "completed",
+                "prompt": prompt,
+                "topic": topic,
+                "original_video": str(video_path),
+                "final_video": str(output_path),
+                "script_source": "narration_extraction"
+            }
+            json.dump(metadata, f, indent=2)
         
         logger.info(f"Video generation completed for ID: {video_id}")
     
