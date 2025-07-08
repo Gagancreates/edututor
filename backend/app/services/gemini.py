@@ -73,6 +73,8 @@ CRITICAL MANIM REQUIREMENTS:
 -*"Only use VGroup.add() for VMobjects; never add animations like .animate to VGroups — instead, collect animations in a list and play them with self.play(animations)."
 -"Before calling self.play(animations), check that the animations list is not empty — only call self.play if animations exist.  
 - from manim import * (required import)
+-Ensure that list.append() is only called with a single positional argument and not with keyword arguments; assign the animation to a variable first if needed
+-Always check if a VGroup has elements using if vgroup: or len(vgroup), never use .mobjects or .get_mobjects()
 -"Ensure all code uses consistent 4-space indentation with no mixed tabs/spaces, and validate proper Python syntax structure.
 - class CreateScene(Scene): (exact class name and inheritance)
 - Complete, executable Python code only
@@ -85,6 +87,10 @@ CRITICAL MANIM REQUIREMENTS:
 - run_time between 0.5-2 seconds for all animations
 -do not include unsupported keywords like ‘word_wrap’ or others not in the official Manim documentation
 - Avoid display_frame, ZoomedScene, TransformMatchingTex errors
+
+COMMENT RULES:
+-add narration comments with prefix NARRATION: <actual narration> before each helper method which explains the content present in the method
+-the narration comment should be enough to last for the duration of the method
 
 
 COMPATIBILITY WARNINGS:
@@ -122,7 +128,8 @@ For each step:
 
 Mathematical Step Template:
 ```python
-# Step presentation
+# NARRATION: In this step, we're going to [action] by applying [concept].
+# This is important because it helps us understand [principle].
 step_title = Text("Step 1: [Action]", color=BLUE).to_edge(UP)
 step_math = MathTex(r"equation", color=YELLOW).scale(1.2)
 step_explanation = Text("We do this because...", color=WHITE).scale(0.7)
