@@ -28,14 +28,23 @@ class ManimTextExtractor:
         # Pattern to extract run_time from play commands
         self.run_time_pattern = re.compile(r'self\.play\s*\([^)]*run_time\s*=\s*(\d+\.?\d*)')
         
+        # Pattern to extract NARRATION comments
+        # Find lines starting with "# NARRATION:" and possibly continuing with lines starting with "#"
+        self.narration_line_pattern = re.compile(r'^\s*#\s*NARRATION:\s*(.+)$', re.MULTILINE | re.IGNORECASE)
+        self.continuation_line_pattern = re.compile(r'^\s*#\s*([^N].+)$', re.MULTILINE)
+        
         # Default timing values (in seconds)
         self.default_wait_time = 2.0
         self.default_animation_time = 1.5
         
     def extract_script(self, manim_code: str) -> List[Dict[str, Any]]:
        
-        # Try to extract section comments first (most reliable for structure)
-        script = self._extract_section_comments(manim_code)
+        # Try to extract NARRATION comments first (highest priority)
+        script = self._extract_narration_comments(manim_code)
+        
+        # If no NARRATION comments found, try to extract section comments
+        if not script:
+            script = self._extract_section_comments(manim_code)
         
         # If no sections found, try to extract text objects
         if not script:
@@ -44,6 +53,88 @@ class ManimTextExtractor:
         # If still no script, extract any comments
         if not script:
             script = self._extract_general_comments(manim_code)
+        
+        return script
+    
+    def _extract_narration_comments(self, manim_code: str) -> List[Dict[str, Any]]:
+        """
+        Extract script from NARRATION comments in the code.
+        
+        This method looks for comments starting with "# NARRATION:" and extracts
+        the continuous block of comments that follows.
+        
+        Args:
+            manim_code: The Manim code to extract from
+            
+        Returns:
+            List of script segments
+        """
+        script = []
+        current_time = 0.0
+        
+        # Split the code into lines
+        lines = manim_code.split('\n')
+        
+        # Find all narration comments
+        narration_blocks = []
+        current_narration = None
+        
+        for i, line in enumerate(lines):
+            # Check if this line starts a new narration block
+            narration_match = re.match(r'^\s*#\s*NARRATION:\s*(.+)$', line, re.IGNORECASE)
+            if narration_match:
+                # If we were collecting a narration block, save it before starting a new one
+                if current_narration is not None:
+                    narration_blocks.append(current_narration.strip())
+                
+                # Start a new narration block
+                current_narration = narration_match.group(1).strip()
+            
+            # Check if this line is a continuation of the current narration block
+            elif current_narration is not None and re.match(r'^\s*#\s*(.+)$', line):
+                # Extract the comment content without the # prefix
+                comment_content = re.match(r'^\s*#\s*(.+)$', line).group(1).strip()
+                
+                # Ignore comments that start another section or are empty
+                if not comment_content.startswith('NARRATION:') and comment_content:
+                    current_narration += " " + comment_content
+            
+            # If we hit a non-comment line and were collecting a narration, save it
+            elif current_narration is not None:
+                narration_blocks.append(current_narration.strip())
+                current_narration = None
+        
+        # Don't forget to save the last narration block if there is one
+        if current_narration is not None:
+            narration_blocks.append(current_narration.strip())
+        
+        # If no NARRATION comments found, return empty script
+        if not narration_blocks:
+            logger.info("No NARRATION comments found in the code")
+            return []
+        
+        logger.info(f"Found {len(narration_blocks)} NARRATION comment blocks")
+        for i, block in enumerate(narration_blocks[:3]):  # Print the first 3 blocks for debugging
+            logger.info(f"  Block {i+1}: {block[:50]}..." if len(block) > 50 else f"  Block {i+1}: {block}")
+        
+        # Extract all wait times to estimate total duration
+        wait_times = self.wait_pattern.findall(manim_code)
+        total_wait_time = sum(float(t) for t in wait_times) if wait_times else self.default_wait_time * len(narration_blocks)
+        
+        # Distribute the wait time among the narration blocks
+        segment_duration = total_wait_time / len(narration_blocks) if narration_blocks else self.default_animation_time
+        
+        # Create script segments for each narration block
+        for narration in narration_blocks:
+            script.append({
+                "text": narration,
+                "timing": {
+                    "start": current_time,
+                    "duration": segment_duration
+                },
+                "type": "narration"
+            })
+            current_time += segment_duration
         
         return script
     
